@@ -302,7 +302,9 @@ function draw_it(root, target) {
                 updateCrumbs(crumbs.slice(0, len))
               }
               else{
-               
+
+
+               console.log(d);
                 crumbs.push(d.name);
                 crumbs.push("term"); 
                 var len = crumbs.length-1;
@@ -320,9 +322,9 @@ function draw_it(root, target) {
       
       //Breadcrumbs
       var crumbs = [];
-      crumbs.push(root.description); 
+      crumbs.push(root.name); 
       while(root.parent){
-        crumbs.push(root.parent.description);
+        crumbs.push(root.parent.name);
         root = root.parent;
       }   
       crumbs.reverse();
