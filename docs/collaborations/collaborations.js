@@ -170,7 +170,7 @@ function draw_it(root, target) {
 
   var center = svg.append("circle")
   .attr("r", radius / 3).on("click", zoomOut);
-  var centerText = svg.append("text").attr("dx", function(d) { return -30; }).style("font-size", "11px").text(function(d) { return "Engineering "});
+  var centerText = svg.append("text").style("text-anchor", "middle").style("font-size", "11px").text(function(d) { return "Engineering "});
 
 
   center.append("title")
@@ -197,7 +197,7 @@ function draw_it(root, target) {
   .append("text")
   .filter(filter_min_arc_size_text)  
     .attr("x", function(d) { d[1]; })  
-    .attr("dx", "6") // margin
+    .attr("dx", "0") // margin
     .attr("dy", ".35em") // vertical-align  
     .attr("text-anchor", "middle")
     .attr("transform", function(d) { 
@@ -286,7 +286,7 @@ function draw_it(root, target) {
       var defaultFontSize = 11;
       var newFontSize = defaultFontSize - root.description.length/defaultFontSize;
       var scaleFactor = -2.9*newFontSize;
-      centerText.attr("dx", function(d) {return (scaleFactor/defaultFontSize)*root.description.length; }).style("font-size", newFontSize+"px").text(root.description);
+      centerText.style("font-size", newFontSize+"px").style("text-anchor", "middle").text(root.description);
       
 
    if(typeof root.parent != "undefined") {
@@ -310,8 +310,6 @@ function draw_it(root, target) {
                 var len = crumbs.length-1;
                 updateCrumbs(crumbs.slice(0, len))
               }
-
-              
           });
         }
         else {

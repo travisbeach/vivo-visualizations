@@ -92,7 +92,7 @@ circle {
 			display: block;
 			float: left;
 			height: 15px;
-			background: #3498db;
+			background: #a9a9a9;
 			text-align: center;
 			padding: 10px 40px 5px 50px;
 			position: relative;
@@ -106,7 +106,7 @@ circle {
 				content: "";  
 				border-top: 15px solid transparent;
 	 			border-bottom: 15px solid transparent;
-	  			border-left: 40px solid #3498db;
+	  			border-left: 40px solid #a9a9a9;
 				position: absolute; right: -40px; top: 0;
 				z-index: 1;
 			}
@@ -135,9 +135,9 @@ circle {
 				}
 			
 			#crumbs ul li a:hover {
-				background: #fa5ba5;
+				background: #d3d3d3;
 			}
 				#crumbs ul li a:hover:after {
-					border-left-color: #fa5ba5;
+					border-left-color: #d3d3d3;
 				}
 		
