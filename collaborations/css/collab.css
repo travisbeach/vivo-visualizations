@@ -1,0 +1,143 @@
+circle, path {
+	cursor: pointer;
+}
+
+circle {
+	fill: none;
+	pointer-events: all;
+}
+
+#tooltip {
+	background-color: rgba(60, 60, 60, 0.7);
+	color: #EFEFEF;
+	padding: 3px 5px;
+	font-family: Arial;
+	text-align: center;
+	font-size: 12px;
+}
+
+.choices {
+	background-color: rgba(50, 50, 50, 0.8);
+	color: white;
+	font-family: Arial;
+	cursor: pointer;
+	font-size: 12px;
+	border: 2px solid #000000;
+	z-index: 10;
+}
+
+.choices a {
+	color: #EFEFEF;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 5px;
+	padding-left: 2px;
+}
+
+.triangle-isosceles {
+	max-height: 300px;
+	max-width: 800px;
+	overflow-y:scroll;
+	overflow:auto;
+	position: relative;
+	padding: 15px;
+	margin: 1em 10em 3em;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	z-index: 100 !important;
+}
+
+.collabhoverable {
+	width: 100%;
+}
+
+.nonlinktext{
+	color: #A9A9A9;
+}
+
+.collabhoverable a {
+	color: white;
+	text-decoration: none;
+}
+
+.collabhoverable:hover {
+	background-color: rgba(50, 150, 200, 0.8);
+}
+
+#outer{
+	width: 100%;
+	text-align: center;
+}
+#svgTest{
+	    display: block;
+    margin: 0 auto;
+
+}
+
+#crumbs {
+	text-align:center;
+}
+
+	#crumbs ul {
+		list-style: none;
+		display: inline-table;
+	}
+		#crumbs ul li {
+			display: inline;
+		}
+	
+		#crumbs ul li a {
+			display: block;
+			float: left;
+			height: 15px;
+			background: #3498db;
+			text-align: center;
+			padding: 10px 40px 5px 50px;
+			position: relative;
+			margin: 0 10px 0 0; 
+			
+			font-size: 10px;
+			text-decoration: none;
+			color: #fff;
+		}
+			#crumbs ul li a:after {
+				content: "";  
+				border-top: 15px solid transparent;
+	 			border-bottom: 15px solid transparent;
+	  			border-left: 40px solid #3498db;
+				position: absolute; right: -40px; top: 0;
+				z-index: 1;
+			}
+			
+			#crumbs ul li a:before {
+				content: "";  
+				border-top: 15px solid transparent;
+	  			border-bottom: 15px solid transparent;
+	  			border-left: 40px solid #FFF;
+				position: absolute; left: 0; top: 0;
+			}
+	
+				#crumbs ul li:first-child a {
+					border-top-left-radius: 10px; border-bottom-left-radius: 10px;
+				}
+				#crumbs ul li:first-child a:before {
+					display: none; 
+				}
+				
+				#crumbs ul li:last-child a {
+					padding-right: 50px;
+					border-top-right-radius: 10px; border-bottom-right-radius: 10px;
+				}
+				#crumbs ul li:last-child a:after {
+					display: none; 
+				}
+			
+			#crumbs ul li a:hover {
+				background: #fa5ba5;
+			}
+				#crumbs ul li a:hover:after {
+					border-left-color: #fa5ba5;
+				}
+		
