@@ -296,14 +296,14 @@ function draw_it(root, target) {
               if(crumbs.slice(-1)[0]==="term"){
                 crumbs.pop()
                 crumbs.pop();
-                crumbs.push(d.description);
+                crumbs.push(d.name);
                 crumbs.push("term"); 
                 var len = crumbs.length-1;
                 updateCrumbs(crumbs.slice(0, len))
               }
               else{
                
-                crumbs.push(d.description);
+                crumbs.push(d.name);
                 crumbs.push("term"); 
                 var len = crumbs.length-1;
                 updateCrumbs(crumbs.slice(0, len))
@@ -381,16 +381,19 @@ function arcTween(b) {
 }
 
 function updateCrumbs(array){
+  console.log(array);
+  //remove existing crumbs 
   d3.selectAll(".crumbs").remove();
-    var circles = svg.selectAll(".crumbs")
+
+  //draw new crumbs
+  var circles = d3.select("#crumbList").selectAll(".crumbItems")
       .data(array)
       .enter()
-      .append("text")
+      .append("li")
       .attr("class", "crumbs")
-      .attr("x", (d,i)=>(i*100)-240)
-      .attr("y", 250)
-      .text(d=>d.substring(0, 8))
-      .style("fill", "black");
+      .append("a")
+      .attr("href", "#_blank")
+      .text((d)=>d)
 }
 
 function updateArc(d) {

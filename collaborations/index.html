@@ -14,13 +14,19 @@
 <script src="collaborations.js"></script>
 </head>
 <body>
-<svg id="svgTest" width = "500" height="500"></svg>
+<div id="container">
+	<svg id="svgTest" width = "400" height="400"></svg>
+</div>
+<div id="crumbs">
+	<ul id="crumbList">
+	</ul>
+</div>
+
 <script>
 	var jsonData;
 	d3.json("data/fake_collab_data.json", function(error, input){
 		//Read data from file
 		jsonData = input;
-
 		//create a svg variable for the visualization
 		sunburst(jsonData, "#svgTest")
 
