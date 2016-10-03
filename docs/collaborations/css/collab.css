@@ -136,7 +136,10 @@ circle {
 .breadcrumb li:nth-child(5) a       { background:        hsla(0,0%,75%,1); }
 .breadcrumb li:nth-child(5) a:after { border-left-color: hsla(0,0%,75%,1); }
 
-
+/* for links 
+.breadcrumb li a:hover { background: hsla(0,0%,25%,1); }
+.breadcrumb li a:hover:after { border-left-color: hsla(0,0%,25%,1) !important; }
+*/
 
 .closeIcon{
 	width: 12px;

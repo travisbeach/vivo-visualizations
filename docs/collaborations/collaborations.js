@@ -209,7 +209,6 @@ function draw_it(root, target) {
   
   .text(function(d,i) {
         if(!d.uri == null){
-          console.log(d.name); 
           return d.name;
         }else{
           return d.name; 
@@ -297,7 +296,7 @@ function draw_it(root, target) {
 
           svg.selectAll('path').on('click', function(d) { 
             tip.show(d);
-
+            //Handling case where user switches from professor to professor. 
               if(crumbs.slice(-1)[0]==="term"){
                 crumbs.pop()
                 crumbs.pop();
@@ -307,7 +306,6 @@ function draw_it(root, target) {
                 updateCrumbs(crumbs.slice(0, len))
               }
               else{
-                console.log(d);
                 crumbs.push(d.name);
                 crumbs.push("term"); 
                 var len = crumbs.length-1;
@@ -317,8 +315,8 @@ function draw_it(root, target) {
           });
 
           d3.select("body").selectAll("#specificTip").on('click', function(d){
-            tip.hide(); 
-            console.log("clicked");
+            //closes the tooltip when clicked (Anywhere except links)
+            tip.hide();
           });
           
         }
@@ -330,20 +328,21 @@ function draw_it(root, target) {
       
       //Breadcrumbs
       var crumbs = [];
+
+      //construct list of nodes. 
       crumbs.push(root.name); 
       while(root.parent){
         crumbs.push(root.parent.name);
         root = root.parent;
-      }   
+      }  
+      //not the best but only up to 4 elements in list. 
       crumbs.reverse();
 
+      //change the UI
       updateCrumbs(crumbs);
 
     });
 
-
-    
-    
     texts = texts.data(new_data, function(d) { return d.key; })
 
     texts.exit()
@@ -392,7 +391,6 @@ function arcTween(b) {
 }
 
 function updateCrumbs(array){
-  console.log(array);
   //remove existing crumbs 
   d3.selectAll(".crumbs").remove();
 
@@ -403,7 +401,6 @@ function updateCrumbs(array){
       .append("li")
       .attr("class", "crumbs")
       .append("a")
-      .attr("href", "#_blank")
       .text((d)=>d)
 }
 
