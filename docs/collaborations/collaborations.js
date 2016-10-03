@@ -46,9 +46,9 @@ var tip = d3.tip().attr('class', 'd3-tip choices triangle-isosceles').attr("id",
   result = "";
 
   if(d.uri != null){
-    result += "<p><img src='assets/x.png' class='closeIcon'><b><a href='" + d.uri + "'>" + d.name + "</a></b></p>";
+    result += "<p><img src='assets/xicon.png' class='closeIcon'><b><a href='" + d.uri + "'>" + d.name + "</a></b></p>";
   }else{
-    result += "<p class='nonlinktext'><img src='assets/x.png' class='closeIcon'>" + d.name + "</p>";
+    result += "<p class='nonlinktext'><img src='assets/xicon.png' class='closeIcon'>" + d.name + "</p>";
   }
   if(typeof d.pubs != "undefined") {
     for(var i = 0; i < d.pubs.length; i++) {
