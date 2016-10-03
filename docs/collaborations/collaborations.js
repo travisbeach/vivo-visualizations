@@ -42,11 +42,13 @@ var luminance = d3.scale.sqrt()
 .clamp(true)
 .range([90, 20]);
 
-var tip = d3.tip().attr('class', 'd3-tip choices triangle-isosceles').html(function(d) { 
+var tip = d3.tip().attr('class', 'd3-tip choices triangle-isosceles').attr("id", "specificTip").html(function(d) { 
+  result = "";
+
   if(d.uri != null){
-    result = "<p><b><a href='" + d.uri + "'>" + d.name + "</a></b></p>";
+    result += "<p><img src='assets/x.png' class='closeIcon'><b><a href='" + d.uri + "'>" + d.name + "</a></b></p>";
   }else{
-    result = "<p class='nonlinktext'>" + d.name + "</p>";
+    result += "<p class='nonlinktext'><img src='assets/x.png' class='closeIcon'>" + d.name + "</p>";
   }
   if(typeof d.pubs != "undefined") {
     for(var i = 0; i < d.pubs.length; i++) {
@@ -292,8 +294,10 @@ function draw_it(root, target) {
 
    if(typeof root.parent != "undefined") {
         if(typeof root.parent.parent != "undefined") {
+
           svg.selectAll('path').on('click', function(d) { 
             tip.show(d);
+
               if(crumbs.slice(-1)[0]==="term"){
                 crumbs.pop()
                 crumbs.pop();
@@ -303,15 +307,20 @@ function draw_it(root, target) {
                 updateCrumbs(crumbs.slice(0, len))
               }
               else{
-
-
-               console.log(d);
+                console.log(d);
                 crumbs.push(d.name);
                 crumbs.push("term"); 
                 var len = crumbs.length-1;
                 updateCrumbs(crumbs.slice(0, len))
               }
+
           });
+
+          d3.select("body").selectAll("#specificTip").on('click', function(d){
+            tip.hide(); 
+            console.log("clicked");
+          });
+          
         }
         else {
           tip.hide();
