@@ -1,4 +1,4 @@
-/**
+  /**
  * Take the fake data that comes from the server and convert the URIs
  * to display page URLs.
  */
@@ -202,7 +202,8 @@ function draw_it(root, target) {
     .attr("text-anchor", "middle")
     .attr("transform", function(d) { 
       return "translate(" + arc.centroid(d) + ")" + "rotate(" + getAngle(d) + ")"; 
-    })    
+    })
+    .attr("font-size", 9)    
   
   .text(function(d,i) {
         if(!d.uri == null){
@@ -346,6 +347,7 @@ function draw_it(root, target) {
     .attr("dx", "6") // margin
     .attr("dy", ".35em") // vertical-align  
     .attr("text-anchor", "middle")
+    .attr("font-size", 9)
     .attr("transform", function(d) { 
       return "translate(" + arc.centroid(d) + ")" + "rotate(" + getAngle(d) + ")"; 
     })   
