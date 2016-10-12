@@ -1,0 +1,75 @@
+<html>
+<head>
+  <script src="https://d3js.org/d3.v3.min.js"></script>
+  <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script> 
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="js/list.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/newStyle.css">
+</head>
+<body>
+
+  <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+            <span class="start">Filter by:</span> Person
+          </a>
+        </h4>
+      </div>
+      <div id="collapseOne" class="panel-collapse collapse">
+        <div class="panel-body" id="person">
+
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+           <span class="start">Filter by:</span> Department
+         </a>
+       </h4>
+     </div>
+     <div id="collapseTwo" class="panel-collapse collapse">
+      <div class="panel-body" id="department">
+        
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+          Collapsible Group Item #3 
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse">
+      <div class="panel-body">
+       test
+     </div>
+   </div>
+ </div>
+</div>
+
+<script>
+  var grants; 
+  d3.json("data/fake_grants_data.json", function(data){
+    grants = data;
+
+
+    var people = getProperty(grants, "Person"); 
+    addList("#person", people); 
+
+    var departments = getProperty(grants, "Department"); 
+    addList("#department", departments)
+
+
+  }); 
+</script>
+
+</body>
+</html>

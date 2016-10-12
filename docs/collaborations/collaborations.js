@@ -296,6 +296,7 @@ function draw_it(root, target) {
 
    if(typeof root.parent != "undefined") {
         if(typeof root.parent.parent != "undefined") {
+          console.log(root);
 
           svg.selectAll('path').on('click', function(d) { 
             tip.show(d);
