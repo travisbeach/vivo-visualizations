@@ -7,6 +7,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="js/list.js"></script>
   <link rel="stylesheet" type="text/css" href="css/newStyle.css">
+  <script src="js/nouislider.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/nouislider.min.css">
 </head>
 <body>
 
@@ -35,7 +37,7 @@
      </div>
      <div id="collapseTwo" class="panel-collapse collapse">
       <div class="panel-body" id="department">
-        
+
       </div>
     </div>
   </div>
@@ -48,11 +50,11 @@
       </h4>
     </div>
     <div id="collapseThree" class="panel-collapse collapse">
-      <div class="panel-body">
-       
-     </div>
-   </div>
- </div>
+      <div class="panel-body" id="date">
+        <div id="range"></div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -65,10 +67,28 @@
     addList("#person", people); 
 
     var departments = getProperty(grants, "Department"); 
-    addList("#department", departments)
+    addList("#department", departments);
+
+    var range = document.getElementById('range');
+    noUiSlider.create(range, {
+        start: [ 1996, 2010], // Handle start position
+        margin: 1, // Handles must be more than '20' apart
+        connect: true, // Display a colored bar between the handles
+        range: { // Slider can select '0' to '100'
+        'min': 1993,
+        'max': 2020
+      }, 
+      pips: {
+        mode: 'values',
+        values: [1993, 2020],
+        density: 5
+      }
+    });
 
 
-  }); 
+
+
+  });
 </script>
 
 </body>

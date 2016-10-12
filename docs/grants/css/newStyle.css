@@ -9,8 +9,17 @@
 	padding-bottom: 2px;
 	max-height: 150px;
 	overflow-y: scroll;
+	min-height: 100px;
 }
 
 .start{
 	color: gray;
+}
+
+#range{
+	margin-top: 20px;
+}
+
+.noUi-connect{
+	background: #d3d3d3;
 }
