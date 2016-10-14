@@ -10,12 +10,17 @@ function getProperty(array, property){
 function addList(id, array){ 
 	var anchorDiv = d3.select(id); 
 	var labels = anchorDiv.selectAll("div")
-							.data(array)
+							.data(array.sort())
 							.enter()
 							.append("div")
 							.attr("class", "checkbox")
-							.html(d=>"<label><input type='checkbox'checked=''>"+d+"</label>");
+							.html(function(d){
 
-							
+								if(d.length > 20){
+									d=d.substring(0, 19) + "..."; 
+								}
 
-}
+								return "<label><input type='checkbox'checked=''>"+d+"</label>"; 
+
+								});
+						}

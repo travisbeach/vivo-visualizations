@@ -6,9 +6,9 @@
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="js/list.js"></script>
-  <link rel="stylesheet" type="text/css" href="css/newStyle.css">
   <script src="js/nouislider.min.js"></script>
   <link rel="stylesheet" type="text/css" href="css/nouislider.min.css">
+   <link rel="stylesheet" type="text/css" href="css/newStyle.css">  
 </head>
 <body>
 
@@ -69,18 +69,23 @@
     var departments = getProperty(grants, "Department"); 
     addList("#department", departments);
 
+    var minYear = d3.min(grants, d=>d.Start); 
+    console.log(minYear);
+    var maxYear = d3.max(grants, d=>d.End); 
+    console.log(maxYear); 
+
     var range = document.getElementById('range');
     noUiSlider.create(range, {
-        start: [ 1996, 2010], // Handle start position
+        start: [ minYear, maxYear], // Handle start position
         margin: 1, // Handles must be more than '20' apart
         connect: true, // Display a colored bar between the handles
         range: { // Slider can select '0' to '100'
-        'min': 1993,
-        'max': 2020
+        'min': minYear,
+        'max': maxYear
       }, 
       pips: {
         mode: 'values',
-        values: [1993, 2020],
+        values: [minYear, maxYear],
         density: 5
       }
     });
