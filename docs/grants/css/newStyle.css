@@ -1,7 +1,9 @@
-.panel-group{
-	width: 20%;
-	margin-left: 1%;
+.row{
 	margin-top: 1%;
+	max-width: 100%;
+}
+.panel-group{
+	padding-left: 1%;
 }
 
 .panel-body{
@@ -17,7 +19,9 @@
 }
 
 #range{
-	margin-top: 34px;
+	margin-top: 40px;
+	margin-left: 20px;
+	margin-right: 20px;
 }
 
 .noUi-connect{
@@ -27,4 +31,23 @@
 .noUi-value-large{
 	font-size: 10pt;
 	margin-top: 5px;
+}
+
+.col-md-9{
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+text {
+  font: 24px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-anchor: middle;
+  pointer-events: none;
+}
+
+circle {
+  fill: #ccc;
+}
+
+.node:hover circle {
+  fill: orange;
 }

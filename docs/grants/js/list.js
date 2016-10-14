@@ -15,11 +15,10 @@ function addList(id, array){
 							.append("div")
 							.attr("class", "checkbox")
 							.html(function(d){
-
+								//shortens long entry to restrict them to one line
 								if(d.length > 20){
 									d=d.substring(0, 19) + "..."; 
 								}
-
 								return "<label><input type='checkbox'checked=''>"+d+"</label>"; 
 
 								});
