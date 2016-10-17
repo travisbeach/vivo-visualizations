@@ -43,11 +43,3 @@ text {
   text-anchor: middle;
   pointer-events: none;
 }
-
-circle {
-  fill: #ccc;
-}
-
-.node:hover circle {
-  fill: orange;
-}

@@ -5,14 +5,17 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="js/list.js"></script>
-    <script src="js/nouislider.min.js"></script>
+    <script src="src/list.js"></script>
+    <script src="src/nouislider.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/nouislider.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/newStyle.css">  
   </head>
   <body>
+
+  
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-md-4">
         <div class="panel-group" id="accordion">
           <div class="panel panel-default">
             <div class="panel-heading">
@@ -58,23 +61,14 @@
         </div>
       </div>
       </div>
-      <div class="col-md-9">
-        <div id="canvas">
+      <div class="col-md-8">
+        <div id="vis">
         </div>
       </div>
     </div>
+
+
     <script>
-     var width=500; 
-     var height = 500;
-     var bleed = 0;
-    //store global copy of grants for debugging.
-    var grants; 
-
-    var pack = d3.layout.pack()
-    .sort(null)
-    .size([width, height])
-    .padding(2);
-
     d3.json("data/fake_grants_data.json", function(data){
       grants = data;
       
@@ -86,9 +80,7 @@
       addList("#department", departments);
 
       var minYear = d3.min(grants, d=>d.Start); 
-      console.log(minYear);
       var maxYear = d3.max(grants, d=>d.End); 
-      console.log(maxYear); 
 
       var range = document.getElementById('range');
       noUiSlider.create(range, {
@@ -115,54 +107,19 @@
         }
       });
 
-
-      var svg = d3.select("#canvas").append("svg")
-            .attr("height", height)
-            .attr("width", width); 
-
-
-      var node = svg.selectAll(".node")
-      .data(pack.nodes(gymnastics(grants))
-        .filter(function(d) { return !d.children; }))
-      .enter().append("g")
-      .attr("class", "node")
-      .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
-
-      node.append("circle")
-      .attr("r", function(d) { return d.r; });
-
-      node.append("text")
-      .text(function(d) { return d.r > 6 ? d.Cost : '' })
-      .style("font-size", function(d) { return Math.min(2 * d.r, (2 * d.r - 8) / this.getComputedTextLength() * 24) + "px"; })
-      .attr("dy", ".35em");
-
-
-  // rebind data
-    svg.data(pack.nodes(gymnastics(dropSome(grants)))).selectAll(".node")
-      .data(pack.nodes);
-
-
-
-
-
     });
+    </script>
 
-//Formats data array to inlude name and value fields; 
-    function gymnastics(array){
-      var nodes = array.map(function(d){
-        d['name'] = d.Title; 
-        d['value'] = d.Cost; 
-        d['test'] = 1; 
-        return d; 
-      }); 
-      return {children: nodes}; 
-    }
 
-    function dropSome(array){
-      return array.filter(d=>Math.random()>.5); 
-    }
+  
+  </div>
 
-  </script>
+  <script src="lib/d3.js"></script>
+  <script src="src/tooltip.js"></script>
+  <script src="src/bubble_chart.js"></script>
+
+
+
 
 </body>
 </html>
