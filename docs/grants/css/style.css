@@ -109,3 +109,58 @@ span.value a {
 span.value a:hover {
 	color: #9BC4D4 !important;
 }
+
+
+.text_16_2_5 {
+  font: bold 10px monospace;
+  fill: white;
+}
+
+.update_16_2_5 {
+  fill: #333;
+}
+
+.enter_16_2_5 {
+  fill: green;
+}
+
+.exit_16_2_5 {
+  fill: brown;
+}
+
+.container_16_2_5 {
+  fill: none;
+  stroke: black;
+  stroke-width: 1;
+}
+
+#ratio {
+  font: bold 24px monospace;
+}
+
+.type1_2_12_16 {
+  fill: #3333ff;
+}
+
+.type2_2_12_16 {
+  fill: #e67300;
+}
+
+.type1_update_2_12_16 {
+  fill: #3333ff;
+}
+
+.type2_update_2_12_16 {
+  fill: #e67300;
+}
+
+.container_2_12_16 {
+  fill: none;
+  stroke: black;
+  stroke-width: 1;
+}
+
+
+label{
+  min-width: 51%;
+}

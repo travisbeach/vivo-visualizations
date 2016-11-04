@@ -8,6 +8,8 @@
  * https://bost.ocks.org/mike/chart/
  *
  */
+
+ 
 function bubbleChart() {
   // Constants for sizing
   var width = 600;
@@ -106,7 +108,9 @@ function bubbleChart() {
         name: d.Title,
         group: d.group,
         x: Math.random() * 900,
-        y: Math.random() * 800
+        y: Math.random() * 800, 
+        cx: width/2, 
+        cy: height/2
       };
     });
 
@@ -170,7 +174,7 @@ function bubbleChart() {
       .attr('r', function (d) { return d.radius; });
 
     // Set initial layout to single group.
-    groupBubbles();
+    groupBubbles()
   };
 
   /*
@@ -348,29 +352,6 @@ function display(error, data) {
   myBubbleChart('#vis', data);
 }
 
-/*
- * Sets up the layout buttons to allow for toggling between view modes.
- */
-function setupButtons() {
-  d3.select('#toolbar')
-    .selectAll('.button')
-    .on('click', function () {
-      // Remove active class from all buttons
-      d3.selectAll('.button').classed('active', false);
-      // Find the button just clicked
-      var button = d3.select(this);
-
-      // Set it as the active button
-      button.classed('active', true);
-
-      // Get the id of the button
-      var buttonId = button.attr('id');
-
-      // Toggle the bubble chart based on
-      // the currently clicked button.
-      myBubbleChart.toggleDisplay(buttonId);
-    });
-}
 
 /*
  * Helper function to convert a number into a string
@@ -389,8 +370,26 @@ function addCommas(nStr) {
   return x1 + x2;
 }
 
+function updateVis(array){
+  d3.select("#vis").selectAll(".bubble").data(array, function (d) { return d.id; }).exit().remove(); 
+  d3.select("#vis").selectAll(".bubble").data(array, function (d) { return d.id; }).enter().append('circle')
+      .classed('bubble', true)
+      .attr('r', 0)
+      .attr('fill', function (d) { return "#d3d3d3"; })
+      .attr('stroke', function (d) { return "#d5d5d5"; })
+      .attr('stroke-width', 2);
+  groupBubbles();
+}
+
+
 // Load the data.
 d3.json('data/fake_grants_data.json', display);
+
+var grants;
+d3.json('data/fake_grants_data.json', function(data){
+  grants = data;
+
+})
 
 // setup the buttons.
 setupButtons();

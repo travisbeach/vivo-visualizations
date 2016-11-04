@@ -1,4 +1,4 @@
- <html>
+w <html>
   <head>
     <script src="https://d3js.org/d3.v3.min.js"></script>
     <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script> 
@@ -70,16 +70,14 @@
 
     <script>
     d3.json("data/fake_grants_data.json", function(data){
-     update(data);
-      raw = data;
-      currentData = raw; 
       grants = data;
+      update(data);
       //
       var people = getProperty(grants, "Person"); 
-      addList("#person", people, "Person"); 
+      addList("#person", people); 
 
       var departments = getProperty(grants, "Department"); 
-      addList("#department", departments, "Department");
+      addList("#department", departments);
 
       var minYear = d3.min(grants, d=>d.Start); 
       var maxYear = d3.max(grants, d=>d.End); 
