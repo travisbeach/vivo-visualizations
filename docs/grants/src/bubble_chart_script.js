@@ -8,7 +8,8 @@ var dateComeback = [];
   // moving around nodes\
   var damper = 0.102;
 
-
+  // tooltip for mouseover functionality
+  var tooltip = floatingTooltip('grants_tooltip', 240);
   var svg = null;
   var bubbles = null;
   var nodes = [];
@@ -48,7 +49,7 @@ var dateComeback = [];
     // Use map() to convert raw data into node data.
     // Checkout http://learnjsdata.com/ for more on
     // working with data.
-   
+
     var myNodes = rawData.map(function (d) {
       return {
         id: d.id,
@@ -97,7 +98,10 @@ var dateComeback = [];
     .attr('r', 0)
     .attr('fill', function (d) { return fillColor(d.group); })
     .attr('stroke', function (d) { return d3.rgb(fillColor(d.group)).darker(); })
-    .attr('stroke-width', 2);
+    .attr('stroke-width', 2)
+    .on('mouseover', showDetail)
+    .on('mouseout', hideDetail)
+    .on('click', clickFunction);
 
     // Fancy transition to make bubbles appear, ending with the
     // correct radius
@@ -128,7 +132,54 @@ var dateComeback = [];
     }
   }
 
+  function showDetail(d) {
+    // change outline to indicate hover state.
+    d3.select(this).attr('stroke', 'black');
 
+    var content = '<span class="name">Title: </span><span class="value">' +
+    d.name +
+    '</span><br/>';
+    tooltip.showTooltip(content, d3.event);
+  }
+
+  function moreDetail(d){
+     // change outline to indicate hover state.
+    //d3.select(this).attr('stroke', 'black');
+
+    var content = '<span class="name">Title: </span><span class="value">' +
+    d.name +
+    '</span><br/><span class="name">Investigator: </span><span class="value">Test</span></br><span class="name">Academic Unit: </span><span class="value">';
+    tooltip.showTooltip(content, d3.event);
+  }
+
+  /*
+   * Hides tooltip
+   */
+   function hideDetail(d) {
+    // reset outline
+
+    d3.select(this)
+    .attr('stroke', d3.rgb(fillColor(d.group)).darker());
+
+    tooltip.hideTooltip();
+  }
+  function addCommas(nStr) {
+    nStr += '';
+    var x = nStr.split('.');
+    var x1 = x[0];
+    var x2 = x.length > 1 ? '.' + x[1] : '';
+    var rgx = /(\d+)(\d{3})/;
+    while (rgx.test(x1)) {
+      x1 = x1.replace(rgx, '$1' + ',' + '$2');
+    }
+
+    return x1 + x2;
+  }
+
+  function clickFunction(d){
+    moreDetail(d);
+
+  }
 
 
 
