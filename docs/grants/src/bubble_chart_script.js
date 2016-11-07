@@ -2,6 +2,8 @@ var width = 600;
 var height = 600;
 var filtered = [];
 var comeback = [];
+var dateFiltered = []; 
+var dateComeback = [];
   // Used when setting up force and
   // moving around nodes\
   var damper = 0.102;
@@ -46,14 +48,15 @@ var comeback = [];
     // Use map() to convert raw data into node data.
     // Checkout http://learnjsdata.com/ for more on
     // working with data.
-    console.log(rawData);
+   
     var myNodes = rawData.map(function (d) {
       return {
         id: d.id,
         radius: radiusScale(+d.Cost),
         dept: d.dept, 
         value: d.Cost,
-        year: d.Start,
+        start: d.Start,
+        end: d.End,
         name: d.Title,
         group: d.group,
         x: Math.random() * 900,
@@ -99,7 +102,7 @@ var comeback = [];
     // Fancy transition to make bubbles appear, ending with the
     // correct radius
     bubbles.transition()
-    .duration(2000)
+    .duration(500)
     .attr('r', function (d) { return d.radius; });
 
 

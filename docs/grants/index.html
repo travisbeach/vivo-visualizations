@@ -69,6 +69,8 @@
 
 
     <script>
+
+    var currentRange = [];
     d3.json("data/fake_grants_data.json", function(data){
      update(data);
       raw = data;
@@ -83,6 +85,8 @@
 
       var minYear = d3.min(grants, d=>d.Start); 
       var maxYear = d3.max(grants, d=>d.End); 
+
+      currentRange  = [minYear, maxYear];
 
       var range = document.getElementById('range');
       noUiSlider.create(range, {
@@ -104,8 +108,49 @@
         pips: {
           mode: 'values',
           values: [minYear, maxYear],
-          density: 5
+          density: 8.5
         }
+      });
+
+
+      range.noUiSlider.on("change", function(values, handle){
+       
+        currentData = currentData.filter(function(d){
+          if((d.Start >= values[0] && d.Start <= values[1])||(d.End <= values[1] && d.End >= values[0])){ 
+            console.log(values);
+            console.log(d.Start);
+            console.log(d.End);
+            return true;
+          }
+          else{
+            dateFiltered.push(d);
+            return false; 
+          }
+        });
+
+
+        if ((values[0] < currentRange[0]) || (values[1] > currentRange[1])){
+        
+          
+            dateFiltered = dateFiltered.filter(function(d){
+              if((d.Start >= values[0] && d.Start <= values[1])||(d.End <= values[1] && d.End >= values[0])){
+                 dateComeback.push(d);
+                return false; 
+              }
+              else{
+               return true;
+              }
+
+            }); 
+          }
+        
+        currentData = currentData.concat(dateComeback);
+        
+        currentRange = values;
+        update(currentData); 
+        updateChecks(); 
+        dateComeback = []
+
       });
 
     });
