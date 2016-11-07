@@ -49,15 +49,25 @@ function addList(id, array, field){
 
 
 		update(currentData);
+		updateChecks();
 		comeback = [];
 		});
 }
 
-function updateChecks(){
-	var checks = d3.selectAll(".cbox");
-	checks[0].forEach(function(d){
-		console.log(d.__data__);
-	})
 
+function updateChecks() {
+
+	var currentNames = currentData.map(d=>d.Person);
+	var currentDept = currentData.map(d=>d.Department);
+
+   	d3.selectAll('input').property("checked", function(d){
+   		
+   		if(currentNames.indexOf(d) != -1 || currentDept.indexOf(d) != -1){
+   			return true;
+   		}
+
+   		else{
+   			return false;
+   		}
+   	});
 }
-
