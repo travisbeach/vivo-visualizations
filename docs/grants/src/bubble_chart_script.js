@@ -1,5 +1,5 @@
-var width = 700;
-var height = 700;
+var width = 600;
+var height = 600;
 var filtered = [];
 var comeback = [];
 var dateFiltered = []; 
@@ -36,13 +36,13 @@ var dateComeback = [];
 
   // Nice looking colors - no reason to buck the trend
   var fillColor = d3.scale.ordinal()
-  .domain(['low', 'medium', 'high'])
-  .range(['#d84b2a', '#beccae', '#7aa25c']);
+  .domain(['unknown','low', 'medium', 'high'])
+  .range(["#41B3A7","#81F7F3", "#819FF7", "#BE81F7"]);
 
   // Sizes bubbles based on their area instead of raw radius
   var radiusScale = d3.scale.pow()
   .exponent(0.5)
-  .range([2, 25]);
+  .range([2, 15]);
 
 
   function createNodesTravis(rawData) {
@@ -146,9 +146,13 @@ var dateComeback = [];
      // change outline to indicate hover state.
     //d3.select(this).attr('stroke', 'black');
 
-    var content = '<span class="name">Title: </span><span class="value">' +
-    d.name +
-    '</span><br/><span class="name">Investigator: </span><span class="value">Test</span></br><span class="name">Academic Unit: </span><span class="value">';
+    var content = 
+    '<span class="name">Title: </span><span class="value">' + d.name+'</span><br/>'
+    +'<span class="name">Investigator: </span><span class="value">Test</span></br>'
+    +'<span class="name">Academic Unit: </span><span class="value">'+'test'+'</span></br>'
+    +'<span class="name">Funding Agency: </span><span class="value">'+'test'+'</span></br>'
+    +'<span class="name">Start Year: </span><span class="value">'+'test'+'</span></br>'
+    +'<span class="name">End Year: </span><span class="value">'+'test'+'</span></br>';
     tooltip.showTooltip(content, d3.event);
   }
 
@@ -180,6 +184,8 @@ var dateComeback = [];
     moreDetail(d);
 
   }
+
+
 
 
 

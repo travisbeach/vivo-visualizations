@@ -1,46 +1,32 @@
  <html>
-  <head>
-    <script src="https://d3js.org/d3.v3.min.js"></script>
-    <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script> 
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="src/list.js"></script>
-    <script src="src/nouislider.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/nouislider.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/newStyle.css">  
-  </head>
-  <body>
+ <head>
+  <script src="https://d3js.org/d3.v3.min.js"></script>
+  <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script> 
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="src/list.js"></script>
+  <script src="src/nouislider.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/nouislider.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/newStyle.css">  
+</head>
+<body>
 
-  
-    <div class="row">
-      <div class="col-md-4">
-        <div class="panel-group" id="accordion">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                  <span class="start">Filter by:</span> Person
-                </a>
-              </h4>
-            </div>
-            <div id="collapseOne" class="panel-collapse collapse">
-              <div class="panel-body" id="person">
 
-              </div>
-            </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                <span class="start">Filter by:</span> Person
+              </a>
+            </h4>
           </div>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                 <span class="start">Filter by:</span> Department
-               </a>
-             </h4>
-           </div>
-           <div id="collapseTwo" class="panel-collapse collapse">
-            <div class="panel-body" id="department">
+          <div id="collapseOne" class="panel-collapse collapse">
+            <div class="panel-body" id="person">
 
             </div>
           </div>
@@ -48,34 +34,62 @@
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                <span class="start">Filter by:</span> Active Year
-              </a>
-            </h4>
-          </div>
-          <div id="collapseThree" class="panel-collapse collapse">
-            <div class="panel-body" id="date">
-              <div id="range"></div>
-            </div>
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+               <span class="start">Filter by:</span> Department
+             </a>
+           </h4>
+         </div>
+         <div id="collapseTwo" class="panel-collapse collapse">
+          <div class="panel-body" id="department">
+
           </div>
         </div>
       </div>
+             <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+               <span class="start">Filter by:</span> Funding Agency
+             </a>
+           </h4>
+         </div>
+         <div id="collapseTwo" class="panel-collapse collapse">
+          <div class="panel-body" id="#funagen">
+
+          </div>
+        </div>
       </div>
-      <div class="col-md-8">
-        <div id="vis">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+              <span class="start">Filter by:</span> Active Year
+            </a>
+          </h4>
+        </div>
+        <div id="collapseThree" class="panel-collapse collapse">
+          <div class="panel-body" id="date">
+            <div id="range"></div>
+          </div>
         </div>
       </div>
     </div>
+  </div>
+  <div class="col-md-8">
+    <div id="vis">
+    </div>
+  </div>
+</div>
 
 
-    <script>
+<script>
 
-    var currentRange = [];
-    d3.json("data/dataFull.json", function(data){
-     update(data);
-      raw = data;
-      currentData = raw; 
-      grants = data;
+  var currentRange = [];
+  d3.json("data/dataFull.json", function(data){
+   update(data);
+   raw = data;
+   currentData = raw; 
+   grants = data;
       //
       var people = getProperty(grants, "Person"); 
       addList("#person", people, "Person"); 
@@ -83,13 +97,13 @@
       var departments = getProperty(grants, "Department"); 
       addList("#department", departments, "Department");
 
-      var minYear = d3.min(grants, d=>Number(d.Start)); 
-      var maxYear = d3.max(grants, d=>Number(d.End)); 
+        var minYear = d3.min(grants, d=>Number(d.Start)); 
+        var maxYear = d3.max(grants, d=>Number(d.End)); 
 
-      currentRange  = [minYear, maxYear];
+        currentRange  = [minYear, maxYear];
 
-      var range = document.getElementById('range');
-      noUiSlider.create(range, {
+        var range = document.getElementById('range');
+        noUiSlider.create(range, {
           start: [ minYear, maxYear], // Handle start position
           connect: true, // Display a colored bar between the handles
           step: 1, 
@@ -113,51 +127,48 @@
       });
 
 
-      range.noUiSlider.on("change", function(values, handle){
-       
-        currentData = currentData.filter(function(d){
-          if((d.Start >= values[0] && d.Start <= values[1])||(d.End <= values[1] && d.End >= values[0])){ 
-            console.log(values);
-            console.log(d.Start);
-            console.log(d.End);
-            return true;
-          }
-          else{
-            dateFiltered.push(d);
-            return false; 
-          }
-        });
+        range.noUiSlider.on("change", function(values, handle){
+
+          currentData = currentData.filter(function(d){
+            if((d.Start >= values[0] && d.Start <= values[1])||(d.End <= values[1] && d.End >= values[0])){ 
+              return true;
+            }
+            else{
+              dateFiltered.push(d);
+              return false; 
+            }
+          });
 
 
-        if ((values[0] < currentRange[0]) || (values[1] > currentRange[1])){
-        
-          
+          if ((values[0] < currentRange[0]) || (values[1] > currentRange[1])){
+
+
             dateFiltered = dateFiltered.filter(function(d){
               if((d.Start >= values[0] && d.Start <= values[1])||(d.End <= values[1] && d.End >= values[0])){
-                 dateComeback.push(d);
-                return false; 
-              }
-              else{
+               dateComeback.push(d);
+               return false; 
+             }
+             else{
                return true;
-              }
+             }
 
-            }); 
+           }); 
           }
-        
-        currentData = currentData.concat(dateComeback);
-        
-        currentRange = values;
-        update(currentData); 
-        updateChecks(); 
-        dateComeback = []
+
+          currentData = currentData.concat(dateComeback);
+
+          currentRange = values;
+          update(currentData); 
+          updateChecks(); 
+          dateComeback = []
+
+        });
 
       });
-
-    });
     </script>
 
 
-  
+
   </div>
 
   <script src="lib/d3.js"></script>

@@ -12,8 +12,8 @@ function addList(id, array, field){
 	var labels = anchorDiv.selectAll("div")
 	.data(array.sort())
 	.enter()
-	.append("label")
-	.text(function(d) { return d; })
+	.append("li"); 
+	labels
 	.append("input")
 	.attr("checked", true)
 	.attr("type", "checkbox")
@@ -52,6 +52,8 @@ function addList(id, array, field){
 		updateChecks();
 		comeback = [];
 		});
+
+	labels.append("label").text(d=>" "+d);
 }
 
 

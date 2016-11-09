@@ -163,4 +163,9 @@ span.value a:hover {
 
 label{
   min-width: 51%;
+  padding-left: 5px;
+}
+li
+{
+list-style-type: none;
 }
