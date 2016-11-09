@@ -1,5 +1,5 @@
-var width = 600;
-var height = 600;
+var width = 700;
+var height = 700;
 var filtered = [];
 var comeback = [];
 var dateFiltered = []; 
@@ -42,7 +42,7 @@ var dateComeback = [];
   // Sizes bubbles based on their area instead of raw radius
   var radiusScale = d3.scale.pow()
   .exponent(0.5)
-  .range([2, 85]);
+  .range([2, 25]);
 
 
   function createNodesTravis(rawData) {
