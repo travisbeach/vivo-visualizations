@@ -42,7 +42,7 @@ var dateComeback = [];
   // Sizes bubbles based on their area instead of raw radius
   var radiusScale = d3.scale.pow()
   .exponent(0.5)
-  .range([2, 20]);
+  .range([2, 15]);
 
 
   function createNodesTravis(rawData) {
@@ -54,11 +54,12 @@ var dateComeback = [];
       return {
         id: d.id,
         radius: radiusScale(+d.Cost),
-        dept: d.dept, 
+        dept: d.dept.name, 
         value: d.Cost,
         start: d.Start,
         end: d.End,
-        name: d.Title,
+        people: d.people,
+        name: d.grant.title,
         group: d.group,
         x: Math.random() * 900,
         y: Math.random() * 800

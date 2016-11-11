@@ -10,6 +10,10 @@
   <link rel="stylesheet" type="text/css" href="css/nouislider.min.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/newStyle.css">  
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.6/lodash.min.js"></script>
+<script src="lib/d3.js"></script>
 </head>
 <body>
 
@@ -27,7 +31,7 @@
           </div>
           <div id="collapseOne" class="panel-collapse collapse">
             <div class="panel-body" id="person">
-
+              <input type="text" class="form-control" id="testInput" placeholder="Search">
             </div>
           </div>
         </div>
@@ -45,65 +49,65 @@
           </div>
         </div>
       </div>
-             <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-               <span class="start">Filter by:</span> Funding Agency
-             </a>
-           </h4>
-         </div>
-         <div id="collapseTwo" class="panel-collapse collapse">
-          <div class="panel-body" id="#funagen">
-
-          </div>
-        </div>
-      </div>
       <div class="panel panel-default">
         <div class="panel-heading">
           <h4 class="panel-title">
-            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-              <span class="start">Filter by:</span> Active Year
-            </a>
-          </h4>
-        </div>
-        <div id="collapseThree" class="panel-collapse collapse">
-          <div class="panel-body" id="date">
-            <div id="range"></div>
-          </div>
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+             <span class="start">Filter by:</span> Funding Agency
+           </a>
+         </h4>
+       </div>
+       <div id="collapseTwo" class="panel-collapse collapse">
+        <div class="panel-body" id="#funagen">
+
         </div>
       </div>
     </div>
-  </div>
-  <div class="col-md-8">
-    <div id="vis">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+            <span class="start">Filter by:</span> Active Year
+          </a>
+        </h4>
+      </div>
+      <div id="collapseThree" class="panel-collapse collapse">
+        <div class="panel-body" id="date">
+          <div id="range"></div>
+        </div>
+      </div>
     </div>
+  </div> 
+</div>
+<div class="col-md-8">
+  <div id="vis">
   </div>
+</div>
 </div>
 
 
 <script>
 
   var currentRange = [];
-  d3.json("data/dataFull.json", function(data){
+  d3.json("data/smallGrants.json", function(data){
    update(data);
    raw = data;
    currentData = raw; 
    grants = data;
-      //
-      var people = getProperty(grants, "Person"); 
+      
+      var people = getNameList(grants);
       addList("#person", people, "Person"); 
 
-      var departments = getProperty(grants, "Department"); 
+      var departments = _.uniq(getDeptList(grants));
       addList("#department", departments, "Department");
 
-        var minYear = d3.min(grants, d=>Number(d.Start)); 
-        var maxYear = d3.max(grants, d=>Number(d.End)); 
+      var minYear = d3.min(grants, d=>Number(d.Start)); 
+      var maxYear = d3.max(grants, d=>Number(d.End)); 
 
-        currentRange  = [minYear, maxYear];
+      currentRange  = [minYear, maxYear];
 
-        var range = document.getElementById('range');
-        noUiSlider.create(range, {
+      var range = document.getElementById('range');
+      noUiSlider.create(range, {
           start: [ minYear, maxYear], // Handle start position
           connect: true, // Display a colored bar between the handles
           step: 1, 
@@ -121,59 +125,62 @@
         }, 
         pips: {
           mode: 'values',
-          values: [minYear, maxYear],
-          density: 8.5
+          values: [minYear, maxYear], 
+          density: 75
         }
       });
 
 
-        range.noUiSlider.on("change", function(values, handle){
+      range.noUiSlider.on("change", function(values, handle){
 
-          currentData = currentData.filter(function(d){
-            if((d.Start >= values[0] && d.Start <= values[1])||(d.End <= values[1] && d.End >= values[0])){ 
-              return true;
-            }
-            else{
-              dateFiltered.push(d);
-              return false; 
-            }
-          });
-
-
-          if ((values[0] < currentRange[0]) || (values[1] > currentRange[1])){
-
-
-            dateFiltered = dateFiltered.filter(function(d){
-              if((d.Start >= values[0] && d.Start <= values[1])||(d.End <= values[1] && d.End >= values[0])){
-               dateComeback.push(d);
-               return false; 
-             }
-             else{
-               return true;
-             }
-
-           }); 
+        currentData = currentData.filter(function(d){
+          if((d.Start >= values[0] && d.Start <= values[1])||(d.End <= values[1] && d.End >= values[0])){ 
+            return true;
           }
-
-          currentData = currentData.concat(dateComeback);
-
-          currentRange = values;
-          update(currentData); 
-          updateChecks(); 
-          dateComeback = []
-
+          else{
+            dateFiltered.push(d);
+            return false; 
+          }
         });
 
+
+        if ((values[0] < currentRange[0]) || (values[1] > currentRange[1])){
+
+
+          dateFiltered = dateFiltered.filter(function(d){
+            if((d.Start >= values[0] && d.Start <= values[1])||(d.End <= values[1] && d.End >= values[0])){
+             dateComeback.push(d);
+             return false; 
+           }
+           else{
+             return true;
+           }
+
+         }); 
+        }
+
+        currentData = currentData.concat(dateComeback);
+
+        currentRange = values;
+        update(currentData); 
+        updateChecks(); 
+        dateComeback = []
+
       });
-    </script>
+
+    });
+  </script>
 
 
 
-  </div>
+</div>
 
-  <script src="lib/d3.js"></script>
-  <script src="src/tooltip.js"></script>
-  <script src="src/bubble_chart_script.js"></script>
+<script src="data/test.js"></script>
+<script src="src/tooltip.js"></script>
+<script src="src/bubble_chart_script.js"></script>
+
+
+
 
 
 

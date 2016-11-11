@@ -17,7 +17,7 @@ function addList(id, array, field){
 	.append("input")
 	.attr("checked", true)
 	.attr("type", "checkbox")
-	.attr("class", "cbox")
+	.attr("class", "cbox" +field)
 	.attr("id", function(d,i) { return i; })
 	.attr("for", function(d,i) { return i; })
 	.on("change", function(d){
@@ -34,6 +34,7 @@ function addList(id, array, field){
 		}
 
 		else{
+
 			filtered = filtered.filter(function(node){
 				if(node[field] == d){
 					comeback.push(node);
@@ -53,14 +54,17 @@ function addList(id, array, field){
 		comeback = [];
 		});
 
-	labels.append("label").text(d=>" "+d);
+	labels.append("label").attr("class", "label" +field).text(d=>d);
 }
 
 
 function updateChecks() {
 
-	var currentNames = currentData.map(d=>d.Person);
-	var currentDept = currentData.map(d=>d.Department);
+	var currentNames = getNameList(currentData);
+	var currentDept = _.uniq(getDeptList(currentData));
+
+	console.log(currentNames);
+	console.log(currentDept);
 
    	d3.selectAll('input').property("checked", function(d){
    		

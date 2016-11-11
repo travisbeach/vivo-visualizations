@@ -1,0 +1,253 @@
+[
+  {
+    "group": "high",
+    "people": [
+      {
+        "uri": "/scholars/display/lc89",
+        "name": "Cheng, Lailiang",
+        "netid": "lc89",
+        "role": "CO"
+      },
+      {
+        "uri": "/scholars/display/rdc6",
+        "name": "Christy, Ralph Dean",
+        "netid": "rdc6",
+        "role": "PI"
+      },
+      {
+        "uri": "/scholars/display/hcw2",
+        "name": "Wien, Hans Christian",
+        "netid": "hcw2",
+        "role": "CO"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt69334",
+      "title": "TRAINING SMALLHOLDER APPLE FARMERS IN CHINA FOR SUSTAINABLE PRODUCTION AND DOMESTIC MARKET ACCESS",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Cornell International Institute for Food, Agriculture and Development (CIIFAD)",
+      "uri": "/scholars/display/org92423"
+    },
+    "funagen": {
+      "name": "WALMART FOUNDATON",
+      "uri": "/scholars/display/org49630"
+    },
+    "Cost": 3700000,
+    "End": "2016",
+    "Start": "2013",
+    "id": "69334"
+  },
+  {
+    "group": "high",
+    "people": [
+      {
+        "uri": "/scholars/display/jdh9",
+        "name": "Helmann, John D.",
+        "netid": "jdh9",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt70092",
+      "title": "ZINC HOMEOSTASIS IN BACILLUS SUBTILIS",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Microbiology",
+      "uri": "/scholars/display/org58067"
+    },
+    "funagen": {
+      "name": "NATL INST OF HEALTH DHHS",
+      "uri": "/scholars/display/org73741"
+    },
+    "Cost": 1260019,
+    "End": "2018",
+    "Start": "2014",
+    "id": "70092"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/rms43",
+        "name": "Scanza, Rocco M.",
+        "netid": "rms43",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt66472",
+      "title": "NEUTRAL SERVICES SUPPORTING THE NUCLEAR REGULATORY COMMISSION OFFICE OF ENFORCEMENT'S ALTERNATIVE DISPUTE RESOLUTION PROGRAM",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "",
+      "name": "not found",
+      "uri": "."
+    },
+    "funagen": {
+      "name": "NUCLEAR REGULATORY COMM",
+      "uri": "/scholars/display/org34065"
+    },
+    "Cost": 998337,
+    "End": "2017",
+    "Start": "2012",
+    "id": "66472"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/aes6",
+        "name": "Staehr, A. Edward",
+        "netid": "aes6",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt77861",
+      "title": "SFY 2015-2016 NEW YORK FARMNET",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Animal Science",
+      "uri": "/scholars/display/org75400"
+    },
+    "funagen": {
+      "name": "NYS OFFICE OF MENTAL HEALTH",
+      "uri": "/scholars/display/org17014"
+    },
+    "Cost": 300000,
+    "End": "2016",
+    "Start": "2015",
+    "id": "77861"
+  },
+  {
+    "group": "low",
+    "people": [
+      {
+        "uri": "/scholars/display/mae10",
+        "name": "Evangelista, Matthew Anthony",
+        "netid": "mae10",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt77534",
+      "title": "DOCTORAL DISSERTATION RESEARCH: THE HUMANITARIAN DISCOURSE OF FORCE: THE CAUSES AND CONSEQUENCES OF U.S. PRESIDENTS' HUMANITARIAN JUSTIFICATIONS FOR INTERVENTION",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Government",
+      "uri": "/scholars/display/org51392"
+    },
+    "funagen": {
+      "name": "NATL SCIENCE FOUNDATION",
+      "uri": "/scholars/display/org90193"
+    },
+    "Cost": 24150,
+    "End": "2017",
+    "Start": "2016",
+    "id": "77534"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/lbs33",
+        "name": "Smart, Lawrence B.",
+        "netid": "lbs33",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt76580",
+      "title": "DIMENSIONS US-CHINA: COLLABORATIVE RESEARCH: ALLOZOMES AND DIOECY IN PLANTS AS DRIVERS OF MULTI-LEVEL BIODIVERSITY",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "School of Integrative Plant Science",
+      "uri": "/scholars/display/org30434"
+    },
+    "funagen": {
+      "name": "DIRECTORATE FOR BIOLOGICAL SCIENCES NSF",
+      "uri": "/scholars/display/org16446"
+    },
+    "Cost": 398065,
+    "End": "2020",
+    "Start": "2016",
+    "id": "76580"
+  },
+  {
+    "group": "low",
+    "people": [
+      {
+        "uri": "/scholars/display/sr43",
+        "name": "Reiners, Stephen",
+        "netid": "sr43",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt79811",
+      "title": "SERVICE ORDER #15",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "School of Integrative Plant Science",
+      "uri": "/scholars/display/org30434"
+    },
+    "funagen": {
+      "name": "MONSANTO",
+      "uri": "/scholars/display/org82656"
+    },
+    "Cost": 4578,
+    "End": "2017",
+    "Start": "2016",
+    "id": "79811"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/jd694",
+        "name": "Dai, Jiangang",
+        "netid": "jd694",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt69899",
+      "title": "HIGH FIDELITY MODELING AND TWO-TIME-SCALE ANALYSIS FOR HOSPITAL INPATIENT FLOW MANAGEMENT",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Operations Research and Information Engineering",
+      "uri": "/scholars/display/org62682"
+    },
+    "funagen": {
+      "name": "NATL SCIENCE FOUNDATION",
+      "uri": "/scholars/display/org90193"
+    },
+    "Cost": 365000,
+    "End": "2016",
+    "Start": "2013",
+    "id": "69899"
+  }]
