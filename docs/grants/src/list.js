@@ -127,7 +127,7 @@ function updateChecks() {
 
 	var currentNames = _.pullAll(getNameList(currentData), removedNames);
 	var currentDept = _.uniq(getDeptList(currentData));
-	var currentAgencies = getFundingAgenc(currentData); 
+	var currentAgencies = getFundingAgency(currentData); 
 
 	//console.log(currentNames);
 	//console.log(currentDept);

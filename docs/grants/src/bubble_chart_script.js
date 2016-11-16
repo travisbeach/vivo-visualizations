@@ -9,7 +9,6 @@ var dateComeback = [];
   var damper = 0.102;
 
   // tooltip for mouseover functionality
-  var tooltip = floatingTooltip('grants_tooltip', 240);
   var svg = null;
   var bubbles = null;
   var nodes = [];
@@ -44,6 +43,16 @@ var dateComeback = [];
   .exponent(0.5)
   .range([2, 15]);
 
+  
+var tip = d3.tip()
+  .attr('class', 'd3-tip')
+  .offset([-10, 0])
+  .html(function(d) {
+    return "<strong>Frequency:</strong> <span style='color:red'>" + d.frequency + "</span>";
+  })  
+
+  svg.call(tip);
+
 
   function createNodesTravis(rawData) {
     // Use map() to convert raw data into node data.
@@ -62,7 +71,8 @@ var dateComeback = [];
         name: d.grant.title,
         group: d.group,
         x: Math.random() * 900,
-        y: Math.random() * 800
+        y: Math.random() * 800, 
+        funagen : d.funagen
       };
     });
 
@@ -100,9 +110,8 @@ var dateComeback = [];
     .attr('fill', function (d) { return fillColor(d.group); })
     .attr('stroke', function (d) { return d3.rgb(fillColor(d.group)).darker(); })
     .attr('stroke-width', 2)
-    .on('mouseover', showDetail)
-    .on('mouseout', hideDetail)
-    .on('click', clickFunction);
+    .on('mouseover', tip.show)
+    .on('mouseout', tip.hide);
 
     // Fancy transition to make bubbles appear, ending with the
     // correct radius
@@ -133,41 +142,6 @@ var dateComeback = [];
     }
   }
 
-  function showDetail(d) {
-    // change outline to indicate hover state.
-    d3.select(this).attr('stroke', 'black');
-
-    var content = '<span class="name">Title: </span><span class="value">' +
-    d.name +
-    '</span><br/>';
-    tooltip.showTooltip(content, d3.event);
-  }
-
-  function moreDetail(d){
-     // change outline to indicate hover state.
-    //d3.select(this).attr('stroke', 'black');
-
-    var content = 
-    '<span class="name">Title: </span><span class="value">' + d.name+'</span><br/>'
-    +'<span class="name">Investigator: </span><span class="value">Test</span></br>'
-    +'<span class="name">Academic Unit: </span><span class="value">'+'test'+'</span></br>'
-    +'<span class="name">Funding Agency: </span><span class="value">'+'test'+'</span></br>'
-    +'<span class="name">Start Year: </span><span class="value">'+'test'+'</span></br>'
-    +'<span class="name">End Year: </span><span class="value">'+'test'+'</span></br>';
-    tooltip.showTooltip(content, d3.event);
-  }
-
-  /*
-   * Hides tooltip
-   */
-   function hideDetail(d) {
-    // reset outline
-
-    d3.select(this)
-    .attr('stroke', d3.rgb(fillColor(d.group)).darker());
-
-    tooltip.hideTooltip();
-  }
   function addCommas(nStr) {
     nStr += '';
     var x = nStr.split('.');
@@ -181,10 +155,9 @@ var dateComeback = [];
     return x1 + x2;
   }
 
-  function clickFunction(d){
-    moreDetail(d);
+ 
 
-  }
+
 
 
 

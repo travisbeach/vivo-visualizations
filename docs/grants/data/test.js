@@ -48,3 +48,11 @@ function uncheckAll(){
 	update(currentData);
 	updateChecks();
 }
+
+function checkAll(){
+	currentData = grants; 
+	removedNames = [];
+	filtered = []; 
+	update(currentData); 
+	updateChecks();
+}
