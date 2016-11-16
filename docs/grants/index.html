@@ -52,13 +52,13 @@
       <div class="panel panel-default">
         <div class="panel-heading">
           <h4 class="panel-title">
-            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
              <span class="start">Filter by:</span> Funding Agency
            </a>
          </h4>
        </div>
-       <div id="collapseTwo" class="panel-collapse collapse">
-        <div class="panel-body" id="#funagen">
+       <div id="collapseFour" class="panel-collapse collapse">
+        <div class="panel-body" id="funagen">
 
         </div>
       </div>
@@ -89,17 +89,29 @@
 <script>
 
   var currentRange = [];
+  var removedNames = []
+
   d3.json("data/smallGrants.json", function(data){
    update(data);
    raw = data;
-   currentData = raw; 
+   currentData = raw.map(function(node){
+    node["peopleList"] = node.people.map(d=>d.name); 
+    return node;
+   }); 
    grants = data;
+
+
+
       
       var people = getNameList(grants);
       addList("#person", people, "Person"); 
 
       var departments = _.uniq(getDeptList(grants));
       addList("#department", departments, "Department");
+
+      var agencies = getFundingAgency(grants); 
+      addList("#funagen", agencies, "Funding Agency")
+ 
 
       var minYear = d3.min(grants, d=>Number(d.Start)); 
       var maxYear = d3.max(grants, d=>Number(d.End)); 

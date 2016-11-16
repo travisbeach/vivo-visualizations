@@ -19,9 +19,9 @@ function getDeptList(array){
 }
 
 function getFundingAgency(array){
-	return array.map(function(d){
+	return _.uniq(array.map(function(d){
 		return d.funagen.name;
-	})
+	})); 
 }
 
 $('#testInput').on('keyup', function() {

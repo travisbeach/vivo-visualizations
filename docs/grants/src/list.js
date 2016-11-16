@@ -21,38 +21,103 @@ function addList(id, array, field){
 	.attr("id", function(d,i) { return i; })
 	.attr("for", function(d,i) { return i; })
 	.on("change", function(d){
-		var bool = d3.select(this).property("checked");
-		if(bool == false){
-			currentData = currentData.filter(function(node){
-				if(node[field] != d){
-					return true;
-				}
-				else{
-					filtered.push(node); 
-				}
-			}); 
-		}
+		
+		var className = $(this).attr("class");
 
-		else{
-
-			filtered = filtered.filter(function(node){
-				if(node[field] == d){
-					comeback.push(node);
-					return false;
+		if (className==="cboxDepartment"){ 
+			var bool = d3.select(this).property("checked");
+			if(bool == false){
+				currentData = currentData.filter(function(node){
+					if(node.dept.name != d){
+						return true;
 					}
-				else{
-					return true;
-				}
+					else{
+						filtered.push(node); 
+					}
+				}); 
+			}
+			else{
+				filtered = filtered.filter(function(node){
+					if(node.dept.name == d){
+						comeback.push(node);
+						return false;
+					}
+					else{
+						return true;
+					}
 				});	
+				currentData = currentData.concat(comeback);
+			}
+		}
 
-			currentData = currentData.concat(comeback);
+		if (className==="cboxPerson"){ 
+			var bool = d3.select(this).property("checked");
+			if(bool == false){
+				removedNames.push(d);
+				currentData = currentData.filter(function(node){
+					if(_.intersection(removedNames, node.peopleList).length != node.peopleList.length){
+						return true; 
+					}
+					else{
+						console.log(node); 
+						filtered.push(node); 
+						return false; 
+					}
+				}); 
+			}
+
+			else{
+				removedNames = removedNames.filter(function(n){
+					return n!=d; 
+				});
+				filtered = filtered.filter(function(node){
+					if ((_.intersection(removedNames, node.peopleList).length != node.peopleList.length) && node.peopleList.indexOf(d) > -1){
+						console.log("coming back" + node);
+						comeback.push(node); 
+						return false; 
+					}
+					else{
+						return true; 
+					}
+				});
+				currentData = currentData.concat(comeback); 
+			}
+		}	
+
+		if(className === "cboxFunding Agency"){
+			var bool = d3.select(this).property("checked");
+
+			if(bool == false){
+				currentData = currentData.filter(function(node){
+					if(node.funagen.name != d){
+						return true;
+					}
+					else{
+						filtered.push(node); 
+					}
+				}); 
+			}
+			else{
+				filtered = filtered.filter(function(node){
+					if(node.funagen.name == d){
+						comeback.push(node);
+						return false;
+					}
+					else{
+						return true;
+					}
+				});	
+				currentData = currentData.concat(comeback);
+			}
+
+			
 		}
 
 
-		update(currentData);
-		updateChecks();
-		comeback = [];
-		});
+		update(currentData); //update the viz
+		updateChecks(); //update the checks
+		comeback = []; //reset comeback
+	});
 
 	labels.append("label").attr("class", "label" +field).text(d=>d);
 }
@@ -60,20 +125,21 @@ function addList(id, array, field){
 
 function updateChecks() {
 
-	var currentNames = getNameList(currentData);
+	var currentNames = _.pullAll(getNameList(currentData), removedNames);
 	var currentDept = _.uniq(getDeptList(currentData));
+	var currentAgencies = getFundingAgency(currentData); 
 
-	console.log(currentNames);
-	console.log(currentDept);
+	//console.log(currentNames);
+	//console.log(currentDept);
 
-   	d3.selectAll('input').property("checked", function(d){
-   		
-   		if(currentNames.indexOf(d) != -1 || currentDept.indexOf(d) != -1){
-   			return true;
-   		}
+	d3.selectAll('input').property("checked", function(d){
 
-   		else{
-   			return false;
-   		}
-   	});
+		if(currentNames.indexOf(d) != -1 || currentDept.indexOf(d) != -1||currentAgencies.indexOf(d) != -1){
+			return true;
+		}
+
+		else{
+			return false;
+		}
+	});
 }
