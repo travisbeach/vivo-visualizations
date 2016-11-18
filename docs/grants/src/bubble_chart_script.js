@@ -4,6 +4,8 @@ var filtered = [];
 var comeback = [];
 var dateFiltered = []; 
 var dateComeback = [];
+
+var clicked = false; 
   // Used when setting up force and
   // moving around nodes\
   var damper = 0.102;
@@ -14,7 +16,7 @@ var dateComeback = [];
   var nodes = [];
 
     // tooltip for mouseover functionality
-  var tooltip = CustomTooltip('grants_tooltip', 240);
+  var tooltip = CustomTooltip('grants_tooltip', 300);
 
 
   var svg = d3.select("#vis")
@@ -46,8 +48,6 @@ var dateComeback = [];
   .exponent(0.5)
   .range([2, 15]);
 
-  
-
 
   function createNodesTravis(rawData) {
     // Use map() to convert raw data into node data.
@@ -58,9 +58,10 @@ var dateComeback = [];
       return {
         id: d.id,
         radius: radiusScale(+d.Cost),
-        dept: d.dept.name, 
+        dept: d.dept, 
         value: d.Cost,
         start: d.Start,
+        grant: d.grant, 
         end: d.End,
         people: d.people,
         name: d.grant.title,
@@ -115,7 +116,7 @@ var dateComeback = [];
     .duration(500)
     .attr('r', function (d) { return d.radius; });
 
-
+ 
     groupBubbles();
 
     function moveToCenter(alpha) {
@@ -150,9 +151,6 @@ var dateComeback = [];
 
     return x1 + x2;
   }
-
- 
-
 
 
 
