@@ -13,6 +13,9 @@ var dateComeback = [];
   var bubbles = null;
   var nodes = [];
 
+    // tooltip for mouseover functionality
+  var tooltip = CustomTooltip('grants_tooltip', 240);
+
 
   var svg = d3.select("#vis")
   .append('svg')
@@ -44,14 +47,6 @@ var dateComeback = [];
   .range([2, 15]);
 
   
-var tip = d3.tip()
-  .attr('class', 'd3-tip')
-  .offset([-10, 0])
-  .html(function(d) {
-    return "<strong>Frequency:</strong> <span style='color:red'>" + d.frequency + "</span>";
-  })  
-
-  svg.call(tip);
 
 
   function createNodesTravis(rawData) {
@@ -110,8 +105,9 @@ var tip = d3.tip()
     .attr('fill', function (d) { return fillColor(d.group); })
     .attr('stroke', function (d) { return d3.rgb(fillColor(d.group)).darker(); })
     .attr('stroke-width', 2)
-    .on('mouseover', tip.show)
-    .on('mouseout', tip.hide);
+    .on('mouseover', showDetail)
+    .on('mouseout', hideDetail)
+    .on('click', clickFunction);
 
     // Fancy transition to make bubbles appear, ending with the
     // correct radius
