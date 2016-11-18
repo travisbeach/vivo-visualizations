@@ -39,7 +39,6 @@
 }
 
 text {
-  font: 24px "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-anchor: middle;
+  font: 16px "Helvetica Neue", Helvetica, Arial, sans-serif;
   pointer-events: none;
 }

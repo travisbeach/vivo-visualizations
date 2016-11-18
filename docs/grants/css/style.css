@@ -175,4 +175,12 @@ list-style-type: none;
 }
 #close{
   margin-bottom: 4px;
+  float:right;
+}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
 }

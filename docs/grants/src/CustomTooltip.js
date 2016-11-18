@@ -68,7 +68,7 @@ function showDetail(d) {
      // change outline to indicate hover state.
     //d3.select(this).attr('stroke', 'black');
     var content;
-    content = "<p><span id='close' onclick ='test()'><img src= '../whiteX.png' ID='closeIcon' alt='close'>Close</span></p>";
+    content = "<p><span id='close' onclick ='test()'><img src= '../whiteX.png' ID='closeIcon' alt='close'></span></p>";
     content += "<span class=\"name\">Title: </span><span class=\"value\"><a href='" + data.grant.uri + "'>" + data.name + "</a></span><br/>";
     content += this.format_people(data.people);
     content += "<span class=\"name\">Academic Unit: </span><span class=\"value\"><a href='" + data.dept.uri + "'>" + data.dept.name + "</a></span><br/>";
