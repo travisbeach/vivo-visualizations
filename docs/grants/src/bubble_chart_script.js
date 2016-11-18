@@ -16,7 +16,7 @@ var clicked = false;
   var nodes = [];
 
     // tooltip for mouseover functionality
-  var tooltip = CustomTooltip('grants_tooltip', 300);
+  var tooltip = CustomTooltip('grants_tooltip', 400);
 
 
   var svg = d3.select("#vis")

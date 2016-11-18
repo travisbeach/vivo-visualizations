@@ -72,7 +72,7 @@ footer {
   font-size: 21px;
   fill: #aaa;
 }
-div.tooltip {
+div.tip {
 	position: absolute;
 	top: 100px;
 	left: 100px;
@@ -91,16 +91,16 @@ div.tooltip {
 	z-index: 3001;
 }
 
-div.tooltip span {
+div.tip span {
   color: #EFEFEF;
   font-family:Arial;
 }
 
-div.tooltip .title {
+div.tip .title {
 	font-size: 13px;
 }
 
-div.tooltip .name {
+div.tip .name {
   font-weight:bold;
 }
 span.value a {
@@ -183,4 +183,8 @@ list-style-type: none;
   margin-left: auto;
   margin-right: auto;
 
+}
+
+label{
+  display: inline;
 }
