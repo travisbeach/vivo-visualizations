@@ -54,7 +54,6 @@ $('#deptInput').on('keyup', function() {
 		}
 	});
 
-
 });
 $('#fundingInput').on('keyup', function() {
 	var query = this.value.toLowerCase();
@@ -89,5 +88,5 @@ function checkAll(){
 	updateChecks();
 }
 
- 
+
 
