@@ -24,28 +24,28 @@ function CustomTooltip(tooltipId, width){
 		var xOffset = 20;
 		var yOffset = 10;
 		
-		 var ttw = $(ttid).width();
-		 var tth = $(ttid).height();
-		 var wscrY = $(window).scrollTop();
-		 var wscrX = $(window).scrollLeft();
-		 var curX = (document.all) ? event.clientX + wscrX : event.pageX;
-		 var curY = (document.all) ? event.clientY + wscrY : event.pageY;
-		 var ttleft = ((curX - wscrX + xOffset*2 + ttw) > $(window).width()) ? curX - ttw - xOffset*2 : curX + xOffset;
-		 if (ttleft < wscrX + xOffset){
-		 	ttleft = wscrX + xOffset;
-		 } 
-		 var tttop = ((curY - wscrY + yOffset*2 + tth) > $(window).height()) ? curY - tth - yOffset*2 : curY + yOffset;
-		 if (tttop < wscrY + yOffset){
-		 	tttop = curY + yOffset;
-		 } 
-		 $(ttid).css('top', tttop + 'px').css('left', ttleft + 'px');
-	}
-	
-	return {
-		showTooltip: showTooltip,
-		hideTooltip: hideTooltip,
-		updatePosition: updatePosition
-	}
+   var ttw = $(ttid).width();
+   var tth = $(ttid).height();
+   var wscrY = $(window).scrollTop();
+   var wscrX = $(window).scrollLeft();
+   var curX = (document.all) ? event.clientX + wscrX : event.pageX;
+   var curY = (document.all) ? event.clientY + wscrY : event.pageY;
+   var ttleft = ((curX - wscrX + xOffset*2 + ttw) > $(window).width()) ? curX - ttw - xOffset*2 : curX + xOffset;
+   if (ttleft < wscrX + xOffset){
+    ttleft = wscrX + xOffset;
+  } 
+  var tttop = ((curY - wscrY + yOffset*2 + tth) > $(window).height()) ? curY - tth - yOffset*2 : curY + yOffset;
+  if (tttop < wscrY + yOffset){
+    tttop = curY + yOffset;
+  } 
+  $(ttid).css('top', tttop + 'px').css('left', ttleft + 'px');
+}
+
+return {
+  showTooltip: showTooltip,
+  hideTooltip: hideTooltip,
+  updatePosition: updatePosition
+}
 }
 
 
@@ -56,12 +56,15 @@ function showDetail(d) {
 
     if (clicked != true){
 
-    var content = '<span class="value">' +
-    d.name +
-    '</span><br/>';
-    tooltip.showTooltip(content, d3.event);
+      var content = '<span class="value">' +
+      d.name +
+      '</span><br/>';
 
-	}
+      console.log(content);
+      tooltip.showTooltip(content, d3.event);
+
+
+    }
   }
 
   function moreDetail(data){
@@ -85,19 +88,19 @@ function showDetail(d) {
 
 
    	if(d && ('group' in d)){
-   	console.log(d);
-   	d3.select(this).attr('stroke', d3.rgb(fillColor(d.group)).darker());
-   }
-   else{
-   	console.log('test');
-   }
+      console.log(d);
+      d3.select(this).attr('stroke', d3.rgb(fillColor(d.group)).darker());
+    }
+    else{
+      console.log('test');
+    }
 
-   	if (clicked!= true){
-    tooltip.hideTooltip();
+    if (clicked!= true){
+      tooltip.hideTooltip();
+    }
+
+
   }
-
-
-}
   function addCommas(nStr) {
     nStr += '';
     var x = nStr.split('.');
@@ -119,42 +122,43 @@ function showDetail(d) {
   }
 
 
- function format_people(people) {
-      var p, spans;
-      people.sort(function(a, b) {
-        if (a.role > b.role) {
-          return -1;
-        } else if (a.role < b.role) {
-          return 1;
-        } else {
-          return 0;
-        }
-      });
-      spans = (function() {
-        var j, len, results;
-        results = [];
-        for (j = 0, len = people.length; j < len; j++) {
-          p = people[j];
-          results.push(this.format_person(p));
-        }
-        return results;
-      }).call(this);
-      return spans.join("");
-    };
-
-   function format_person(p) {
-      var role;
-      if (p.role === "PI") {
-        role = "Investigator";
+  function format_people(people) {
+    var p, spans;
+    people.sort(function(a, b) {
+      if (a.role > b.role) {
+        return -1;
+      } else if (a.role < b.role) {
+        return 1;
       } else {
-        role = "Co-Investigator";
+        return 0;
       }
-      return "<span class=\"name\">" + role + ": </span><span class=\"value\"><a href='" + p.uri + "'>" + p.name + "</a></span><br/>";
-    };
+    });
+    spans = (function() {
+      var j, len, results;
+      results = [];
+      for (j = 0, len = people.length; j < len; j++) {
+        p = people[j];
+        results.push(this.format_person(p));
+      }
+      return results;
+    }).call(this);
+    return spans.join("");
+  };
+
+  function format_person(p) {
+    var role;
+    if (p.role === "PI") {
+      role = "Investigator";
+    } else {
+      role = "Co-Investigator";
+    }
+    return "<span class=\"name\">" + role + ": </span><span class=\"value\"><a href='" + p.uri + "'>" + p.name + "</a></span><br/>";
+  };
 
 
-function test(){
-	$("#grants_tooltip").hide();
-}
+  function test(){
+    tooltip.hideTooltip();
+    clicked = false; 
+  }
 
-    
+

@@ -1,4 +1,2 @@
 TODO:
-Fix long labels, 
-
-Legend
+add searches

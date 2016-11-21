@@ -176,6 +176,7 @@ list-style-type: none;
 #close{
   margin-bottom: 4px;
   float:right;
+  cursor: pointer;
 }
 
 .center-block {
@@ -187,4 +188,7 @@ list-style-type: none;
 
 label{
   display: inline;
+}
+a {
+  cursor: pointer;
 }
