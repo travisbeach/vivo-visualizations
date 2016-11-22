@@ -109,7 +109,7 @@
   var currentRange = [];
   var removedNames = []; 
 
-  d3.json("data/smallGrants.json", function(data){
+  d3.json("data/grants.json", function(data){
    update(data);
    raw = data;
    currentData = raw.map(function(node){

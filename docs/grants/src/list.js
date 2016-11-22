@@ -121,8 +121,6 @@ function addList(id, array, field){
 
 	labels.append("label").attr("class", "label" +field).text(d=>d);
 
-
-	console.log()
 }
 
 
