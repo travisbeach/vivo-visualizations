@@ -72,7 +72,6 @@ function addList(id, array, field){
 				});
 				filtered = filtered.filter(function(node){
 					if ((_.intersection(removedNames, node.peopleList).length != node.peopleList.length) && node.peopleList.indexOf(d) > -1){
-						console.log("coming back" + node);
 						comeback.push(node); 
 						return false; 
 					}
@@ -82,6 +81,9 @@ function addList(id, array, field){
 				});
 				currentData = currentData.concat(comeback); 
 			}
+			console.log("current: "+currentData); 
+			console.log("filtered: "+filtered); 
+			console.log("comeback: "+comeback);
 		}	
 
 		if(className === "cboxFunding Agency"){

@@ -60,7 +60,7 @@ function showDetail(d) {
       d.name +
       '</span><br/>';
 
-      console.log(content);
+      //console.log(content);
       tooltip.showTooltip(content, d3.event);
 
 
@@ -88,11 +88,11 @@ function showDetail(d) {
 
 
    	if(d && ('group' in d)){
-      console.log(d);
+      //console.log(d);
       d3.select(this).attr('stroke', d3.rgb(fillColor(d.group)).darker());
     }
     else{
-      console.log('test');
+     //console.log('test');
     }
 
     if (clicked!= true){

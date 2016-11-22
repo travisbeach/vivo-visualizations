@@ -76,6 +76,8 @@ function uncheckAll(){
 	currentData = [];
 	filtered = grants; 
 
+	removedNames = getNameList(grants);
+
 	update(currentData);
 	updateChecks();
 }
