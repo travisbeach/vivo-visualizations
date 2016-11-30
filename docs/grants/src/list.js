@@ -128,7 +128,7 @@ function addList(id, array, field){
 
 function updateChecks() {
 
-	var currentNames = _.pullAll(getNameList(currentData), removedNames);
+	var currentNames = getNameList(currentData);
 	var currentDept = _.uniq(getDeptList(currentData));
 	var currentAgencies = getFundingAgency(currentData); 
 
