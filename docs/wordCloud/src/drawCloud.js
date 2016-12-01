@@ -11,7 +11,7 @@ function transformUniversityWordCloud(rawData) {
             size: 5+(Math.random()*30)
             }
        
-        function processPersonStructure(pStruct) {
+        function processPersonStructure(pStruct) {  
             return {
                 personName: pStruct.personName,
                 personURI: pStruct.personURI,

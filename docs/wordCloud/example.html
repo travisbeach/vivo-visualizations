@@ -18,7 +18,7 @@
 
 function wordCloud(selector) {
 
-    var fill = d3.scale.category20();
+    var fill = d3.scale.category20c();
 
     //Construct the word cloud's SVG element
     var svg = d3.select(selector).append("svg")
@@ -73,11 +73,14 @@ function wordCloud(selector) {
         //The outside world will need to call this function, so make it part
         // of the wordCloud return value.
         update: function(input) {
+
+            var fontScale = makeScale(input);
+
             d3.layout.cloud().size([800, 400])
             .words(input, d=>d.keyword)
             .rotate(function() { return ~~(Math.random() * 2) * 90; })
             .font("Tahoma")
-            .fontSize(function(d) { return d.size; })
+            .fontSize(function(d) { return fontScale(d.countOfArticle); })
             .text(d=>d.keyword)
             .on("end", draw)
             .start();
@@ -121,7 +124,7 @@ d3.json("data/KWbyPersonCount.json", function(data) {
     var currentWords = smallWords;
     //console.log(words);
     //Create a new instance of the word cloud visualisation.
-     myWordCloud = wordCloud('body');
+    myWordCloud = wordCloud('body');
     showNewWords(myWordCloud, smallWords);
 
 });
@@ -158,6 +161,11 @@ function getChecks(){
    var mined = d3.select("#mined").property("checked"); 
 
    return [keyword, mesh, mined]; 
+}
+
+function makeScale(array){
+    var domain = d3.extent(array, d=>d.countOfArticle); 
+    return d3.scale.linear().domain(domain).range([5, 50]);
 }
 
 
