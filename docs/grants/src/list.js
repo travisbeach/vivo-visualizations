@@ -127,20 +127,13 @@ function addList(id, array, field){
 
 
 function updateChecks() {
-
 	var currentNames = getNameList(currentData);
 	var currentDept = _.uniq(getDeptList(currentData));
 	var currentAgencies = getFundingAgency(currentData); 
-
-	//console.log(currentNames);
-	//console.log(currentDept);
-
 	d3.selectAll('input').property("checked", function(d){
-
 		if(currentNames.indexOf(d) != -1 || currentDept.indexOf(d) != -1||currentAgencies.indexOf(d) != -1){
 			return true;
 		}
-
 		else{
 			return false;
 		}

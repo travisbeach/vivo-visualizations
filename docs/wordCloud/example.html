@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <body>
+  <label><input id="keyword" type="checkbox" class="cbox" checked>Keyword</label>
+  <label><input id="mesh" type="checkbox" class="cbox" checked>Mesh</label>
+  <label><input id="mined" type="checkbox" class="cbox" checked>Mined Keywords</label>
 
-<button id="delete">Drop 10</button>
   <script src="http://d3js.org/d3.v3.min.js"></script>
   <script src="https://rawgit.com/jasondavies/d3-cloud/master/build/d3.layout.cloud.js"></script>
   <script src="src/drawCloud.js"></script>
@@ -27,11 +29,11 @@ function wordCloud(selector) {
 
 
     //Draw the word cloud
-    function draw(words) {
+    function draw(input) {
 
 
         var cloud = svg.selectAll("g text")
-        .data(words, function(d) { return d.keyword; })
+        .data(input, function(d) { return d.keyword; })
 
         //Entering words
         cloud.enter()
@@ -70,9 +72,9 @@ function wordCloud(selector) {
         // asycnhronously call draw when the layout has been computed.
         //The outside world will need to call this function, so make it part
         // of the wordCloud return value.
-        update: function(words) {
+        update: function(input) {
             d3.layout.cloud().size([800, 400])
-            .words(words, d=>d.keyword)
+            .words(input, d=>d.keyword)
             .rotate(function() { return ~~(Math.random() * 2) * 90; })
             .font("Tahoma")
             .fontSize(function(d) { return d.size; })
@@ -114,24 +116,49 @@ var myWordCloud;
 d3.json("data/KWbyPersonCount.json", function(data) {
 
     words = transformUniversityWordCloud(data); 
-    smallWords = words.filter((d, i) => i < 49); 
+    smallWords = words.filter((d, i) => i < 100); 
+
+    var currentWords = smallWords;
     //console.log(words);
     //Create a new instance of the word cloud visualisation.
      myWordCloud = wordCloud('body');
+    showNewWords(myWordCloud, smallWords);
 
-    //Start cycling through the demo data
-    showNewWords(myWordCloud, words);
+});
 
-}); 
+d3.selectAll(".cbox").on("change", function(){
+   var checks = getChecks(); 
+   var currentWords = smallWords;
 
+   if(checks[0] == false){
+        currentWords = currentWords.filter(function(d){
+            return d.type != 'keyword'; 
+        });
+   }
 
-d3.select("#delete").on("click", function(){
-    words = words.filter(function(d){
-        return Math.random() > .5; 
-    }); 
-        showNewWords(myWordCloud, words);
+   if(checks[1] == false){
+        currentWords = currentWords.filter(function(d){
+            return d.type != 'mesh'; 
+        });
+    }
+    if(checks[2] == false){
+        currentWords = currentWords.filter(function(d){
+            return d.type != 'mined';
+        });
+    }
+
+   showNewWords(myWordCloud, currentWords); 
 })
 
+var checks;
+
+function getChecks(){
+   var keyword = d3.select("#keyword").property("checked"); 
+   var mesh = d3.select("#mesh").property("checked"); 
+   var mined = d3.select("#mined").property("checked"); 
+
+   return [keyword, mesh, mined]; 
+}
 
 
 </script>
