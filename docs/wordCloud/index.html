@@ -1,17 +1,39 @@
 <!DOCTYPE html>
-<html>
+<meta charset="utf-8">
 <head>
-	<title>Word Cloud</title>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
-	<label><input type="checkbox" id="mesh">MeSH Terms</label>
-	<label><input type="checkbox" id="key">Keywords</label>
-	<div id="viz"></div>
-	<script src="lib/d3.min.js"></script>
-	<script src="lib/d3.layout.cloud.js"></script>
-	<script src="lib/jquery-3.1.1.min.js"></script>
-	<script src="lib/d3-tip.js"></script>	
-	<script src="src/drawCloud.js"></script>
-	<script src="src/script.js"></script>
+
+
+
+  <div class="row">
+    <div id="canvas">
+    </div>
+  </div>
+  <div class="row">
+    <div class="container">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Word Cloud
+        </div>
+        <div class="panel-body">
+          <label><input id="keyword" type="checkbox" class="cbox" checked>Keyword</label><br>
+          <label><input id="mesh" type="checkbox" class="cbox" checked>Mesh</label><br>
+          <label><input id="mined" type="checkbox" class="cbox" checked>Mined Keywords</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="lib/d3.min.js"></script>
+  <script src="lib/d3.layout.cloud.js"></script>
+  <script src="src/drawCloud.js"></script>
+  <script src="lib/d3-tip.js"></script>
+  <script src="src/tipFunctions.js"></script>
+  <script src="src/script.js"></script>
 </body>
-</html>
+
+

@@ -7,7 +7,7 @@ d3.json("data/KWbyPersonCount.json", function(data) {
     var currentWords = smallWords;
     //console.log(words);
     //Create a new instance of the word cloud visualisation.
-    myWordCloud = wordCloud('body');
+    myWordCloud = wordCloud('#canvas');
     showNewWords(myWordCloud, smallWords);
 
 });
