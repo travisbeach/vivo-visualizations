@@ -97,6 +97,7 @@ function wordCloud(selector) {
         update: function(input) {
 
             var fontScale = makeScale(input);
+            hideTooltip();
 
             d3.layout.cloud().size([800, 400])
             .words(input, d=>d.keyword)

@@ -39,5 +39,5 @@ function changeOnHover(d){
 }
 
 function hideTooltip(){
-    d3.select(".d3-tip").style("opacity", 0).style("pointer-events", "none");
+    d3.selectAll(".d3-tip").style("opacity", 0).style("pointer-events", "none");
 }
