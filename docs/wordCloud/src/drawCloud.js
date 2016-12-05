@@ -2,15 +2,15 @@ function transformUniversityWordCloud(rawData) {
 	return rawData.map(processKeywordStructure);
 	
 	function processKeywordStructure(kwStruct) {
-     return {
-         persons: kwStruct.persons.map(processPersonStructure),
-         countOfArticle: kwStruct.countOfArticle,
-         keyword: kwStruct.keyword,
-         countByPerson: kwStruct.countByPerson, 
-         type: randomType()
-     }
+       return {
+           persons: kwStruct.persons.map(processPersonStructure),
+           countOfArticle: kwStruct.countOfArticle,
+           keyword: kwStruct.keyword,
+           countByPerson: kwStruct.countByPerson, 
+           type: randomType()
+       }
 
-     function processPersonStructure(pStruct) {  
+       function processPersonStructure(pStruct) {  
         return {
             personName: pStruct.personName,
             personURI: pStruct.personURI,
@@ -71,10 +71,11 @@ function wordCloud(selector) {
         })
         .style("fill-opacity", 1);
 
-
-        cloud
-        .call(tip)
-        .on('click', tip.show);
+        if(input[0] != null){
+            cloud
+            .call(tip)
+            .on('click', tip.show);
+        }
 
         //Exiting words
         cloud.exit()
@@ -121,10 +122,10 @@ function showNewWords(vis, words) {
 
 
 d3.selectAll(".cbox").on("change", function(){
-   var checks = getChecks(); 
-   var currentWords = smallWords;
+ var checks = getChecks(); 
+ var currentWords = smallWords;
 
-   if(checks[0] == false){
+ if(checks[0] == false){
     currentWords = currentWords.filter(function(d){
         return d.type != 'keyword'; 
     });
@@ -147,11 +148,11 @@ showNewWords(myWordCloud, currentWords);
 var checks;
 
 function getChecks(){
-   var keyword = d3.select("#keyword").property("checked"); 
-   var mesh = d3.select("#mesh").property("checked"); 
-   var mined = d3.select("#mined").property("checked"); 
+ var keyword = d3.select("#keyword").property("checked"); 
+ var mesh = d3.select("#mesh").property("checked"); 
+ var mined = d3.select("#mined").property("checked"); 
 
-   return [keyword, mesh, mined]; 
+ return [keyword, mesh, mined]; 
 }
 
 function makeScale(array){
