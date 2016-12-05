@@ -2,7 +2,9 @@
 page formatting
 */
 #left-panel{
-	padding-left: 2%;
+	padding-top: 5px;
+	padding-left: 0px;
+	padding-right: 0px;
 }
 
 #viz{
@@ -10,7 +12,16 @@ page formatting
 	margin: auto; 
 }
 
+.radio-label{
+	display: inline-block;
+}
 
+li{
+	list-style: none;
+}
+ul{
+	padding-left: 0px;
+}
 /*
 Tooltip
 */
