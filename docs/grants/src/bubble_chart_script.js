@@ -78,6 +78,8 @@ var clicked = false;
   }
 
   function update(rawData){
+    hideTip();
+    
 
     var maxAmount = d3.max(rawData, function (d) { return +d.Cost; });
     radiusScale.domain([0, maxAmount]);
