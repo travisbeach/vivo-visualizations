@@ -1,8 +1,9 @@
 
 
 function getHtmlString(d) {
-    var text = '<b>' + d.text + '</b>,' + '<font class="text-muted"> person count: N</font>, ' + '<font class="text-warning">article count: ' + d.articleCount + '</font>';
-    console.log(text);
+    console.log(d)
+    var text = '<b>' + d.text + '</b>,' + '<font class="text-muted"> person count:'+d.countByPerson+'</font>, ' + '<font class="text-warning">article count: ' + d.countOfArticle + '</font>';
+   
     return text;
 }
 
@@ -11,9 +12,11 @@ function hideTooltip(){
 }
 
 function showDetails(d){
+    hideDetails(d);
     d3.select(this).style("cursor", "pointer");
-    var spot = d3.select("#viz").append("text").attr("x", 10).attr("y", 10).attr("class", "details").attr("text-anchor", "start").html(getHtmlString(d));
+    var spot = d3.select("#hover").append("text").attr("x", 10).attr("y", 10).attr("class", "details").attr("text-anchor", "start").html(getHtmlString(d));
 }
+
 function hideDetails(d){
-    d3.select("#canvas").selectAll(".details").remove();
+    d3.select("#hover").selectAll(".details").remove();
 }

@@ -12,15 +12,8 @@ page formatting
 	margin: auto; 
 }
 
-.radio-label{
-	display: inline-block;
-}
-
-li{
-	list-style: none;
-}
-ul{
-	padding-left: 0px;
+#hover{
+	min-height: 20px;
 }
 /*
 Tooltip
@@ -67,5 +60,11 @@ Tooltip
 /*Viz formatting*/
 .word:hover{
 	opacity: .5;
+}
+
+.titleTip{
+	color: white;
+	font-weight: bold;
+	font-size: 14pt;
 }
 

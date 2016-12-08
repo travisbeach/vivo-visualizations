@@ -41,7 +41,7 @@ function wordCloud(selector) {
     function draw(input) {
 
         var tip = d3.tip().attr('class', 'sitewc d3-tip choices triangle-isosceles').html(function(d) {
-            var repr = "<p><span id='close' onclick ='hideTooltip()'><img src= 'whiteX.png' ID='closeIcon' alt='close'></span></p>"
+            var repr = "<p><span class='titleTip'>"+d.text+"</span><span id='close' onclick ='hideTooltip()'><img src= 'whiteX.png' ID='closeIcon' alt='close'></span></p>"
             for (var i = 0; i < d.persons.length; i++) {
                 repr += "<div class='hoverable'><a href='" + d.persons[i].personURI + "'>" + (i + 1) + ". " + d.persons[i].personName + " (" + d.persons[i].articleCount + ")</a></div>";
             }
@@ -75,8 +75,7 @@ function wordCloud(selector) {
             cloud
             .call(tip)
             .on('click', tip.show)
-            .on('mouseover', showDetails)
-            .on('mouseout', hideDetails);
+            .on('mouseover', showDetails);
         }
 
         //Exiting words
