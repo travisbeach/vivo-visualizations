@@ -11,6 +11,7 @@ function hideTooltip(){
 }
 
 function showDetails(d){
+    d3.select(this).style("cursor", "pointer");
     var spot = d3.select("#viz").append("text").attr("x", 10).attr("y", 10).attr("class", "details").attr("text-anchor", "start").html(getHtmlString(d));
 }
 function hideDetails(d){
