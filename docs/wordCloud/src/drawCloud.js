@@ -18,14 +18,14 @@ function transformUniversityWordCloud(rawData) {
         }
     }
 }
-
+//function to randomly apply type to each incoming word. 
 function randomType(){
     return Math.random() > .5 ? "mesh" : "keyword"; 
 }
 }
 
 function wordCloud(selector) {
-
+    //Categorical color scale--basically random
     var fill = d3.scale.category20c();
 
     //Construct the word cloud's SVG element
@@ -74,7 +74,9 @@ function wordCloud(selector) {
         if(input[0] != null){
             cloud
             .call(tip)
-            .on('click', tip.show);
+            .on('click', tip.show)
+            .on('mouseover', showDetails)
+            .on('mouseout', hideDetails);
         }
 
         //Exiting words
@@ -96,8 +98,9 @@ function wordCloud(selector) {
         //The outside world will need to call this function, so make it part
         // of the wordCloud return value.
         update: function(input) {
-
+            //recalculate font scale based on updated data. 
             var fontScale = makeScale(input);
+            //hide tooltip on change of vis to prevent 'hanging' tooltip
             hideTooltip();
 
             d3.layout.cloud().size([800, 400])
@@ -147,6 +150,7 @@ showNewWords(myWordCloud, currentWords);
 
 var checks;
 
+/*Returns the status of the checkboxes as an array*/
 function getChecks(){
  var keyword = d3.select("#keyword").property("checked"); 
  var mesh = d3.select("#mesh").property("checked"); 
@@ -155,6 +159,9 @@ function getChecks(){
  return [keyword, mesh, mined]; 
 }
 
+/*Returns a function that is a linear scale between 5 and 50 pixels based on array. 
+Called before the draw procedure to ensure that less frequent words become more visible 
+when high frequency words have been filtered.*/
 function makeScale(array){
     var domain = d3.extent(array, d=>d.countOfArticle); 
     return d3.scale.linear().domain(domain).range([5, 50]);
