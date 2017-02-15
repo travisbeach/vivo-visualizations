@@ -1,10 +1,9 @@
 
 
-function drawCountryMap(){
+function drawCountryMap(articles){
 
     var urls = {
         us: "us.json", 
-        data: "external-2016-11-4.json", 
         keys: "statesHash.csv"
     }
 
@@ -18,17 +17,17 @@ function drawCountryMap(){
         percent: d3.format('%')
     };
 
-// projection and path setup
-var projection = d3.geo.albersUsa()
-.scale(width)
-.translate([width / 2, height / 2]);
+    // projection and path setup
+    var projection = d3.geo.albersUsa()
+    .scale(width)
+    .translate([width / 2, height / 2]);
 
-var path = d3.geo.path()
-.projection(projection);
+    var path = d3.geo.path()
+    .projection(projection);
 
     // scales and axes
     var colors = d3.scale.quantize()
-    .range(['#f6eff7','#d0d1e6','#a6bddb','#67a9cf','#3690c0','#02818a','#016450']);
+    .range(['#e0f3db','#ccebc5','#a8ddb5','#7bccc4','#4eb3d3','#2b8cbe','#0868ac','#084081']);
 
     // make a map
     var map = d3.select('#mapViz').append('svg')
@@ -36,10 +35,11 @@ var path = d3.geo.path()
     .style('height', height + 'px')
     .style('width', width + 'px');
 
+    
+
     // queue and render
     d3.queue()
     .defer(d3.json, urls.us)
-    .defer(d3.json, urls.data)
     .defer(d3.csv, urls.keys)
     .await(render);
 
@@ -47,23 +47,24 @@ var path = d3.geo.path()
     d3.select(window).on('resize', resize);
 
 
-    function render(err, us, data, abbr) {
+    function render(err, us, abbr) {
         statesDict={}
+
         abbr.forEach(function(entry){
             statesDict[entry.full] = entry.short
         });
 
 
 
-        var stateCounts = getCounts(data)[1];
+        var stateCounts = getCounts(articles)[1];
 
         var land = topojson.mesh(us, us.objects.land)
         , states = topojson.feature(us, us.objects.states);
 
-       
+
         colors.domain(d3.extent(d3.values(stateCounts).map(d=>Math.log(d))));
 
-            
+
 
         map.append('path')
         .datum(land)
@@ -117,6 +118,7 @@ var path = d3.geo.path()
         map.select('.land').attr('d', path);
         map.selectAll('.state').attr('d', path);
     }
+    addLegend("#legendDiv", colors)
 
 }///drawCountyMap
 
@@ -131,19 +133,19 @@ function createEventListeners(){
 
         currentValue = d3.select('input[name="map"]:checked').node().value
         if(currentValue === "usa"){
-            drawCountryMap();
+            drawCountryMap(window.data);
         }
         if(currentValue === "world"){
-            drawWorldMap();
+            drawWorldMap(window.data);
 
         }
     });
 }
 
-function drawWorldMap(){
+function drawWorldMap(data){
 
     var urls = {
-        world: "world-110m2.json"
+        world: "countries.topo.json"
     }
 
     var margin = {top: 10, left: 10, bottom: 10, right: 10}
@@ -158,7 +160,7 @@ function drawWorldMap(){
 
 // projection and path setup
 var projection = d3.geo.mercator()
-.scale(width)
+.scale(width/9)
 .translate([width / 2, height / 2]);
 
 var path = d3.geo.path()
@@ -187,13 +189,25 @@ var path = d3.geo.path()
 
         window.world = world;
 
+        countryCounts = getCounts(data)[0];
+
+        colors.domain(d3.extent(d3.values(countryCounts).map(d=>Math.log(d))));
+
 
         map.selectAll("path")
         .data(topojson.feature(world, world.objects.countries).features)
         .enter()
         .append("path")
         .attr("d", path)
-
+        .style("fill", function(d){
+            var name = d.properties.name.toUpperCase();
+            if(countryCounts.hasOwnProperty(name)){
+                return colors(Math.log(countryCounts[name]));
+            }
+            else{
+                return "#d3d3d3"; 
+            }
+        }); 
 
     }
 
@@ -253,3 +267,21 @@ var path = d3.geo.path()
             return [collabCounter, statesCounter];
         }
 
+
+        function addLegend(target, scale){
+            d3.selectAll("#legend").remove(); 
+
+            var legendSvg = d3.select("#legendDiv").append("svg").attr("width", 200).attr("height", 200).attr("id", "legend"); 
+
+            scale.range().forEach(function(d, i){
+                legendSvg.append("rect").attr("height", 20).attr("width", 20).attr("x", 10).attr("y", 10+ i*25).style("fill", d);
+                legendSvg.append("text").attr("x", 40).attr("y", 10+10+i*25).text(d).style("alignment-baseline", "middle").style("font-size", 20);
+            })  
+        }
+
+        function draw(){
+            d3.json("external-2016-11-4.json", function(data){
+                window.data = data;
+                drawCountryMap(data);
+            }); 
+        }

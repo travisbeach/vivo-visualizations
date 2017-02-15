@@ -6,10 +6,13 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.js"></script>
+	<script src="d3-legend.js"></script>
 	<script src="d3-queue.v3.min.js"></script>
 	<script src="topojson.v1.min.js"></script>
 	<script src="university-world-map.js"></script>
+	<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>  
 	<link rel="stylesheet" href="styles.css">
+
 
 	
 </head>
@@ -66,6 +69,10 @@
 						</div>
 					</div>
 				</div>
+
+				<div id="legendDiv">
+
+				</div>
 			</div>
 			<div class="col-md-8 container">
 				<div id="mapViz">
@@ -79,7 +86,7 @@
 		<script>
 			$(document).ready(function(){
 				createEventListeners();
-				drawCountryMap();
+				draw(); 
 			})
 		</script>
 	</body>
