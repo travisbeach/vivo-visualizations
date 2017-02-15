@@ -1,12 +1,11 @@
 
 
-
 function drawCountryMap(){
 
     var urls = {
         us: "us.json", 
         data: "subset.json", 
-        keys: "statesHash.json"
+        keys: "statesHash.csv"
     }
 
     var margin = {top: 10, left: 10, bottom: 10, right: 10}
@@ -41,7 +40,7 @@ var path = d3.geo.path()
     d3.queue()
     .defer(d3.json, urls.us)
     .defer(d3.json, urls.data)
-    .defer(d3.json, urls.keys)
+    .defer(d3.csv, urls.keys)
     .await(render);
 
     // catch the resize
@@ -49,15 +48,24 @@ var path = d3.geo.path()
 
 
     function render(err, us, data, abbr) {
-        console.log(data);
+        statesDict={}
+        abbr.forEach(function(entry){
+            statesDict[entry.full] = entry.short
+        });
+
+
+
         var stateCounts = getCounts(data)[1];
 
         var land = topojson.mesh(us, us.objects.land)
         , states = topojson.feature(us, us.objects.states);
 
-        window.us = us;
+       
+        colors.domain(d3.values(stateCounts).sort(function(a,b){
+            return a-b;
+        }));
 
-        colors.domain(d3.values(stateCounts))
+        console.log(colors[3]);
 
         map.append('path')
         .datum(land)
@@ -73,10 +81,16 @@ var path = d3.geo.path()
         })
         .attr('d', path)
         .style('fill', function(d) {
-            console.log(stateCounts);
-            console.log(d.properties.name.toUpperCase());
-            if (stateCounts.hasOwnProperty(d.properties.name.toUpperCase())){
-                return colors(stateCounts[d.properties.name.toUpperCase()]);
+
+            var stateName = d.properties.name.toUpperCase(); 
+            var short = statesDict[stateName]; 
+
+            console.log(typeof(short));
+            
+
+            if (stateCounts.hasOwnProperty(short)){
+                var stateCount = stateCounts[short]
+                return colors(stateCount);
             }
             else{
                 return "#FFF";
@@ -107,6 +121,8 @@ var path = d3.geo.path()
         map.selectAll('.state').attr('d', path);
     }
 
+    console.log(colors.domain());
+    console.log(colors.range());
 }///drawCountyMap
 
 
@@ -223,7 +239,7 @@ var path = d3.geo.path()
                 paper.authors.forEach(function(author){
                     if(collabCounter.hasOwnProperty(author.country)){
                         collabCounter[author.country] ++; 
-    
+
                     }
                     else{
                         collabCounter[author.country] = 1;
