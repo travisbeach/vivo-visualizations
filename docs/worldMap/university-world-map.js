@@ -4,7 +4,7 @@ function drawCountryMap(){
 
     var urls = {
         us: "us.json", 
-        data: "subset.json", 
+        data: "external-2016-11-4.json", 
         keys: "statesHash.csv"
     }
 
@@ -28,7 +28,7 @@ var path = d3.geo.path()
 
     // scales and axes
     var colors = d3.scale.quantize()
-    .range(['#e0f3db','#ccebc5']);
+    .range(['#f6eff7','#d0d1e6','#a6bddb','#67a9cf','#3690c0','#02818a','#016450']);
 
     // make a map
     var map = d3.select('#mapViz').append('svg')
@@ -61,11 +61,9 @@ var path = d3.geo.path()
         , states = topojson.feature(us, us.objects.states);
 
        
-        colors.domain(d3.values(stateCounts).sort(function(a,b){
-            return a-b;
-        }));
+        colors.domain(d3.extent(d3.values(stateCounts).map(d=>Math.log(d))));
 
-        console.log(colors[3]);
+            
 
         map.append('path')
         .datum(land)
@@ -85,12 +83,11 @@ var path = d3.geo.path()
             var stateName = d.properties.name.toUpperCase(); 
             var short = statesDict[stateName]; 
 
-            console.log(typeof(short));
             
 
             if (stateCounts.hasOwnProperty(short)){
                 var stateCount = stateCounts[short]
-                return colors(stateCount);
+                return colors(Math.log(stateCount));
             }
             else{
                 return "#FFF";
@@ -121,8 +118,6 @@ var path = d3.geo.path()
         map.selectAll('.state').attr('d', path);
     }
 
-    console.log(colors.domain());
-    console.log(colors.range());
 }///drawCountyMap
 
 
