@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.js"></script>
+	<script src="d3-queue.v3.min.js"></script>
+	<script src="topojson.v1.min.js"></script>
+	<script src="university-world-map.js"></script>
+
+	
+</head>
+<body>
+
+<div id="worldMapContainer" class="col-md-12 scholars-container">
+	<div class="row" id="mapRow">
+		<div class="col-md-4">
+			<div class="panel-group" id="accordion">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+								<span class="start">Filter by:</span> Academic Unit
+							</a>
+						</h4>
+					</div>
+					<div id="collapseOne" class="panel-collapse collapse">
+						<div class="panel-body" id="person">
+							<input type="text" class="form-control" id="testInput" placeholder="Search">
+						</div>
+					</div>
+				</div>
+
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+								<span class="start">Filter by:</span> Subject Area
+							</a>
+						</h4>
+					</div>
+					<div id="collapseTwo" class="panel-collapse collapse">
+						<div class="panel-body" id="department">
+							<input type="text" class="form-control" id="deptInput" placeholder="Search">
+						</div>
+					</div>
+				</div>
+
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+								<span class="start">Filter by:</span> Active Year
+							</a>
+						</h4>
+					</div>
+					<div id="collapseThree" class="panel-collapse collapse">
+
+						<div class="panel-body" id="date">
+							<div id="range"></div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-8" class="container">
+			<div id="mapViz" class="container">
+				<form>
+				<label class="radio-inline"><input type="radio" name="map" value="usa" checked>USA Map</label>
+				<label class="radio-inline"><input type="radio" name="map" value="world">World Map</label>
+				</form>
+				
+			</div>
+		</div>
+	</div>
+	<script>
+	$(document).ready(function(){
+		createEventListeners();
+		drawCountryMap();
+	})
+	</script>
+</body>
+</html>

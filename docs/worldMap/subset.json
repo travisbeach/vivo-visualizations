@@ -1,0 +1,312 @@
+[
+  {
+    "id": "WOS:000272308200007",
+    "idType": "WOS",
+    "scholarURI": "http://scholars.cornell.edu/individual/UR-255049",
+    "articleTitle": "The physics of gas chimney and pockmark formation, with implications for assessment of seafloor hazards and gas sequestration",
+    "articleDoi": "10.1016/j.marpetgeo.2009.09.010",
+    "yearOfPublication": "2010",
+    "authors": [
+      {
+        "authorName": "Cathles, L. M.",
+        "authorAffiliation": {
+          "localName": "Cornell University",
+          "gridURI": "https://www.grid.ac/institutes/grid.5386.8"
+        },
+        "country": "UNITED STATES",
+        "state": "NY",
+        "cornellAffiliation": null
+      },
+      {
+        "authorName": "Chen, Duofu",
+        "authorAffiliation": {
+          "localName": "Chinese Acad Sci",
+          "gridURI": null
+        },
+        "country": "CHINA",
+        "state": null,
+        "cornellAffiliation": null
+      },
+      {
+        "authorName": "Su, Zheng",
+        "authorAffiliation": {
+          "localName": "Chinese Acad Sci",
+          "gridURI": null
+        },
+        "country": "CHINA",
+        "state": null,
+        "cornellAffiliation": null
+      }
+    ]
+  },
+  {
+    "id": "WOS:000259180000013",
+    "idType": "WOS",
+    "scholarURI": "http://scholars.cornell.edu/individual/UR-322700",
+    "articleTitle": "Influence of the cure systems on long time thermal aging behaviors of NR composites",
+    "articleDoi": "null",
+    "yearOfPublication": "2008",
+    "authors": [
+      {
+        "authorName": "Kim, Jong-Chul",
+        "authorAffiliation": {
+          "localName": "Sejong University",
+          "gridURI": "https://www.grid.ac/institutes/grid.263333.4"
+        },
+        "country": "SOUTH KOREA",
+        "state": null,
+        "cornellAffiliation": null
+      },
+      {
+        "authorName": "Lee, Seung Goo",
+        "authorAffiliation": {
+          "localName": "Chungnam National University",
+          "gridURI": "https://www.grid.ac/institutes/grid.254230.2"
+        },
+        "country": "SOUTH KOREA",
+        "state": null,
+        "cornellAffiliation": null
+      },
+      {
+        "authorName": "Joo, Yong L.",
+        "authorAffiliation": {
+          "localName": "Cornell University",
+          "gridURI": "https://www.grid.ac/institutes/grid.5386.8"
+        },
+        "country": "UNITED STATES",
+        "state": "NY",
+        "cornellAffiliation": "COLLEGE OF ENGINEERING"
+      },
+      {
+        "authorName": "Choi, Sung-Seen",
+        "authorAffiliation": {
+          "localName": "Sejong University",
+          "gridURI": "https://www.grid.ac/institutes/grid.263333.4"
+        },
+        "country": "SOUTH KOREA",
+        "state": null,
+        "cornellAffiliation": null
+      }
+    ]
+  },
+  {
+    "id": "WOS:000305568800004",
+    "idType": "WOS",
+    "scholarURI": "http://scholars.cornell.edu/individual/UR-17619",
+    "articleTitle": "A watershed rainfall data recovery approach with application to distributed hydrological models",
+    "articleDoi": "10.1002/hyp.8242",
+    "yearOfPublication": "2012",
+    "authors": [
+      {
+        "authorName": "Zhang, Chi",
+        "authorAffiliation": {
+          "localName": "Dalian University of Technology",
+          "gridURI": "https://www.grid.ac/institutes/grid.30055.33"
+        },
+        "country": "CHINA",
+        "state": null,
+        "cornellAffiliation": null
+      },
+      {
+        "authorName": "Zhou, Huicheng",
+        "authorAffiliation": {
+          "localName": "Dalian University of Technology",
+          "gridURI": "https://www.grid.ac/institutes/grid.30055.33"
+        },
+        "country": "CHINA",
+        "state": null,
+        "cornellAffiliation": null
+      },
+      {
+        "authorName": "Wang, Yilun",
+        "authorAffiliation": {
+          "localName": "Cornell University",
+          "gridURI": "https://www.grid.ac/institutes/grid.5386.8"
+        },
+        "country": "UNITED STATES",
+        "state": "NY",
+        "cornellAffiliation": "COLLEGE OF ENGINEERING"
+      },
+      {
+        "authorName": "Chu, Jinggang",
+        "authorAffiliation": {
+          "localName": "Dalian University of Technology",
+          "gridURI": "https://www.grid.ac/institutes/grid.30055.33"
+        },
+        "country": "CHINA",
+        "state": null,
+        "cornellAffiliation": null
+      },
+      {
+        "authorName": "Zhang, Chi",
+        "authorAffiliation": {
+          "localName": "Cornell University",
+          "gridURI": "https://www.grid.ac/institutes/grid.5386.8"
+        },
+        "country": "UNITED STATES",
+        "state": "NY",
+        "cornellAffiliation": "COLLEGE OF ENGINEERING"
+      },
+      {
+        "authorName": "Shoemaker, Christine A.",
+        "authorAffiliation": {
+          "localName": "Cornell University",
+          "gridURI": "https://www.grid.ac/institutes/grid.5386.8"
+        },
+        "country": "UNITED STATES",
+        "state": "NY",
+        "cornellAffiliation": "COLLEGE OF ENGINEERING"
+      }
+    ]
+  },
+  {
+    "id": "WOS:000334092800002",
+    "idType": "WOS",
+    "scholarURI": "http://scholars.cornell.edu/individual/UR-361495",
+    "articleTitle": "A chemical mechanism for low to high temperature oxidation of n-dodecane as a component of transportation fuel surrogates",
+    "articleDoi": "10.1016/j.combustflame.2013.10.012",
+    "yearOfPublication": "2014",
+    "authors": [
+      {
+        "authorName": "Pitsch, Heinz",
+        "authorAffiliation": {
+          "localName": "Stanford University",
+          "gridURI": "https://www.grid.ac/institutes/grid.168010.e"
+        },
+        "country": "UNITED STATES",
+        "state": "CA",
+        "cornellAffiliation": null
+      },
+      {
+        "authorName": "Pepiot, Perrine",
+        "authorAffiliation": {
+          "localName": "Cornell University",
+          "gridURI": "https://www.grid.ac/institutes/grid.5386.8"
+        },
+        "country": "UNITED STATES",
+        "state": "NY",
+        "cornellAffiliation": "COLLEGE OF ENGINEERING"
+      },
+      {
+        "authorName": "Narayanaswamy, Krithika",
+        "authorAffiliation": {
+          "localName": "Stanford University",
+          "gridURI": "https://www.grid.ac/institutes/grid.168010.e"
+        },
+        "country": "UNITED STATES",
+        "state": "CA",
+        "cornellAffiliation": null
+      }
+    ]
+  },
+  {
+    "id": "WOS:000188607100001",
+    "idType": "WOS",
+    "scholarURI": "http://scholars.cornell.edu/individual/UR-370583",
+    "articleTitle": "Temperature and deformation measurements in transient metal cutting",
+    "articleDoi": "10.1177/0014485104039623",
+    "yearOfPublication": "2004",
+    "authors": [
+      {
+        "authorName": "Potdar, YK",
+        "authorAffiliation": {
+          "localName": "Exponent Failure Anal Associates",
+          "gridURI": null
+        },
+        "country": "UNITED STATES",
+        "state": "CA",
+        "cornellAffiliation": null
+      },
+      {
+        "authorName": "Zehnder, AT",
+        "authorAffiliation": {
+          "localName": "Cornell University",
+          "gridURI": "https://www.grid.ac/institutes/grid.5386.8"
+        },
+        "country": "UNITED STATES",
+        "state": "NY",
+        "cornellAffiliation": "COLLEGE OF ENGINEERING"
+      }
+    ]
+  },
+  {
+    "id": "WOS:000281613800010",
+    "idType": "WOS",
+    "scholarURI": "http://scholars.cornell.edu/individual/UR-122773",
+    "articleTitle": "Fullerol ionic fluids",
+    "articleDoi": "10.1039/c0nr00307g",
+    "yearOfPublication": "2010",
+    "authors": [
+      {
+        "authorName": "Fernandes, Nikhil",
+        "authorAffiliation": {
+          "localName": "Cornell University",
+          "gridURI": "https://www.grid.ac/institutes/grid.5386.8"
+        },
+        "country": "UNITED STATES",
+        "state": "NY",
+        "cornellAffiliation": "COLLEGE OF ENGINEERING"
+      },
+      {
+        "authorName": "Georgakilas, Vasilios",
+        "authorAffiliation": {
+          "localName": "NCSR Demokritos",
+          "gridURI": null
+        },
+        "country": "GREECE",
+        "state": null,
+        "cornellAffiliation": null
+      },
+      {
+        "authorName": "Bourlinos, Athanasios B.",
+        "authorAffiliation": {
+          "localName": "NCSR Demokritos",
+          "gridURI": null
+        },
+        "country": "GREECE",
+        "state": null,
+        "cornellAffiliation": null
+      },
+      {
+        "authorName": "Dallas, Panagiotis",
+        "authorAffiliation": {
+          "localName": "Cornell University",
+          "gridURI": "https://www.grid.ac/institutes/grid.5386.8"
+        },
+        "country": "UNITED STATES",
+        "state": "NY",
+        "cornellAffiliation": "COLLEGE OF ENGINEERING"
+      },
+      {
+        "authorName": "Dallas, Panagiotis",
+        "authorAffiliation": {
+          "localName": "NCSR Demokritos",
+          "gridURI": null
+        },
+        "country": "GREECE",
+        "state": null,
+        "cornellAffiliation": null
+      },
+      {
+        "authorName": "Rodriguez, Robert",
+        "authorAffiliation": {
+          "localName": "Cornell University",
+          "gridURI": "https://www.grid.ac/institutes/grid.5386.8"
+        },
+        "country": "UNITED STATES",
+        "state": "NY",
+        "cornellAffiliation": "COLLEGE OF ENGINEERING"
+      },
+      {
+        "authorName": "Giannelis, Emmanuel P.",
+        "authorAffiliation": {
+          "localName": "Cornell University",
+          "gridURI": "https://www.grid.ac/institutes/grid.5386.8"
+        },
+        "country": "UNITED STATES",
+        "state": "NY",
+        "cornellAffiliation": "COLLEGE OF ENGINEERING"
+      }
+    ]
+  }
+]
