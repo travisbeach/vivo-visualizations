@@ -35,15 +35,8 @@ function drawCountryMap(articles){
     .style('height', height + 'px')
     .style('width', width + 'px');
 
-    var tip = d3.tip()
-    .attr('class', 'd3-tip')
-    .offset([-10, 0])
-    .html(function(d) {
-        console.log("test");
-        return "<strong>Frequency:</strong> <span style='color:red'>" + d.frequency + "</span>";
-    })
-
-    map.call(tip);
+    var tooltip = d3.select("#mapViz").append("div")
+    .attr("class", "tooltip");
 
 
     // queue and render
@@ -67,26 +60,14 @@ function drawCountryMap(articles){
 
         var stateCounts = getCounts(articles)[1];
 
-        var land = topojson.mesh(us, us.objects.land)
-        , states = topojson.feature(us, us.objects.states);
-
+        var states = topojson.feature(us, us.objects.states);
 
         colors.domain(d3.extent(d3.values(stateCounts).map(d=>Math.log(d))));
 
-
-
-        map.append('path')
-        .datum(land)
-        .attr('class', 'land')
-        .attr('d', path);
-
-        var states = map.selectAll('path.state')
+        var statePaths = map.selectAll('path.state')
         .data(states.features)
         .enter().append('path')
         .attr('class', 'state')
-        .attr('id', function(d) { 
-            return d.properties.name.toLowerCase().replace(/\s/g, '-'); 
-        })
         .attr('d', path)
         .style('fill', function(d) {
 
@@ -100,8 +81,12 @@ function drawCountryMap(articles){
             else{
                 return "#FFF";
             }
-        });
+        })
+        .on("click", function(){
+            console.log(this)
+        }); 
 
+   
 
     }
 
