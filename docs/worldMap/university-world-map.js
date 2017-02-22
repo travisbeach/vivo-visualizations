@@ -35,7 +35,16 @@ function drawCountryMap(articles){
     .style('height', height + 'px')
     .style('width', width + 'px');
 
-    
+    var tip = d3.tip()
+    .attr('class', 'd3-tip')
+    .offset([-10, 0])
+    .html(function(d) {
+        console.log("test");
+        return "<strong>Frequency:</strong> <span style='color:red'>" + d.frequency + "</span>";
+    })
+
+    map.call(tip);
+
 
     // queue and render
     d3.queue()
@@ -84,8 +93,6 @@ function drawCountryMap(articles){
             var stateName = d.properties.name.toUpperCase(); 
             var short = statesDict[stateName]; 
 
-            
-
             if (stateCounts.hasOwnProperty(short)){
                 var stateCount = stateCounts[short]
                 return colors(Math.log(stateCount));
@@ -118,6 +125,9 @@ function drawCountryMap(articles){
         map.select('.land').attr('d', path);
         map.selectAll('.state').attr('d', path);
     }
+
+
+
     addLegend("#legendDiv", colors)
 
 }///drawCountyMap
