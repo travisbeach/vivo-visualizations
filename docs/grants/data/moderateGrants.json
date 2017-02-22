@@ -1,0 +1,3949 @@
+[
+  {
+    "group": "high",
+    "people": [
+      {
+        "uri": "/scholars/display/lc89",
+        "name": "Cheng, Lailiang",
+        "netid": "lc89",
+        "role": "CO"
+      },
+      {
+        "uri": "/scholars/display/rdc6",
+        "name": "Christy, Ralph Dean",
+        "netid": "rdc6",
+        "role": "PI"
+      },
+      {
+        "uri": "/scholars/display/hcw2",
+        "name": "Wien, Hans Christian",
+        "netid": "hcw2",
+        "role": "CO"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt69334",
+      "title": "TRAINING SMALLHOLDER APPLE FARMERS IN CHINA FOR SUSTAINABLE PRODUCTION AND DOMESTIC MARKET ACCESS",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Cornell International Institute for Food, Agriculture and Development (CIIFAD)",
+      "uri": "/scholars/display/org92423"
+    },
+    "funagen": {
+      "name": "WALMART FOUNDATON",
+      "uri": "/scholars/display/org49630"
+    },
+    "Cost": 3700000,
+    "End": "2016",
+    "Start": "2013",
+    "id": "69334"
+  },
+  {
+    "group": "high",
+    "people": [
+      {
+        "uri": "/scholars/display/jdh9",
+        "name": "Helmann, John D.",
+        "netid": "jdh9",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt70092",
+      "title": "ZINC HOMEOSTASIS IN BACILLUS SUBTILIS",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Microbiology",
+      "uri": "/scholars/display/org58067"
+    },
+    "funagen": {
+      "name": "NATL INST OF HEALTH DHHS",
+      "uri": "/scholars/display/org73741"
+    },
+    "Cost": 1260019,
+    "End": "2018",
+    "Start": "2014",
+    "id": "70092"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/rms43",
+        "name": "Scanza, Rocco M.",
+        "netid": "rms43",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt66472",
+      "title": "NEUTRAL SERVICES SUPPORTING THE NUCLEAR REGULATORY COMMISSION OFFICE OF ENFORCEMENT'S ALTERNATIVE DISPUTE RESOLUTION PROGRAM",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "",
+      "name": "not found",
+      "uri": "."
+    },
+    "funagen": {
+      "name": "NUCLEAR REGULATORY COMM",
+      "uri": "/scholars/display/org34065"
+    },
+    "Cost": 998337,
+    "End": "2017",
+    "Start": "2012",
+    "id": "66472"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/aes6",
+        "name": "Staehr, A. Edward",
+        "netid": "aes6",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt77861",
+      "title": "SFY 2015-2016 NEW YORK FARMNET",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Animal Science",
+      "uri": "/scholars/display/org75400"
+    },
+    "funagen": {
+      "name": "NYS OFFICE OF MENTAL HEALTH",
+      "uri": "/scholars/display/org17014"
+    },
+    "Cost": 300000,
+    "End": "2016",
+    "Start": "2015",
+    "id": "77861"
+  },
+  {
+    "group": "low",
+    "people": [
+      {
+        "uri": "/scholars/display/mae10",
+        "name": "Evangelista, Matthew Anthony",
+        "netid": "mae10",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt77534",
+      "title": "DOCTORAL DISSERTATION RESEARCH: THE HUMANITARIAN DISCOURSE OF FORCE: THE CAUSES AND CONSEQUENCES OF U.S. PRESIDENTS' HUMANITARIAN JUSTIFICATIONS FOR INTERVENTION",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Government",
+      "uri": "/scholars/display/org51392"
+    },
+    "funagen": {
+      "name": "NATL SCIENCE FOUNDATION",
+      "uri": "/scholars/display/org90193"
+    },
+    "Cost": 24150,
+    "End": "2017",
+    "Start": "2016",
+    "id": "77534"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/lbs33",
+        "name": "Smart, Lawrence B.",
+        "netid": "lbs33",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt76580",
+      "title": "DIMENSIONS US-CHINA: COLLABORATIVE RESEARCH: ALLOZOMES AND DIOECY IN PLANTS AS DRIVERS OF MULTI-LEVEL BIODIVERSITY",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "School of Integrative Plant Science",
+      "uri": "/scholars/display/org30434"
+    },
+    "funagen": {
+      "name": "DIRECTORATE FOR BIOLOGICAL SCIENCES NSF",
+      "uri": "/scholars/display/org16446"
+    },
+    "Cost": 398065,
+    "End": "2020",
+    "Start": "2016",
+    "id": "76580"
+  },
+  {
+    "group": "low",
+    "people": [
+      {
+        "uri": "/scholars/display/sr43",
+        "name": "Reiners, Stephen",
+        "netid": "sr43",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt79811",
+      "title": "SERVICE ORDER #15",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "School of Integrative Plant Science",
+      "uri": "/scholars/display/org30434"
+    },
+    "funagen": {
+      "name": "MONSANTO",
+      "uri": "/scholars/display/org82656"
+    },
+    "Cost": 4578,
+    "End": "2017",
+    "Start": "2016",
+    "id": "79811"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/jd694",
+        "name": "Dai, Jiangang",
+        "netid": "jd694",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt69899",
+      "title": "HIGH FIDELITY MODELING AND TWO-TIME-SCALE ANALYSIS FOR HOSPITAL INPATIENT FLOW MANAGEMENT",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Operations Research and Information Engineering",
+      "uri": "/scholars/display/org62682"
+    },
+    "funagen": {
+      "name": "NATL SCIENCE FOUNDATION",
+      "uri": "/scholars/display/org90193"
+    },
+    "Cost": 365000,
+    "End": "2016",
+    "Start": "2013",
+    "id": "69899"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/od57",
+        "name": "Desjardins, Olivier",
+        "netid": "od57",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt72696",
+      "title": "COLLABORATIVE RESEARCH: A FUNDAMENTAL AND MODELING STUDY OF CLUSTER-INDUCED TURBULENCE IN PARTICLE-LADEN FLOWS",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Mechanical and Aerospace Engineering",
+      "uri": "/scholars/display/org66771"
+    },
+    "funagen": {
+      "name": "NATL SCIENCE FOUNDATION",
+      "uri": "/scholars/display/org90193"
+    },
+    "Cost": 260000,
+    "End": "2017",
+    "Start": "2014",
+    "id": "72696"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/js2434",
+        "name": "Stoye, Joerg",
+        "netid": "js2434",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt68552",
+      "title": "REVEALED PREFERENCE AND ECONOMETRICS",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Economics",
+      "uri": "/scholars/display/org51375"
+    },
+    "funagen": {
+      "name": "DIRECTORATE FOR SOCIAL BEHAVIORAL & ECONOMIC SCIENCES NSF",
+      "uri": "/scholars/display/org24989"
+    },
+    "Cost": 278038,
+    "End": "2016",
+    "Start": "2013",
+    "id": "68552"
+  },
+  {
+    "group": "low",
+    "people": [
+      {
+        "uri": "/scholars/display/tds5",
+        "name": "Seeley, Thomas Dyer",
+        "netid": "tds5",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt78057",
+      "title": "DISSERTATION RESEARCH: HOW WORKER HONEY BEES DETECT THEIR COLONY'S SIZE: TESTING THE COMB VIBRATION AND CHEMICAL COMPOSITION HYPOTHESES",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Neurobiology and Behavior",
+      "uri": "/scholars/display/org16088"
+    },
+    "funagen": {
+      "name": "DIRECTORATE FOR BIOLOGICAL SCIENCES NSF",
+      "uri": "/scholars/display/org16446"
+    },
+    "Cost": 20922,
+    "End": "2018",
+    "Start": "2016",
+    "id": "78057"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/jh299",
+        "name": "Hua, Jian",
+        "netid": "jh299",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt72432",
+      "title": "MOLECULAR MECHANISMS UNDERLYING TEMPERATURE MODULATION OF PLANT IMMUNITY",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Plant Biology Section",
+      "uri": "/scholars/display/org81917"
+    },
+    "funagen": {
+      "name": "NATL SCIENCE FOUNDATION",
+      "uri": "/scholars/display/org90193"
+    },
+    "Cost": 628569,
+    "End": "2017",
+    "Start": "2014",
+    "id": "72432"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/tk499",
+        "name": "Kawate, Toshimitsu",
+        "netid": "tk499",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt74647",
+      "title": "HORMONE DELIVERY IN PLANTS: MECHANISMS AND PHYSIOLOGICAL ROLES OF GIBBERELLIC ACID TRANSPORTERS",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Molecular Medicine",
+      "uri": "/scholars/display/org51414"
+    },
+    "funagen": {
+      "name": "INTERNATIONAL HUMAN FRONTIER SCIENCE PROGRAM ORGANIZATION",
+      "uri": "/scholars/display/org99604"
+    },
+    "Cost": 116666,
+    "End": "2018",
+    "Start": "2015",
+    "id": "74647"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/jp275",
+        "name": "Park, Jiwoong",
+        "netid": "jp275",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt68600",
+      "title": "ATOMICALLY ACCURATE SYNTHESIS AND ENGINEERING OF INTERFACES IN GRAPHENE AND RELATED 2D MATERIALS",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Chemistry and Chemical Biology",
+      "uri": "/scholars/display/org89757"
+    },
+    "funagen": {
+      "name": "SEJONG UNIVERSITY",
+      "uri": "/scholars/display/org74337"
+    },
+    "Cost": 790000,
+    "End": "2017",
+    "Start": "2012",
+    "id": "68600"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/jps66",
+        "name": "Sparks, Jed P.",
+        "netid": "jps66",
+        "role": "CO"
+      },
+      {
+        "uri": "/scholars/display/lad9",
+        "name": "Derry, Louis A.",
+        "netid": "lad9",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt66714",
+      "title": "COUPLED BIOGEOCHEMICAL CYCLING OF WATER, SILICON AND CATIONS IN A TEMPERATURE FOREST-SHALE SYSTEM",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Earth and Atmospheric Sciences",
+      "uri": "/scholars/display/org32427"
+    },
+    "funagen": {
+      "name": "DIRECTORATE FOR GEOSCIENCES",
+      "uri": "/scholars/display/org41403"
+    },
+    "Cost": 201156,
+    "End": "2016",
+    "Start": "2012",
+    "id": "66714"
+  },
+  {
+    "group": "high",
+    "people": [
+      {
+        "uri": "/scholars/display/jhg285",
+        "name": "Goldberg, Jesse H.",
+        "netid": "jhg285",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt74894",
+      "title": "IDENTIFYING PATHWAYS FOR MOTOR VARIABILITY IN THE MAMMALIAN BRAIN",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Neurobiology and Behavior",
+      "uri": "/scholars/display/org16088"
+    },
+    "funagen": {
+      "name": "NATL INST OF HEALTH DHHS",
+      "uri": "/scholars/display/org73741"
+    },
+    "Cost": 2415000,
+    "End": "2020",
+    "Start": "2015",
+    "id": "74894"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/rel222",
+        "name": "Ley, Ruth E.",
+        "netid": "rel222",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt63021",
+      "title": "MICROBIAL TRANSLOCATION AND ALTERATIONS IN GUT MICROBIOMES IN HIV-1 INFECTED CHILDREN",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Molecular Biology and Genetics",
+      "uri": "/scholars/display/org24788"
+    },
+    "funagen": {
+      "name": "UNIVERSITY OF MIAMI SCHOOL OF MEDICINE",
+      "uri": "/scholars/display/org34238"
+    },
+    "Cost": 593712,
+    "End": "2016",
+    "Start": "2013",
+    "id": "63021"
+  },
+  {
+    "group": "high",
+    "people": [
+      {
+        "uri": "/scholars/display/cl273",
+        "name": "Lehmann, Christopher Johannes",
+        "netid": "cl273",
+        "role": "PI"
+      },
+      {
+        "uri": "/scholars/display/jet25",
+        "name": "Thies, Janice E.",
+        "netid": "jet25",
+        "role": "CO"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt60348",
+      "title": "BREAD: BIOCHAR INOCULANTS FOR ENABLING SMALLHOLDER AGRICULTURE",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Soil and Crop Sciences Section",
+      "uri": "/scholars/display/org76798"
+    },
+    "funagen": {
+      "name": "DIRECTORATE FOR BIOLOGICAL SCIENCES NSF",
+      "uri": "/scholars/display/org16446"
+    },
+    "Cost": 2725115,
+    "End": "2017",
+    "Start": "2010",
+    "id": "60348"
+  },
+  {
+    "group": "high",
+    "people": [
+      {
+        "uri": "/scholars/display/rm92",
+        "name": "Manohar, Rajit",
+        "netid": "rm92",
+        "role": "CO"
+      },
+      {
+        "uri": "/scholars/display/am699",
+        "name": "Molnar, Alyosha Christopher",
+        "netid": "am699",
+        "role": "CO"
+      },
+      {
+        "uri": "/scholars/display/al274",
+        "name": "Lal, Amit",
+        "netid": "al274",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt66553",
+      "title": "MULTI-FOUNDRY CMOS INTEGRATED ULTRASONIC COMMUNICATION LINKS FOR TRUSTED INTEGRATED CIRCUITS",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Electrical and Computer Engineering",
+      "uri": "/scholars/display/org49841"
+    },
+    "funagen": {
+      "name": "SPACE AND NAVAL WARFARE SYSTEMS CENTER SAN DIEGO",
+      "uri": "/scholars/display/org24608"
+    },
+    "Cost": 3161359,
+    "End": "2016",
+    "Start": "2012",
+    "id": "66553"
+  },
+  {
+    "group": "low",
+    "people": [
+      {
+        "uri": "/scholars/display/srb237",
+        "name": "Allred, Shorna Broussard",
+        "netid": "srb237",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt73378",
+      "title": "UNDERSTANDING AND INFORMING FAMILY FOREST OWNER DECISIONS OF LAND TRANSFER TO ENHANCE THE VIABILITY AND COMPETITIVENESS OF OUR FORESTED LANDSCAPES",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Natural Resources",
+      "uri": "/scholars/display/org17112"
+    },
+    "funagen": {
+      "name": "UNIVERSITY OF MASSACHUSETTS AMHERST",
+      "uri": "/scholars/display/org16593"
+    },
+    "Cost": 40646,
+    "End": "2019",
+    "Start": "2015",
+    "id": "73378"
+  },
+  {
+    "group": "unknown",
+    "people": [
+      {
+        "uri": "/scholars/display/anr37",
+        "name": "Rice, Aaron N.",
+        "netid": "anr37",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt74478",
+      "title": "BASIC ORDER AGREEMENT",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Cornell Lab of Ornithology",
+      "uri": "/scholars/display/org34615"
+    },
+    "funagen": {
+      "name": "TETRA TECH INC",
+      "uri": "/scholars/display/org33539"
+    },
+    "Cost": 0,
+    "End": "2019",
+    "Start": "2014",
+    "id": "74478"
+  },
+  {
+    "group": "high",
+    "people": [
+      {
+        "uri": "/scholars/display/qh22",
+        "name": "Hao, Quan",
+        "netid": "qh22",
+        "role": "CO"
+      },
+      {
+        "uri": "/scholars/display/ay13",
+        "name": "Yen, Andrew",
+        "netid": "ay13",
+        "role": "PI"
+      },
+      {
+        "uri": "/scholars/display/hl379",
+        "name": "Lin, Hening",
+        "netid": "hl379",
+        "role": "CO"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt60693",
+      "title": "MECHANISM OF ACTION OF RETINOIC ACID USING CD38",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Biomedical Sciences",
+      "uri": "/scholars/display/org75930"
+    },
+    "funagen": {
+      "name": "NATL CANCER INSTITUTE NIH",
+      "uri": "/scholars/display/org16690"
+    },
+    "Cost": 1597640,
+    "End": "2016",
+    "Start": "2011",
+    "id": "60693"
+  },
+  {
+    "group": "low",
+    "people": [
+      {
+        "uri": "/scholars/display/jl554",
+        "name": "Lloyd, James",
+        "netid": "jl554",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt76822",
+      "title": "FORMULATION OF PLANETARY AND EXOPLANETARY CUBESAT MISSIONS",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Cornell Center for Astrophysics & Planetary Science (CCAPS)",
+      "uri": "/scholars/display/org76324"
+    },
+    "funagen": {
+      "name": "JET PROPULSION LABORATORY",
+      "uri": "/scholars/display/org81962"
+    },
+    "Cost": 38841,
+    "End": "2016",
+    "Start": "2015",
+    "id": "76822"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/lm432",
+        "name": "McAllister, Liam",
+        "netid": "lm432",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt62717",
+      "title": "CAREER: STRING THEORY APPLIED TO PRECISION COSMOLOGY",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Cornell Laboratory for Accelerator-based Sciences and Education (CLASSE)",
+      "uri": "/scholars/display/org17208"
+    },
+    "funagen": {
+      "name": "DIRECTORATE FOR MATHEMATICAL & PHYSICAL SCIENCES NSF",
+      "uri": "/scholars/display/org81963"
+    },
+    "Cost": 400000,
+    "End": "2016",
+    "Start": "2011",
+    "id": "62717"
+  },
+  {
+    "group": "low",
+    "people": [
+      {
+        "uri": "/scholars/display/eeb36",
+        "name": "Baptist, Edward Eugene",
+        "netid": "eeb36",
+        "role": "PI"
+      },
+      {
+        "uri": "/scholars/display/wcb67",
+        "name": "Block, William C.",
+        "netid": "wcb67",
+        "role": "CO"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt74519",
+      "title": "FREEDOM ON THE MOVE: A CROWDSOURCED, COMPREHENSIVE DATABASE ON NORTH AMERICAN RUNAWAY SLAVE ADVERTISEMENTS",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Cornell Institute for Social and Economic Research (CISER)",
+      "uri": "/scholars/display/org17156"
+    },
+    "funagen": {
+      "name": "NATL ENDOWMENT HUMANITIES",
+      "uri": "/scholars/display/org41761"
+    },
+    "Cost": 59989,
+    "End": "2016",
+    "Start": "2015",
+    "id": "74519"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/rb41",
+        "name": "Batt, Rosemary",
+        "netid": "rb41",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt77475",
+      "title": "FRANCHISING AND THE FUTURE OF WORK",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Human Resource Studies",
+      "uri": "/scholars/display/org83654"
+    },
+    "funagen": {
+      "name": "RUSSELL SAGE FDN",
+      "uri": "/scholars/display/org65739"
+    },
+    "Cost": 136950,
+    "End": "2017",
+    "Start": "2016",
+    "id": "77475"
+  },
+  {
+    "group": "low",
+    "people": [
+      {
+        "uri": "/scholars/display/krh73",
+        "name": "Hume, Kelly R.",
+        "netid": "krh73",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt67373",
+      "title": "A PILOT STUDY TO DETERMINE IF PALLADIA INDUCES HYPOTHYROIDISM IN DOGS",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Clinical Sciences",
+      "uri": "/scholars/display/org80031"
+    },
+    "funagen": {
+      "name": "PFIZER ANIMAL HEALTH",
+      "uri": "/scholars/display/org74122"
+    },
+    "Cost": 12970,
+    "End": "2016",
+    "Start": "2012",
+    "id": "67373"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/hsa1",
+        "name": "Aldwinckle, Herbert Sanders",
+        "netid": "hsa1",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt47057",
+      "title": "FIELD TRIAL ACTIVITIES",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Plant Pathology and Plant-Microbe Biology Section, Geneva",
+      "uri": "/scholars/display/org62465"
+    },
+    "funagen": {
+      "name": "OKANAGAN BIOTECHNOLOGY INC.",
+      "uri": "/scholars/display/org42456"
+    },
+    "Cost": 113710,
+    "End": "2016",
+    "Start": "2005",
+    "id": "47057"
+  },
+  {
+    "group": "low",
+    "people": [
+      {
+        "uri": "/scholars/display/eb58",
+        "name": "Behling-Kelly, Erica L.",
+        "netid": "eb58",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt77623",
+      "title": "FLOW CYTOMETRIC MEASURE OF PHOSPHORYLATED HISTONES AS A NOVEL, MORE SENSITIVE, MEANS TO DETERMINE MITOTIC INDEX IN CANINE TUMOR CELLS",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Population Medicine and Diagnostic Sciences",
+      "uri": "/scholars/display/org20700"
+    },
+    "funagen": {
+      "name": "AMERICAN SOCIETY FOR VETERINARY CLINICAL PATHOLOGY",
+      "uri": "/scholars/display/org74157"
+    },
+    "Cost": 1500,
+    "End": "2016",
+    "Start": "2015",
+    "id": "77623"
+  },
+  {
+    "group": "low",
+    "people": [
+      {
+        "uri": "/scholars/display/ngh1",
+        "name": "Hairston, Nelson George",
+        "netid": "ngh1",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt74830",
+      "title": "DISSERTATION RESEARCH: LINKING COEXISTENCE AT LOCAL AND REGIONAL SCALES BY ASSESSING A DORMANCY-DISPERSAL TRADEOFF",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Ecology and Evolutionary Biology",
+      "uri": "/scholars/display/org92335"
+    },
+    "funagen": {
+      "name": "NATL SCIENCE FOUNDATION",
+      "uri": "/scholars/display/org90193"
+    },
+    "Cost": 20928,
+    "End": "2017",
+    "Start": "2015",
+    "id": "74830"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/gs272",
+        "name": "Suh, Gookwon Edward",
+        "netid": "gs272",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt75035",
+      "title": "CUSTOMIZABLE COMPUTING: AUTOMATED CROSS-LAYER OPTIMIZATIONS FOR EFFICIENCY AND SECURITY",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Electrical and Computer Engineering",
+      "uri": "/scholars/display/org49841"
+    },
+    "funagen": {
+      "name": "OFFICE OF NAVAL RESEARCH DOD",
+      "uri": "/scholars/display/org16694"
+    },
+    "Cost": 541847,
+    "End": "2018",
+    "Start": "2015",
+    "id": "75035"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/hc63",
+        "name": "Chiang, Hsiao-Dong",
+        "netid": "hc63",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt66735",
+      "title": "COLLABORATIVE RESEARCH; SMART POWER DISTRIBUTION SYSTEM CURRICULUM - MULTI-INSTITUTION DEMONSTRATION AND DEPLOYMENT",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Electrical and Computer Engineering",
+      "uri": "/scholars/display/org49841"
+    },
+    "funagen": {
+      "name": "DIRECTORATE FOR EDUCATION AND HUMAN RESOURCES NSF",
+      "uri": "/scholars/display/org16634"
+    },
+    "Cost": 120000,
+    "End": "2016",
+    "Start": "2012",
+    "id": "66735"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/jem482",
+        "name": "Mendle, Jane E.",
+        "netid": "jem482",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt77338",
+      "title": "EARLY PUBERTAL TIMING AND PSYCHOSOCIAL OUTCOMES IN ADULTHOOD",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Human Development",
+      "uri": "/scholars/display/org44742"
+    },
+    "funagen": {
+      "name": "NATL INST OF CHILD HEALTH & HUMAN DEVELOPMENT, NIH",
+      "uri": "/scholars/display/org24607"
+    },
+    "Cost": 168907,
+    "End": "2018",
+    "Start": "2016",
+    "id": "77338"
+  },
+  {
+    "group": "high",
+    "people": [
+      {
+        "uri": "/scholars/display/am699",
+        "name": "Molnar, Alyosha Christopher",
+        "netid": "am699",
+        "role": "CO"
+      },
+      {
+        "uri": "/scholars/display/al274",
+        "name": "Lal, Amit",
+        "netid": "al274",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt65247",
+      "title": "ATOMICALLY STABLE INERTIAL SENSORS (ASIS) WITH ACTIVE CALIBRATION",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Electrical and Computer Engineering",
+      "uri": "/scholars/display/org49841"
+    },
+    "funagen": {
+      "name": "US ARMY",
+      "uri": "/scholars/display/org17756"
+    },
+    "Cost": 2349045,
+    "End": "2016",
+    "Start": "2011",
+    "id": "65247"
+  },
+  {
+    "group": "low",
+    "people": [
+      {
+        "uri": "/scholars/display/nmt2",
+        "name": "Trautmann, Nancy M.",
+        "netid": "nmt2",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt72219",
+      "title": "ENGAGING YOUTH IN SCIENCE AND CONSERVATION THROUGH CARIBBEAN BIRDSLEUTH (SUBCONTRACT)",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Cornell Lab of Ornithology",
+      "uri": "/scholars/display/org34615"
+    },
+    "funagen": {
+      "name": "SOCIETY FOR THE CONSERVATION AND STUDY OF CARIBBEAN BIRDS",
+      "uri": "/scholars/display/org41636"
+    },
+    "Cost": 6468,
+    "End": "2016",
+    "Start": "2014",
+    "id": "72219"
+  },
+  {
+    "group": "low",
+    "people": [
+      {
+        "uri": "/scholars/display/aes6",
+        "name": "Staehr, A. Edward",
+        "netid": "aes6",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt79412",
+      "title": "MANAGING RISK OF FARM TRANSFER FROM NYSDAM",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Animal Science",
+      "uri": "/scholars/display/org75400"
+    },
+    "funagen": {
+      "name": "NYS DEPT OF AG & MARKETS",
+      "uri": "/scholars/display/org24800"
+    },
+    "Cost": 14000,
+    "End": "2016",
+    "Start": "2016",
+    "id": "79412"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/pc252",
+        "name": "Chen, Peng",
+        "netid": "pc252",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt73829",
+      "title": "SINGLE-MOLECULE IMAGING OF TRIPARTITE MEMBRANE EFFLUX PUMPS IN LIVE BACTERIA",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Chemistry and Chemical Biology",
+      "uri": "/scholars/display/org89757"
+    },
+    "funagen": {
+      "name": "NATL INST OF ALLERGY & INFECTIOUS DISEASE NIH",
+      "uri": "/scholars/display/org24694"
+    },
+    "Cost": 439855,
+    "End": "2017",
+    "Start": "2015",
+    "id": "73829"
+  },
+  {
+    "group": "low",
+    "people": [
+      {
+        "uri": "/scholars/display/bb22",
+        "name": "Blossey, Bernd",
+        "netid": "bb22",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt79341",
+      "title": "HEMLOCK WOOLLY ADELGID BIOLOGICAL CONTROL 2015/16 RESPONSE",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Natural Resources",
+      "uri": "/scholars/display/org17112"
+    },
+    "funagen": {
+      "name": "NYS DEPT OF ENVIRONMENTAL CONSERVATION",
+      "uri": "/scholars/display/org57595"
+    },
+    "Cost": 21305,
+    "End": "2016",
+    "Start": "2015",
+    "id": "79341"
+  },
+  {
+    "group": "low",
+    "people": [
+      {
+        "uri": "/scholars/display/mf13",
+        "name": "Fuchs, Marc F.",
+        "netid": "mf13",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt78742",
+      "title": "VIRUS DETECTION FROM GRAPEVINE SAMPLES SUBMITTED BY COOPERATIVE EXTENSION COOPERATORS FOR A GRAPE COMMODITY SURVEY",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Plant Pathology and Plant-Microbe Biology Section, Geneva",
+      "uri": "/scholars/display/org62465"
+    },
+    "funagen": {
+      "name": "NYS DEPT OF AG & MARKETS",
+      "uri": "/scholars/display/org24800"
+    },
+    "Cost": 22700,
+    "End": "2016",
+    "Start": "2015",
+    "id": "78742"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/agt1",
+        "name": "Taylor, Alan George",
+        "netid": "agt1",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt77145",
+      "title": "LIMITING LOSSES TO BACTERIAL SPOT THROUGH KNOWLEDGE OF GLOBAL PATHOGEN DIVERSITY, IMPROVED SEED HEALTH, NOVEL BACTERICIDES AND TOMATO BREEDING",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "School of Integrative Plant Science",
+      "uri": "/scholars/display/org30434"
+    },
+    "funagen": {
+      "name": "UNIVERSITY OF FLORIDA",
+      "uri": "/scholars/display/org57812"
+    },
+    "Cost": 349262,
+    "End": "2019",
+    "Start": "2015",
+    "id": "77145"
+  },
+  {
+    "group": "high",
+    "people": [
+      {
+        "uri": "/scholars/display/jrf49",
+        "name": "Fetcho, Joseph R.",
+        "netid": "jrf49",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt70970",
+      "title": "CENTRAL CONROL OF MOTONEURONS",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Neurobiology and Behavior",
+      "uri": "/scholars/display/org16088"
+    },
+    "funagen": {
+      "name": "NATL INST OF HEALTH DHHS",
+      "uri": "/scholars/display/org73741"
+    },
+    "Cost": 2576018,
+    "End": "2019",
+    "Start": "2014",
+    "id": "70970"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/ef11",
+        "name": "Fontes, Ernest",
+        "netid": "ef11",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt73482",
+      "title": "METAL AND SEMICONDUCTOR NANOCRYSTAL SUPERLATTICES UNDER PRESSURE: MULTISCALE TUNING OF STRUCTURE AND FUNCTION",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Cornell Laboratory for Accelerator-based Sciences and Education (CLASSE)",
+      "uri": "/scholars/display/org17208"
+    },
+    "funagen": {
+      "name": "LOS ALAMOS NATL LAB",
+      "uri": "/scholars/display/org25321"
+    },
+    "Cost": 119843,
+    "End": "2016",
+    "Start": "2014",
+    "id": "73482"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/pc252",
+        "name": "Chen, Peng",
+        "netid": "pc252",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt75237",
+      "title": "IMAGING EFFLUX MACHINERIES FOR METAL DEFENSE IN LIVE BACTERIA",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Chemistry and Chemical Biology",
+      "uri": "/scholars/display/org89757"
+    },
+    "funagen": {
+      "name": "ARMY RESEARCH OFFICE",
+      "uri": "/scholars/display/org57631"
+    },
+    "Cost": 281385,
+    "End": "2018",
+    "Start": "2015",
+    "id": "75237"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/eac20",
+        "name": "Cowen, Edwin Alfred",
+        "netid": "eac20",
+        "role": "PI"
+      },
+      {
+        "uri": "/scholars/display/zw16",
+        "name": "Warhaft, Zellman",
+        "netid": "zw16",
+        "role": "CO"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt67046",
+      "title": "ENERGY HARVESTING IN FLOWS USING PARASITIC AEROELASTIC STRUCTURES AND NONLINEAR SWITCHING ELECTRONICS",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Mechanical and Aerospace Engineering",
+      "uri": "/scholars/display/org66771"
+    },
+    "funagen": {
+      "name": "DIRECTORATE FOR ENGINEERING NSF",
+      "uri": "/scholars/display/org90658"
+    },
+    "Cost": 360000,
+    "End": "2017",
+    "Start": "2013",
+    "id": "67046"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/lkn2",
+        "name": "Nicholson, Linda K.",
+        "netid": "lkn2",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt66159",
+      "title": "ROLE OF THE ISOMERASE PIN 1 IN THE DEVELOPMENT AND TREATMENT OF ASTHMAS",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Molecular Biology and Genetics",
+      "uri": "/scholars/display/org24788"
+    },
+    "funagen": {
+      "name": "BETH ISRAEL DEACONESS MEDICAL CENTER",
+      "uri": "/scholars/display/org90301"
+    },
+    "Cost": 718515,
+    "End": "2016",
+    "Start": "2012",
+    "id": "66159"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/rjn7",
+        "name": "Nelson, Rebecca J.",
+        "netid": "rjn7",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt64104",
+      "title": "GENETIC AND HISTOPATHOLOGICAL DISSECTION OF PHENOTYPIC VARIATION IN QUANTITATIVE RESISTANCE TO MAIZE DISEASES",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Plant Pathology and Plant-Microbe Biology Section",
+      "uri": "/scholars/display/org96766"
+    },
+    "funagen": {
+      "name": "UNIVERSITY OF DELAWARE",
+      "uri": "/scholars/display/org33688"
+    },
+    "Cost": 601146,
+    "End": "2016",
+    "Start": "2011",
+    "id": "64104"
+  },
+  {
+    "group": "low",
+    "people": [
+      {
+        "uri": "/scholars/display/ems394",
+        "name": "Schwarz, Erich Marquard",
+        "netid": "ems394",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt79290",
+      "title": "CAENORHABDITIS GENETICS CENTER",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Molecular Biology and Genetics",
+      "uri": "/scholars/display/org24788"
+    },
+    "funagen": {
+      "name": "UNIVERSITY OF MINNESOTA",
+      "uri": "/scholars/display/org58243"
+    },
+    "Cost": 38750,
+    "End": "2016",
+    "Start": "2016",
+    "id": "79290"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/jh433",
+        "name": "Hinestroza, Juan",
+        "netid": "jh433",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt77658",
+      "title": "FLUORINE-FREE SURFACE MODIFICATION TECHNOLOGIES TOWARD DEVELOPMENT OF OLEOPHOBIC TEXTILES",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Fiber Science and Apparel Design",
+      "uri": "/scholars/display/org61623"
+    },
+    "funagen": {
+      "name": "TAL APPAREL LIMITED",
+      "uri": "/scholars/display/org57742"
+    },
+    "Cost": 394718,
+    "End": "2017",
+    "Start": "2015",
+    "id": "77658"
+  },
+  {
+    "group": "high",
+    "people": [
+      {
+        "uri": "/scholars/display/mot1",
+        "name": "Thompson, Michael Olgar",
+        "netid": "mot1",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt66251",
+      "title": "SUBSTRATE INTERACTIONS WITH INGAZNO THIN FILM TRANSISTORS",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Materials Science and Engineering",
+      "uri": "/scholars/display/org42189"
+    },
+    "funagen": {
+      "name": "CORNING, INC.",
+      "uri": "/scholars/display/org25567"
+    },
+    "Cost": 1040297,
+    "End": "2015",
+    "Start": "2011",
+    "id": "66251"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/spe2",
+        "name": "Ellner, Stephen Paul",
+        "netid": "spe2",
+        "role": "PI"
+      },
+      {
+        "uri": "/scholars/display/gjh27",
+        "name": "Hooker, Giles J.",
+        "netid": "gjh27",
+        "role": "CO"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt69636",
+      "title": "COLLABORATIVE RESEARCH: INTEGRAL PROJECTION MODELS FOR POPULATIONS IN VARYING ENVIRONMENTS: CONSTRUCTION AND ANALYSIS",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Ecology and Evolutionary Biology",
+      "uri": "/scholars/display/org92335"
+    },
+    "funagen": {
+      "name": "DIRECTORATE FOR BIOLOGICAL SCIENCES NSF",
+      "uri": "/scholars/display/org16446"
+    },
+    "Cost": 259997,
+    "End": "2017",
+    "Start": "2014",
+    "id": "69636"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/kgt2",
+        "name": "Tidball, Keith G.",
+        "netid": "kgt2",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt74254",
+      "title": "COMMUNITY CAPACITY BUILDING, TRANSITION SUPPORT FOR FAMILIES, AND MILITARY CAREGIVING",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Natural Resources",
+      "uri": "/scholars/display/org17112"
+    },
+    "funagen": {
+      "name": "UNIVERSITY OF ILLINOIS AT URBANA-CHAMPAIGN",
+      "uri": "/scholars/display/org41065"
+    },
+    "Cost": 131809,
+    "End": "2016",
+    "Start": "2014",
+    "id": "74254"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/mdn49",
+        "name": "Niemack, Michael D.",
+        "netid": "mdn49",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt75195",
+      "title": "COSMOLOGY WITH THE KINEMATIC SUNYAEV-ZEL'DOVICH EFFECT: TESTING FUNDAMENTAL PHYSICS AND HYDRODYNAMICAL SIMULATIONS",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Cornell Laboratory for Accelerator-based Sciences and Education (CLASSE)",
+      "uri": "/scholars/display/org17208"
+    },
+    "funagen": {
+      "name": "NATL SCIENCE FOUNDATION",
+      "uri": "/scholars/display/org90193"
+    },
+    "Cost": 143714,
+    "End": "2017",
+    "Start": "2015",
+    "id": "75195"
+  },
+  {
+    "group": "low",
+    "people": [
+      {
+        "uri": "/scholars/display/clw37",
+        "name": "Wood, Christopher Leighton",
+        "netid": "clw37",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt77629",
+      "title": "BREEDING BIRD ATLAS AGREEMENT",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Cornell Lab of Ornithology",
+      "uri": "/scholars/display/org34615"
+    },
+    "funagen": {
+      "name": "VIRGINIA DEPT. OF GAME AND INLAND FISHERIES",
+      "uri": "/scholars/display/org26000"
+    },
+    "Cost": 75000,
+    "End": "2020",
+    "Start": "2015",
+    "id": "77629"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/eyb5",
+        "name": "Bitar, Eilyan Yamen",
+        "netid": "eyb5",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt66734",
+      "title": "CPS: SYNERGY: COLLABORATIVE RESEARCH: COORDINATED RESOURCE MANAGEMENT OF CYBER-PHYSICAL-SOCIAL POWER SYSTEMS",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Electrical and Computer Engineering",
+      "uri": "/scholars/display/org49841"
+    },
+    "funagen": {
+      "name": "NATL SCIENCE FOUNDATION",
+      "uri": "/scholars/display/org90193"
+    },
+    "Cost": 280429,
+    "End": "2016",
+    "Start": "2012",
+    "id": "66734"
+  },
+  {
+    "group": "high",
+    "people": [
+      {
+        "uri": "/scholars/display/jtb47",
+        "name": "Butcher, Jonathan T.",
+        "netid": "jtb47",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt63172",
+      "title": "BIOMECHANICAL REGULATION OF VALVULOGENESIS",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Biomedical Engineering",
+      "uri": "/scholars/display/org68763"
+    },
+    "funagen": {
+      "name": "NATL HEART LUNG & BLOOD INST, NIH",
+      "uri": "/scholars/display/org16957"
+    },
+    "Cost": 1890530,
+    "End": "2016",
+    "Start": "2011",
+    "id": "63172"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/mw16",
+        "name": "Wiedmann, Martin",
+        "netid": "mw16",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt71365",
+      "title": "SOURCE IDENTIFICATION AND EDUCATION ON SPOREFORMING BACTERIAL ENTRY AT THE DAIRY FARM LEVEL: A CRUCIAL NEXT STEP TO PRODUCTION OF HIGH QUALITY RAW MILK IN NY",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Food Science",
+      "uri": "/scholars/display/org86203"
+    },
+    "funagen": {
+      "name": "NEW YORK FARM VIABILITY INSTITUTE",
+      "uri": "/scholars/display/org90166"
+    },
+    "Cost": 148598,
+    "End": "2016",
+    "Start": "2014",
+    "id": "71365"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/dcr14",
+        "name": "Ralph, Daniel C.",
+        "netid": "dcr14",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt74949",
+      "title": "TOPOLOGICAL INSULATORS AS EFFICIENT ROOM-TEMPERATURE SOURCES OF SPIN-TRANSFER TORQUE FOR NON-VOLATILE MAGNETIC LOGIC",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Laboratory of Atomic and Solid State Physics (LASSP)",
+      "uri": "/scholars/display/org77636"
+    },
+    "funagen": {
+      "name": "OFFICE OF NAVAL RESEARCH DOD",
+      "uri": "/scholars/display/org16694"
+    },
+    "Cost": 150000,
+    "End": "2016",
+    "Start": "2015",
+    "id": "74949"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/ert2",
+        "name": "Turgeon, E G Robert",
+        "netid": "ert2",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt69685",
+      "title": "HETEROGENEITY IN THE PHLOEM OF MINOR VEINS",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Plant Biology Section",
+      "uri": "/scholars/display/org81917"
+    },
+    "funagen": {
+      "name": "DIRECTORATE FOR BIOLOGICAL SCIENCES NSF",
+      "uri": "/scholars/display/org16446"
+    },
+    "Cost": 637267,
+    "End": "2017",
+    "Start": "2014",
+    "id": "69685"
+  },
+  {
+    "group": "low",
+    "people": [
+      {
+        "uri": "/scholars/display/tms1",
+        "name": "Schmit, Todd Michael",
+        "netid": "tms1",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt75004",
+      "title": "GENERAL CAPACITY BUILDING OF THE COOPERATIVE ENTERPRISE PROGRAM (CEP)",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Animal Science",
+      "uri": "/scholars/display/org75400"
+    },
+    "funagen": {
+      "name": "CHS FOUNDATION",
+      "uri": "/scholars/display/org66185"
+    },
+    "Cost": 25000,
+    "End": "2016",
+    "Start": "2015",
+    "id": "75004"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/mw16",
+        "name": "Wiedmann, Martin",
+        "netid": "mw16",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt76302",
+      "title": "ASSESSMENT OF SALMONELLA DETECTION METHODS PART II",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Food Science",
+      "uri": "/scholars/display/org86203"
+    },
+    "funagen": {
+      "name": "MARS INCORPORATED",
+      "uri": "/scholars/display/org66061"
+    },
+    "Cost": 353607,
+    "End": "2016",
+    "Start": "2015",
+    "id": "76302"
+  },
+  {
+    "group": "low",
+    "people": [
+      {
+        "uri": "/scholars/display/mtm3",
+        "name": "McGrath, Margaret T.",
+        "netid": "mtm3",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt76411",
+      "title": "INTEGRATED MANAGEMENT OF TOMATO CHLOROTIC SPOT VIRUS, AN EMERGING TOSPOVIRUS THREATENING TOMATO PRODUCTION IN THE EASTERN UNITED STATES",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Plant Pathology and Plant-Microbe Biology Section",
+      "uri": "/scholars/display/org96766"
+    },
+    "funagen": {
+      "name": "UNIVERSITY OF FLORIDA",
+      "uri": "/scholars/display/org57812"
+    },
+    "Cost": 13956,
+    "End": "2018",
+    "Start": "2015",
+    "id": "76411"
+  },
+  {
+    "group": "low",
+    "people": [
+      {
+        "uri": "/scholars/display/mjd9",
+        "name": "Dudley, Mary Jo",
+        "netid": "mjd9",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt73425",
+      "title": "IMPROVING WORKPLACE COMMUNICATIONS: OPPORTUNITIES FOR WORKER TRAINING AND ADVANCEMENT",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Development Sociology",
+      "uri": "/scholars/display/org62634"
+    },
+    "funagen": {
+      "name": "NEW YORK FARM VIABILITY INSTITUTE",
+      "uri": "/scholars/display/org90166"
+    },
+    "Cost": 100000,
+    "End": "2017",
+    "Start": "2014",
+    "id": "73425"
+  },
+  {
+    "group": "high",
+    "people": [
+      {
+        "uri": "/scholars/display/gjs12",
+        "name": "Stacey, Gordon John",
+        "netid": "gjs12",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt76336",
+      "title": "DEVELOPMENT OF SILICON-SUBSTRATE BASED FABRY-PEROT ETALONS FOR FAR-IR ASTROPHYSICS",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Cornell Center for Astrophysics & Planetary Science (CCAPS)",
+      "uri": "/scholars/display/org76324"
+    },
+    "funagen": {
+      "name": "NASA SHARED SERVICES CENTER",
+      "uri": "/scholars/display/org98399"
+    },
+    "Cost": 1135075,
+    "End": "2018",
+    "Start": "2016",
+    "id": "76336"
+  },
+  {
+    "group": "low",
+    "people": [
+      {
+        "uri": "/scholars/display/jlp5",
+        "name": "Powers, Jane L.",
+        "netid": "jlp5",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt77519",
+      "title": "EVALUATION OF TEEN OUTREACH PROGRAM EXAMINING YOUTH DEVELOPMENT OUTCOMES",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Bronfenbrenner Center for Translational Research (BCTR)",
+      "uri": "/scholars/display/org52741"
+    },
+    "funagen": {
+      "name": "CENTRAL JERSEY FAMILY HEALTH CONSORTIUM",
+      "uri": "/scholars/display/org49445"
+    },
+    "Cost": 50000,
+    "End": "2016",
+    "Start": "2015",
+    "id": "77519"
+  },
+  {
+    "group": "high",
+    "people": [
+      {
+        "uri": "/scholars/display/thw4",
+        "name": "Weigle, Timothy H.",
+        "netid": "thw4",
+        "role": "CO"
+      },
+      {
+        "uri": "/scholars/display/trb7",
+        "name": "Bates, Terence R.",
+        "netid": "trb7",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt76401",
+      "title": "PRECISION VINEYARD MANAGEMENT: COLLECTING AND INTERPRETING SPATIAL DATA FOR VARIABLE VINEYARD MANAGEMENT",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "School of Integrative Plant Science",
+      "uri": "/scholars/display/org30434"
+    },
+    "funagen": {
+      "name": "NATIONAL INSTITUTE OF FOOD AND AGRICULTURE-USDA",
+      "uri": "/scholars/display/org65555"
+    },
+    "Cost": 6355640,
+    "End": "2019",
+    "Start": "2015",
+    "id": "76401"
+  },
+  {
+    "group": "unknown",
+    "people": [
+      {
+        "uri": "/scholars/display/mel245",
+        "name": "Lujan, Marla E.",
+        "netid": "mel245",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt69298",
+      "title": "ULTRASOUND CHARACTERIZATION OF OVARIAN FOLLICLE DYNAMICS DURING WEIGHT LOSS",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Nutritional Sciences",
+      "uri": "/scholars/display/org57049"
+    },
+    "funagen": {
+      "name": "NUTRISYSTEM INC. CORPORATION",
+      "uri": "/scholars/display/org91409"
+    },
+    "Cost": 0,
+    "End": "2016",
+    "Start": "2012",
+    "id": "69298"
+  },
+  {
+    "group": "high",
+    "people": [
+      {
+        "uri": "/scholars/display/jrf49",
+        "name": "Fetcho, Joseph R.",
+        "netid": "jrf49",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt58126",
+      "title": "GLOBAL CHANGES IN SYNAPTIC STRENGTH AND EXCITABILITY DURING SLEEP AND WAKEFULNESS",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Neurobiology and Behavior",
+      "uri": "/scholars/display/org16088"
+    },
+    "funagen": {
+      "name": "OFFICE OF THE DIRECTOR NIH",
+      "uri": "/scholars/display/org98570"
+    },
+    "Cost": 3927539,
+    "End": "2016",
+    "Start": "2009",
+    "id": "58126"
+  },
+  {
+    "group": "low",
+    "people": [
+      {
+        "uri": "/scholars/display/mjf267",
+        "name": "Frye, Matthew J.",
+        "netid": "mjf267",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt76205",
+      "title": "EVALUATION OF EXCLUSION TO PREVENT INDOOR INFESTATIONS OF THE BROWN MARMORATED STINK BUG",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Cornell Cooperative Extension",
+      "uri": "/scholars/display/org55296"
+    },
+    "funagen": {
+      "name": "PEST MANAGEMENT FOUNDATION",
+      "uri": "/scholars/display/org33208"
+    },
+    "Cost": 12004,
+    "End": "2016",
+    "Start": "2015",
+    "id": "76205"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/keb264",
+        "name": "Bunting-Howarth, Katherine E.",
+        "netid": "keb264",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt71583",
+      "title": "NEW YORK SEA GRANT CLIMATE CHANGE CAPACITY BUILDING INITIATIVE",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "New York Sea Grant Program",
+      "uri": "/scholars/display/org49111"
+    },
+    "funagen": {
+      "name": "NEW YORK SEA GRANT INSTITUTE, STONY BROOK",
+      "uri": "/scholars/display/org58127"
+    },
+    "Cost": 120000,
+    "End": "2018",
+    "Start": "2014",
+    "id": "71583"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/rac1",
+        "name": "Cerione, Richard A.",
+        "netid": "rac1",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt74283",
+      "title": "DEFINING THE FUNCTIONS OF EXTRACELLULAR SHED VESICLES IN CANCER PROGRESSION",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Molecular Medicine",
+      "uri": "/scholars/display/org51414"
+    },
+    "funagen": {
+      "name": "NATL INST OF HEALTH DHHS",
+      "uri": "/scholars/display/org73741"
+    },
+    "Cost": 157290,
+    "End": "2018",
+    "Start": "2015",
+    "id": "74283"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/mm826",
+        "name": "Ma, Minglin",
+        "netid": "mm826",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt69581",
+      "title": "BIO-INSPIRED DESIGN OF A CLINICALLY TRANSLATABLE ISLET ENCAPSULATION SYSTEM FOR TYPE 1 DIABETES",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Biological and Environmental Engineering",
+      "uri": "/scholars/display/org24212"
+    },
+    "funagen": {
+      "name": "AMERICAN DIABETES ASSOCIATION",
+      "uri": "/scholars/display/org50451"
+    },
+    "Cost": 372600,
+    "End": "2016",
+    "Start": "2013",
+    "id": "69581"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/tkc28",
+        "name": "Choudhury, Tanzeem K.",
+        "netid": "tkc28",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt74359",
+      "title": "CIRCADIAN RHYTHM AWARE COMPUTING-TOWARDS BODYCLOCK FRIENDLY TECHNOLOGY",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Information Science",
+      "uri": "/scholars/display/org74438"
+    },
+    "funagen": {
+      "name": "SEMICONDUCTOR RESEARCH CORP",
+      "uri": "/scholars/display/org82167"
+    },
+    "Cost": 300000,
+    "End": "2017",
+    "Start": "2014",
+    "id": "74359"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/sm939",
+        "name": "Mehta, Saurabh",
+        "netid": "sm939",
+        "role": "PI"
+      },
+      {
+        "uri": "/scholars/display/de54",
+        "name": "Erickson, David",
+        "netid": "de54",
+        "role": "CO"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt76166",
+      "title": "CORNELL NUTRIPHONE: EXPANDING ITS CAPABILITIES TO ASSESS IRON, VITAMIN A AND INFLAMMATION STATUS",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Nutritional Sciences",
+      "uri": "/scholars/display/org57049"
+    },
+    "funagen": {
+      "name": "MICRONUTRIENT INITIATIVE",
+      "uri": "/scholars/display/org24690"
+    },
+    "Cost": 161051,
+    "End": "2017",
+    "Start": "2015",
+    "id": "76166"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/mm826",
+        "name": "Ma, Minglin",
+        "netid": "mm826",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt74975",
+      "title": "ORGANOGENESIS IN MICROCAPSULES: DEVELOPING AN EFFICIENT AND SCALABLE ORGANOID CULTURE PLATFORM",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Biological and Environmental Engineering",
+      "uri": "/scholars/display/org24212"
+    },
+    "funagen": {
+      "name": "NATL INST OF HEALTH DHHS",
+      "uri": "/scholars/display/org73741"
+    },
+    "Cost": 144100,
+    "End": "2017",
+    "Start": "2015",
+    "id": "74975"
+  },
+  {
+    "group": "high",
+    "people": [
+      {
+        "uri": "/scholars/display/jel27",
+        "name": "Losey, John E.",
+        "netid": "jel27",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt62760",
+      "title": "BROAD IMPLEMENTATION OF THE LOST LADYBUG PROJECT: A NATIONAL LIFELONG LEARNING OPPORTUNITY",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Entomology",
+      "uri": "/scholars/display/org95927"
+    },
+    "funagen": {
+      "name": "DIRECTORATE FOR EDUCATION AND HUMAN RESOURCES NSF",
+      "uri": "/scholars/display/org16634"
+    },
+    "Cost": 2491912,
+    "End": "2016",
+    "Start": "2011",
+    "id": "62760"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/agh5",
+        "name": "Hay, Anthony G.",
+        "netid": "agh5",
+        "role": "CO"
+      },
+      {
+        "uri": "/scholars/display/myl3",
+        "name": "Louge, Michel Yves",
+        "netid": "myl3",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt70161",
+      "title": "MICROBIAL STABILIZATION OF MOBILE DUNES FOR INFRASTRUCTURE PROTECTION AND ENVIRONMENTAL PRESERVATION",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Mechanical and Aerospace Engineering",
+      "uri": "/scholars/display/org66771"
+    },
+    "funagen": {
+      "name": "WEILL CORNELL MEDICAL COLLEGE/QATAR",
+      "uri": "/scholars/display/org24996"
+    },
+    "Cost": 354040,
+    "End": "2016",
+    "Start": "2013",
+    "id": "70161"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/jma7",
+        "name": "Abowd, John Maron",
+        "netid": "jma7",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt64631",
+      "title": "SUBCONTRACT TO UNIVERSITY OF MICHIGAN PROPOSAL TO LINK CONFIDENTIAL CENSUS BUSINESS DATA TO THE HEALTH AND RETIREMENT STUDY",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "",
+      "name": "not found",
+      "uri": "."
+    },
+    "funagen": {
+      "name": "UNIVERSITY OF MICHIGAN",
+      "uri": "/scholars/display/org17789"
+    },
+    "Cost": 349607,
+    "End": "2016",
+    "Start": "2011",
+    "id": "64631"
+  },
+  {
+    "group": "high",
+    "people": [
+      {
+        "uri": "/scholars/display/an58",
+        "name": "Nikitin, Alexander",
+        "netid": "an58",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt74824",
+      "title": "NEUROENDOCRINE MECHANISMS OF PROSTATE CANCER PROGRESSION",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Biomedical Sciences",
+      "uri": "/scholars/display/org75930"
+    },
+    "funagen": {
+      "name": "NATL CANCER INSTITUTE NIH",
+      "uri": "/scholars/display/org16690"
+    },
+    "Cost": 1740725,
+    "End": "2020",
+    "Start": "2015",
+    "id": "74824"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/rge2",
+        "name": "Ehrenberg, Ronald Gordon",
+        "netid": "rge2",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt68590",
+      "title": "CORNELL HIGHER EDUCATION RESEARCH INSTITUTE -RESEARCH RELATING TO THE HUMANITIES AND DIVERSIFYING THE FACULTY",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Cornell Higher Education Research Institute (CHERI)",
+      "uri": "/scholars/display/org21750"
+    },
+    "funagen": {
+      "name": "MELLON, ANDREW W. FDN",
+      "uri": "/scholars/display/org66633"
+    },
+    "Cost": 814000,
+    "End": "2016",
+    "Start": "2013",
+    "id": "68590"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/ksk28",
+        "name": "Kassam, Karim-Aly Saleh",
+        "netid": "ksk28",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt78290",
+      "title": "COLLABORATIVE RESEARCH BELMONT FORUM: ECOLOGICAL CALENDARS AND CLIMATE ADAPTATION IN THE PAMIRS",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Natural Resources",
+      "uri": "/scholars/display/org17112"
+    },
+    "funagen": {
+      "name": "DIRECTORATE FOR GEOSCIENCES",
+      "uri": "/scholars/display/org41403"
+    },
+    "Cost": 459962,
+    "End": "2019",
+    "Start": "2016",
+    "id": "78290"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/dmg4",
+        "name": "Gadoury, David M.",
+        "netid": "dmg4",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt73909",
+      "title": "REDUCING THE IMPACT OF INDUSTRY-CRITICAL INSECT AND DISEASE PROBLEMS IN HOPS THROUGH DEVELOPMENT OF PREVENTIVE AND PREDICTIVE STRATEGIES",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Plant Pathology and Plant-Microbe Biology Section, Geneva",
+      "uri": "/scholars/display/org62465"
+    },
+    "funagen": {
+      "name": "WASHINGTON STATE UNIVERSITY",
+      "uri": "/scholars/display/org83204"
+    },
+    "Cost": 438278,
+    "End": "2018",
+    "Start": "2014",
+    "id": "73909"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/bkr2",
+        "name": "Richards, Brian K.",
+        "netid": "bkr2",
+        "role": "CO"
+      },
+      {
+        "uri": "/scholars/display/agh5",
+        "name": "Hay, Anthony G.",
+        "netid": "agh5",
+        "role": "CO"
+      },
+      {
+        "uri": "/scholars/display/tss1",
+        "name": "Steenhuis, Tammo S.",
+        "netid": "tss1",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt73706",
+      "title": "PHYSICAL MECHANISMS OF WATER FILM-MEDIATED MICROBIAL PATHOGEN ATTACHMENT AND DETACHMENT ON FRESH VEGETABLE SURFACES",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Biological and Environmental Engineering",
+      "uri": "/scholars/display/org24212"
+    },
+    "funagen": {
+      "name": "NATIONAL INSTITUTE OF FOOD AND AGRICULTURE-USDA",
+      "uri": "/scholars/display/org65555"
+    },
+    "Cost": 479764,
+    "End": "2018",
+    "Start": "2015",
+    "id": "73706"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/epg2",
+        "name": "Giannelis, Emmanuel P.",
+        "netid": "epg2",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt75763",
+      "title": "NANOPARTICLE TECHNOLOGY FOR NEW STEEL ALLOYS",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Materials Science and Engineering",
+      "uri": "/scholars/display/org42189"
+    },
+    "funagen": {
+      "name": "SAUDI BASIC INDUSTRIES CORPORATION",
+      "uri": "/scholars/display/org83367"
+    },
+    "Cost": 297512,
+    "End": "2017",
+    "Start": "2015",
+    "id": "75763"
+  },
+  {
+    "group": "unknown",
+    "people": [
+      {
+        "uri": "/scholars/display/ljb7",
+        "name": "Brewer, Lori Jean",
+        "netid": "ljb7",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt77879",
+      "title": "COLLABORATIVE AGREEMENT",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Horticulture Section",
+      "uri": "/scholars/display/org93693"
+    },
+    "funagen": {
+      "name": "UNIVERSITY OF ALASKA FAIRBANKS",
+      "uri": "/scholars/display/org91287"
+    },
+    "Cost": 0,
+    "End": "2016",
+    "Start": "2015",
+    "id": "77879"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/ago25",
+        "name": "Ophir, Alexander G.",
+        "netid": "ago25",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt72279",
+      "title": "IMPACT OF EARLY LIFE FAMILY STRUCTURE ON BEHAVIOR, NONAPEPTIDE SYSTEMS, AND THE EPIGENOME OF OFFSPRING AND MOTHERS",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Psychology",
+      "uri": "/scholars/display/org43229"
+    },
+    "funagen": {
+      "name": "NATL INST OF HEALTH DHHS",
+      "uri": "/scholars/display/org73741"
+    },
+    "Cost": 156450,
+    "End": "2017",
+    "Start": "2014",
+    "id": "72279"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/eyb5",
+        "name": "Bitar, Eilyan Yamen",
+        "netid": "eyb5",
+        "role": "CO"
+      },
+      {
+        "uri": "/scholars/display/lt35",
+        "name": "Tong, Lang",
+        "netid": "lt35",
+        "role": "PI"
+      },
+      {
+        "uri": "/scholars/display/cla28",
+        "name": "Anderson, Catherine Lindsay",
+        "netid": "cla28",
+        "role": "CO"
+      },
+      {
+        "uri": "/scholars/display/wds3",
+        "name": "Schulze, William D.",
+        "netid": "wds3",
+        "role": "CO"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt74572",
+      "title": "CERTS 2014: POWER SYSTEM RESEARCH",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Electrical and Computer Engineering",
+      "uri": "/scholars/display/org49841"
+    },
+    "funagen": {
+      "name": "ARIZONA STATE UNIVERSITY",
+      "uri": "/scholars/display/org65654"
+    },
+    "Cost": 160157,
+    "End": "2017",
+    "Start": "2014",
+    "id": "74572"
+  },
+  {
+    "group": "unknown",
+    "people": [
+      {
+        "uri": "/scholars/display/cwc2",
+        "name": "Clark, Christopher Willes",
+        "netid": "cwc2",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt69804",
+      "title": "MARINEXPLORE CA",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Cornell Lab of Ornithology",
+      "uri": "/scholars/display/org34615"
+    },
+    "funagen": {
+      "name": "PLANET OS INC.",
+      "uri": "/scholars/display/org82107"
+    },
+    "Cost": 0,
+    "End": "2016",
+    "Start": "2013",
+    "id": "69804"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/jtb47",
+        "name": "Butcher, Jonathan T.",
+        "netid": "jtb47",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt73588",
+      "title": "STEM CELL AND CARDIAC VALVE RESEARCH PROJECT",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Biomedical Engineering",
+      "uri": "/scholars/display/org68763"
+    },
+    "funagen": {
+      "name": "SEATTLE CHILDREN'S RESEARCH INSTITUTE",
+      "uri": "/scholars/display/org83098"
+    },
+    "Cost": 115000,
+    "End": "2017",
+    "Start": "2014",
+    "id": "73588"
+  },
+  {
+    "group": "low",
+    "people": [
+      {
+        "uri": "/scholars/display/gl14",
+        "name": "Levine, Gilbert",
+        "netid": "gl14",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt74900",
+      "title": "FULBRIGHT - HAYS 2014-2015 - RUTLEDGE",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Mario Einaudi Center for International Studies",
+      "uri": "/scholars/display/org98903"
+    },
+    "funagen": {
+      "name": "DEPT OF EDUCATION US",
+      "uri": "/scholars/display/org33181"
+    },
+    "Cost": 48509,
+    "End": "2016",
+    "Start": "2014",
+    "id": "74900"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/mfl55",
+        "name": "Lovenheim, Michael F.",
+        "netid": "mfl55",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt74560",
+      "title": "DOES ATTENDING AN ELITE UNIVERSITY HELP LOW-INCOME STUDENT? EVIDENCE FROM TEXAS",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Policy Analysis and Management",
+      "uri": "/scholars/display/org97501"
+    },
+    "funagen": {
+      "name": "GRANT,W T FOUNDATION",
+      "uri": "/scholars/display/org49987"
+    },
+    "Cost": 277993,
+    "End": "2017",
+    "Start": "2015",
+    "id": "74560"
+  },
+  {
+    "group": "low",
+    "people": [
+      {
+        "uri": "/scholars/display/dlh37",
+        "name": "Hysell, David Lee",
+        "netid": "dlh37",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt71058",
+      "title": "NEUTRAL-PLASMA DYNAMICS AT SMALL SCALES.",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Earth and Atmospheric Sciences",
+      "uri": "/scholars/display/org32427"
+    },
+    "funagen": {
+      "name": "GATS INC.",
+      "uri": "/scholars/display/org91166"
+    },
+    "Cost": 92760,
+    "End": "2016",
+    "Start": "2014",
+    "id": "71058"
+  },
+  {
+    "group": "high",
+    "people": [
+      {
+        "uri": "/scholars/display/ak735",
+        "name": "Keinan, Alon",
+        "netid": "ak735",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt70501",
+      "title": "THE X-FACTOR OF COMPLEX DISEASE: FROM POPULATION GENETICS TO GWAS OF CHROMOSOME X",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Biological Statistics and Computational Biology",
+      "uri": "/scholars/display/org62105"
+    },
+    "funagen": {
+      "name": "NATL INST OF HEALTH DHHS",
+      "uri": "/scholars/display/org73741"
+    },
+    "Cost": 1119253,
+    "End": "2017",
+    "Start": "2013",
+    "id": "70501"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/gdf9",
+        "name": "Fuchs, Gregory David",
+        "netid": "gdf9",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt74444",
+      "title": "REU SITE: INTERDISCIPLINARY MATERIALS RESEARCH",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Cornell Center for Materials Research (CCMR)",
+      "uri": "/scholars/display/org33318"
+    },
+    "funagen": {
+      "name": "NATL SCIENCE FOUNDATION",
+      "uri": "/scholars/display/org90193"
+    },
+    "Cost": 450000,
+    "End": "2018",
+    "Start": "2015",
+    "id": "74444"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/ast4",
+        "name": "Turner, Andrew S.",
+        "netid": "ast4",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt63600",
+      "title": "CORNELL UNIVERSITY SUSTAINABLE COMMUNITY PROJECT: CITIZEN U",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Cornell Cooperative Extension",
+      "uri": "/scholars/display/org55296"
+    },
+    "funagen": {
+      "name": "NATIONAL INSTITUTE OF FOOD AND AGRICULTURE-USDA",
+      "uri": "/scholars/display/org65555"
+    },
+    "Cost": 628000,
+    "End": "2016",
+    "Start": "2011",
+    "id": "63600"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/mag4",
+        "name": "Gandolfo Nixon, Maria Alejandra",
+        "netid": "mag4",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt77512",
+      "title": "COLLABORATIVE RESEARCH: PATAGONIAN FOSSIL FLORAS, THE KEYS TO THE ORIGINS, BIOGEOGRAPHY, BIODIVERSITY, AND SURVIVAL OF THE GONDWANAN RAINFOREST BIOME",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Plant Biology Section",
+      "uri": "/scholars/display/org81917"
+    },
+    "funagen": {
+      "name": "DIRECTORATE FOR BIOLOGICAL SCIENCES NSF",
+      "uri": "/scholars/display/org16446"
+    },
+    "Cost": 436177,
+    "End": "2020",
+    "Start": "2016",
+    "id": "77512"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/tro2",
+        "name": "Overton, Thomas R.",
+        "netid": "tro2",
+        "role": "PI"
+      },
+      {
+        "uri": "/scholars/display/dvn2",
+        "name": "Nydam, Daryl Van",
+        "netid": "dvn2",
+        "role": "CO"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt68517",
+      "title": "ASSOCIATIONS OF NUTRITIONAL STRATEGY AND GROUPING MANAGEMENT DURING THE DRY PERIOD AND EARLY LACTATION WITH BIOMARKERS OF ENERGY METABOLISM AND INFLAMMATION, HEALTH, MILK YIELD, AND REPRODUCTIVE PERFO",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Animal Science",
+      "uri": "/scholars/display/org75400"
+    },
+    "funagen": {
+      "name": "NEW YORK FARM VIABILITY INSTITUTE",
+      "uri": "/scholars/display/org90166"
+    },
+    "Cost": 148954,
+    "End": "2015",
+    "Start": "2013",
+    "id": "68517"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/wrz2",
+        "name": "Zipfel, Warren R.",
+        "netid": "wrz2",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt68962",
+      "title": "A MINIATURE CONFOCAL FOR LONG TERM 3D MULTICOLOR IMAGING WITHIN A C02 INCUBATOR",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Biomedical Engineering",
+      "uri": "/scholars/display/org68763"
+    },
+    "funagen": {
+      "name": "NATL INST OF HEALTH DHHS",
+      "uri": "/scholars/display/org73741"
+    },
+    "Cost": 365089,
+    "End": "2016",
+    "Start": "2013",
+    "id": "68962"
+  },
+  {
+    "group": "low",
+    "people": [
+      {
+        "uri": "/scholars/display/gls9",
+        "name": "Sacks, Gavin Lavi",
+        "netid": "gls9",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt72607",
+      "title": "AS EASY AS SPELLING SO2 SIMPLIFYING MEASUREMENTS OF MOLECULAR SULFUR DIOXIDE (SO2) AND WINE STABILITY IN NEW YORK STATE WINERIES",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Food Science",
+      "uri": "/scholars/display/org86203"
+    },
+    "funagen": {
+      "name": "NY WINE/GRAPE FDN",
+      "uri": "/scholars/display/org90576"
+    },
+    "Cost": 30622,
+    "End": "2016",
+    "Start": "2014",
+    "id": "72607"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/cl273",
+        "name": "Lehmann, Christopher Johannes",
+        "netid": "cl273",
+        "role": "CO"
+      },
+      {
+        "uri": "/scholars/display/gb78",
+        "name": "Blalock, Garrick",
+        "netid": "gb78",
+        "role": "CO"
+      },
+      {
+        "uri": "/scholars/display/cbb2",
+        "name": "Barrett, Christopher",
+        "netid": "cbb2",
+        "role": "PI"
+      },
+      {
+        "uri": "/scholars/display/jdw277",
+        "name": "Woodard, Joshua D.",
+        "netid": "jdw277",
+        "role": "CO"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt72962",
+      "title": "SOIL FERTILITY AND AGRICULTURAL DEVELOPMENT IN ETHIOPIA",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Animal Science",
+      "uri": "/scholars/display/org75400"
+    },
+    "funagen": {
+      "name": "INTERNATIONAL FOOD POLICY RSCH INST",
+      "uri": "/scholars/display/org98701"
+    },
+    "Cost": 350034,
+    "End": "2016",
+    "Start": "2014",
+    "id": "72962"
+  },
+  {
+    "group": "high",
+    "people": [
+      {
+        "uri": "/scholars/display/kjb4",
+        "name": "Boor, Kathryn Jean",
+        "netid": "kjb4",
+        "role": "CO"
+      },
+      {
+        "uri": "/scholars/display/mw16",
+        "name": "Wiedmann, Martin",
+        "netid": "mw16",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt73039",
+      "title": "MILK QUALITY IMPROVEMENT RESEARCH",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Food Science",
+      "uri": "/scholars/display/org86203"
+    },
+    "funagen": {
+      "name": "NYS DEPT OF AG & MARKETS",
+      "uri": "/scholars/display/org24800"
+    },
+    "Cost": 3709303,
+    "End": "2018",
+    "Start": "2013",
+    "id": "73039"
+  },
+  {
+    "group": "low",
+    "people": [
+      {
+        "uri": "/scholars/display/dbc7",
+        "name": "Campbell, Donald B.",
+        "netid": "dbc7",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt75900",
+      "title": "NEAR EARTH ASTEROIDS: PHYSICAL PROPERTIES FROM COMBINING RADAR AND INFRARED OBSERVATIONS",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Cornell Center for Astrophysics & Planetary Science (CCAPS)",
+      "uri": "/scholars/display/org76324"
+    },
+    "funagen": {
+      "name": "NASA SHARED SERVICES CENTER",
+      "uri": "/scholars/display/org98399"
+    },
+    "Cost": 30000,
+    "End": "2016",
+    "Start": "2015",
+    "id": "75900"
+  },
+  {
+    "group": "high",
+    "people": [
+      {
+        "uri": "/scholars/display/ac347",
+        "name": "Clark, Andrew",
+        "netid": "ac347",
+        "role": "PI"
+      },
+      {
+        "uri": "/scholars/display/mfw5",
+        "name": "Wolfner, Mariana Federica",
+        "netid": "mfw5",
+        "role": "CO"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt65439",
+      "title": "DROSOPHILA GENES CAUSING MALE X FEMALE INTERACTION IN REPRODUCTION",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Molecular Biology and Genetics",
+      "uri": "/scholars/display/org24788"
+    },
+    "funagen": {
+      "name": "NATL INST OF CHILD HEALTH & HUMAN DEVELOPMENT, NIH",
+      "uri": "/scholars/display/org24607"
+    },
+    "Cost": 1663499,
+    "End": "2017",
+    "Start": "2012",
+    "id": "65439"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/sly3",
+        "name": "Young, Sera Lewise",
+        "netid": "sly3",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt76727",
+      "title": "HEALTH CONSEQUENCES OF WATER INSECURITY FOR HIV-INFECTED MOTHERS & THEIR INFANTS",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Population Medicine and Diagnostic Sciences",
+      "uri": "/scholars/display/org20700"
+    },
+    "funagen": {
+      "name": "NATL INST OF MENTAL HEALTH, NIH",
+      "uri": "/scholars/display/org25047"
+    },
+    "Cost": 356043,
+    "End": "2018",
+    "Start": "2016",
+    "id": "76727"
+  },
+  {
+    "group": "low",
+    "people": [
+      {
+        "uri": "/scholars/display/th358",
+        "name": "Hanrath, Tobias",
+        "netid": "th358",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt70195",
+      "title": "DESIGN, PROCESSING AND CHARACTERIZATION OF ADVANCED BINARY NANOPARTICLE CATALYSTS",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Chemical and Biomolecular Engineering",
+      "uri": "/scholars/display/org80541"
+    },
+    "funagen": {
+      "name": "AMERICAN CHEMICAL SOCIETY",
+      "uri": "/scholars/display/org57465"
+    },
+    "Cost": 100000,
+    "End": "2016",
+    "Start": "2014",
+    "id": "70195"
+  },
+  {
+    "group": "high",
+    "people": [
+      {
+        "uri": "/scholars/display/jdh9",
+        "name": "Helmann, John D.",
+        "netid": "jdh9",
+        "role": "CO"
+      },
+      {
+        "uri": "/scholars/display/pc252",
+        "name": "Chen, Peng",
+        "netid": "pc252",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt70755",
+      "title": "FACILITATED MECHANISMS IN ZINC REGULATION DOWN TO THE SINGLE-MOLECULE LEVEL",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Chemistry and Chemical Biology",
+      "uri": "/scholars/display/org89757"
+    },
+    "funagen": {
+      "name": "NATL INST OF GENERAL MEDICAL SCIENCES, NIH",
+      "uri": "/scholars/display/org57597"
+    },
+    "Cost": 1189248,
+    "End": "2018",
+    "Start": "2014",
+    "id": "70755"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/mpp3",
+        "name": "Pritts, Marvin P.",
+        "netid": "mpp3",
+        "role": "PI"
+      },
+      {
+        "uri": "/scholars/display/lcl3",
+        "name": "Levitan, Lois C.",
+        "netid": "lcl3",
+        "role": "CO"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt73830",
+      "title": "OPTIMIZING PROTECTED CULTURE ENVIRONMENTS FOR BERRY CROPS",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Horticulture Section",
+      "uri": "/scholars/display/org93693"
+    },
+    "funagen": {
+      "name": "MICHIGAN STATE UNIVERSITY",
+      "uri": "/scholars/display/org41184"
+    },
+    "Cost": 197045,
+    "End": "2019",
+    "Start": "2014",
+    "id": "73830"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/agp4",
+        "name": "Power, Alison G.",
+        "netid": "agp4",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt76770",
+      "title": "CAPACITY STRENGTHENING FOR A NEW ETHIOPIAN AGROECOLOGY NETWORK",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Ecology and Evolutionary Biology",
+      "uri": "/scholars/display/org92335"
+    },
+    "funagen": {
+      "name": "MCKNIGHT FOUNDATION",
+      "uri": "/scholars/display/org99159"
+    },
+    "Cost": 120000,
+    "End": "2017",
+    "Start": "2016",
+    "id": "76770"
+  },
+  {
+    "group": "low",
+    "people": [
+      {
+        "uri": "/scholars/display/mtm3",
+        "name": "McGrath, Margaret T.",
+        "netid": "mtm3",
+        "role": "CO"
+      },
+      {
+        "uri": "/scholars/display/cds14",
+        "name": "Smart, Christine Durbahn",
+        "netid": "cds14",
+        "role": "PI"
+      },
+      {
+        "uri": "/scholars/display/mm284",
+        "name": "Mazourek, Michael",
+        "netid": "mm284",
+        "role": "CO"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt76854",
+      "title": "VEGETABLE RESEARCH: IMPROVING INTEGRATED MANAGEMENT PRACTICES FOR PHYTOPHTHORA BLIGHT IN NEW YORK",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Plant Pathology and Plant-Microbe Biology Section, Geneva",
+      "uri": "/scholars/display/org62465"
+    },
+    "funagen": {
+      "name": "NYS DEPT OF AG & MARKETS",
+      "uri": "/scholars/display/org24800"
+    },
+    "Cost": 100000,
+    "End": "2016",
+    "Start": "2015",
+    "id": "76854"
+  },
+  {
+    "group": "high",
+    "people": [
+      {
+        "uri": "/scholars/display/jcs92",
+        "name": "Schimenti, John C.",
+        "netid": "jcs92",
+        "role": "PI"
+      },
+      {
+        "uri": "/scholars/display/an58",
+        "name": "Nikitin, Alexander",
+        "netid": "an58",
+        "role": "CO"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt70754",
+      "title": "CORNELL STEM CELL AND MODELING AND PHENOTYPING CORE",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Biomedical Sciences",
+      "uri": "/scholars/display/org75930"
+    },
+    "funagen": {
+      "name": "NYS DEPT OF HEALTH",
+      "uri": "/scholars/display/org57477"
+    },
+    "Cost": 3027175,
+    "End": "2018",
+    "Start": "2014",
+    "id": "70754"
+  },
+  {
+    "group": "low",
+    "people": [
+      {
+        "uri": "/scholars/display/dar329",
+        "name": "Riechers, Dominik A.",
+        "netid": "dar329",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt78649",
+      "title": "PRECISE GAS DYNAMICAL IMAGING OF THE MOST DISTANT UNLENSED STARBURST",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Cornell Center for Astrophysics & Planetary Science (CCAPS)",
+      "uri": "/scholars/display/org76324"
+    },
+    "funagen": {
+      "name": "NATL RADIO ASTRONOMY OBSERV",
+      "uri": "/scholars/display/org90483"
+    },
+    "Cost": 35000,
+    "End": "2017",
+    "Start": "2016",
+    "id": "78649"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/elm3",
+        "name": "Madsen, Eugene Lewis",
+        "netid": "elm3",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt61983",
+      "title": "NEW TOOLS FOR REMEDIATION PERFORMANCE ASSESSMENT OF PETROLEUM HYDROCARBON CONTAMINATED SITES",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Microbiology",
+      "uri": "/scholars/display/org58067"
+    },
+    "funagen": {
+      "name": "UNIVERSITY OF NEUCHATEL",
+      "uri": "/scholars/display/org66767"
+    },
+    "Cost": 355500,
+    "End": "2016",
+    "Start": "2010",
+    "id": "61983"
+  },
+  {
+    "group": "high",
+    "people": [
+      {
+        "uri": "/scholars/display/rs946",
+        "name": "Seguin, Rebecca",
+        "netid": "rs946",
+        "role": "PI"
+      },
+      {
+        "uri": "/scholars/display/kh289",
+        "name": "Hanson, Karla",
+        "netid": "kh289",
+        "role": "CO"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt73934",
+      "title": "INNOVATIVE COMMUNITY SUPPORTED AGRICULTURE COST-OFFSET INTERVENTION TO PREVENT CHILDHOOD OBESITY AND STRENGTHEN LOCAL AGRICULTURAL ECONOMIES",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Nutritional Sciences",
+      "uri": "/scholars/display/org57049"
+    },
+    "funagen": {
+      "name": "NATIONAL INSTITUTE OF FOOD AND AGRICULTURE-USDA",
+      "uri": "/scholars/display/org65555"
+    },
+    "Cost": 4944568,
+    "End": "2020",
+    "Start": "2015",
+    "id": "73934"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/ag865",
+        "name": "Ghosh, Arpita",
+        "netid": "ag865",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt76363",
+      "title": "DESIGNING ONLINE USER CONTRIBUTION ENVIRONMENTS: A FRAMEWORK FOR FORMAL ANALYSIS",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Information Science",
+      "uri": "/scholars/display/org74438"
+    },
+    "funagen": {
+      "name": "OFFICE OF NAVAL RESEARCH DOD",
+      "uri": "/scholars/display/org16694"
+    },
+    "Cost": 550000,
+    "End": "2018",
+    "Start": "2015",
+    "id": "76363"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/wds3",
+        "name": "Schulze, William D.",
+        "netid": "wds3",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt53234",
+      "title": "PSERC - SCHULZE",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Animal Science",
+      "uri": "/scholars/display/org75400"
+    },
+    "funagen": {
+      "name": "ARIZONA STATE UNIVERSITY",
+      "uri": "/scholars/display/org65654"
+    },
+    "Cost": 353990,
+    "End": "2016",
+    "Start": "2006",
+    "id": "53234"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/vmv1",
+        "name": "Vogt, Volker M.",
+        "netid": "vmv1",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt68708",
+      "title": "STRUCTURE AND ASSEMBLY OF RETROVIRUSES",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Molecular Biology and Genetics",
+      "uri": "/scholars/display/org24788"
+    },
+    "funagen": {
+      "name": "NATL CANCER INSTITUTE NIH",
+      "uri": "/scholars/display/org16690"
+    },
+    "Cost": 719247,
+    "End": "2017",
+    "Start": "2013",
+    "id": "68708"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/mm284",
+        "name": "Mazourek, Michael",
+        "netid": "mm284",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt67379",
+      "title": "SQUASH IMPROVEMENT",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Plant Breeding and Genetics Section",
+      "uri": "/scholars/display/org48637"
+    },
+    "funagen": {
+      "name": "SENECA FOODS INC.",
+      "uri": "/scholars/display/org17346"
+    },
+    "Cost": 124889,
+    "End": "2017",
+    "Start": "2010",
+    "id": "67379"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/ytg1",
+        "name": "Grohn, Yrjo Tapio",
+        "netid": "ytg1",
+        "role": "CO"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt66036",
+      "title": "ON-FARM OPTIMAL INTERVENTION PROGRAMS RESULTING IN REDUCTION OF MAP BACTERIAL LOAD IN MILK",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Population Medicine and Diagnostic Sciences",
+      "uri": "/scholars/display/org20700"
+    },
+    "funagen": {
+      "name": "NATIONAL INSTITUTE OF FOOD AND AGRICULTURE-USDA",
+      "uri": "/scholars/display/org65555"
+    },
+    "Cost": 499841,
+    "End": "2016",
+    "Start": "2012",
+    "id": "66036"
+  },
+  {
+    "group": "low",
+    "people": [
+      {
+        "uri": "/scholars/display/vnm1",
+        "name": "Meyers-Wallen, Vicki N.",
+        "netid": "vnm1",
+        "role": "PI"
+      },
+      {
+        "uri": "/scholars/display/arb359",
+        "name": "Boyko, Adam R.",
+        "netid": "arb359",
+        "role": "CO"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt73552",
+      "title": "IDENTIFICATION OF AN ANCIENT MUTATION ASSOCIATED WITH XX DISORDER OF SEXUAL DEVELOPMENT (DSD), AN INHERITED CAUSE OF FEMALE INFERTILITY AND STERILITY IN 28 BREEDS",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Baker Institute for Animal Health",
+      "uri": "/scholars/display/org55533"
+    },
+    "funagen": {
+      "name": "AMERICAN KENNEL CLUB CANINE HEALTH FOUNDATION",
+      "uri": "/scholars/display/org57871"
+    },
+    "Cost": 12960,
+    "End": "2016",
+    "Start": "2014",
+    "id": "73552"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/lq35",
+        "name": "Qi, Ling",
+        "netid": "lq35",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt64001",
+      "title": "REGULATION OF SYSTEMIC INSULIN SENSITIVITY BY ADIPOCYTE XBP1'S",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Nutritional Sciences",
+      "uri": "/scholars/display/org57049"
+    },
+    "funagen": {
+      "name": "AMERICAN DIABETES ASSOCIATION",
+      "uri": "/scholars/display/org50451"
+    },
+    "Cost": 848375,
+    "End": "2016",
+    "Start": "2012",
+    "id": "64001"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/dl57",
+        "name": "Lai, Dong",
+        "netid": "dl57",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt71085",
+      "title": "TIDAL DISSIPATION IN EXOPLANETARY SYSTEMS",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Cornell Center for Astrophysics & Planetary Science (CCAPS)",
+      "uri": "/scholars/display/org76324"
+    },
+    "funagen": {
+      "name": "NASA SHARED SERVICES CENTER",
+      "uri": "/scholars/display/org98399"
+    },
+    "Cost": 420117,
+    "End": "2017",
+    "Start": "2014",
+    "id": "71085"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/kcw8",
+        "name": "Wagner, KC",
+        "netid": "kcw8",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt76984",
+      "title": "DOMESTIC VIOLENCE AWARENESS AND WORKPLACE EMPOWERMENT PROJECT 2015-2016",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "",
+      "name": "not found",
+      "uri": "."
+    },
+    "funagen": {
+      "name": "NYS DEPT OF LABOR",
+      "uri": "/scholars/display/org25208"
+    },
+    "Cost": 150000,
+    "End": "2016",
+    "Start": "2015",
+    "id": "76984"
+  },
+  {
+    "group": "low",
+    "people": [
+      {
+        "uri": "/scholars/display/agh4",
+        "name": "Hayes, Alexander G.",
+        "netid": "agh4",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt75917",
+      "title": "GEOMORPHOLOGY OF TITAN'S POLAR TERRAINS: USING LANDSCAPE FORM TO UNDERSTAND SURFACE PROCESSES",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Cornell Center for Astrophysics & Planetary Science (CCAPS)",
+      "uri": "/scholars/display/org76324"
+    },
+    "funagen": {
+      "name": "NASA SHARED SERVICES CENTER",
+      "uri": "/scholars/display/org98399"
+    },
+    "Cost": 30000,
+    "End": "2016",
+    "Start": "2015",
+    "id": "75917"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/nsm47",
+        "name": "Mattson, Neil S.",
+        "netid": "nsm47",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt72264",
+      "title": "OPTIMIZING LED SYSTEMS FOR GREENHOUSE LEAFY GREEN PRODUCTION",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Horticulture Section",
+      "uri": "/scholars/display/org93693"
+    },
+    "funagen": {
+      "name": "NEW YORK STATE ENERGY RESEARCH AND DEVELOPMENT AUTHORITY",
+      "uri": "/scholars/display/org90329"
+    },
+    "Cost": 249081,
+    "End": "2017",
+    "Start": "2014",
+    "id": "72264"
+  },
+  {
+    "group": "low",
+    "people": [
+      {
+        "uri": "/scholars/display/laf4",
+        "name": "Fortier, Lisa Ann",
+        "netid": "laf4",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt77934",
+      "title": "OPTIMIZATION OF EQUINE ACP",
+      "type": "CONTRACT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Clinical Sciences",
+      "uri": "/scholars/display/org80031"
+    },
+    "funagen": {
+      "name": "ARTHREX INC.",
+      "uri": "/scholars/display/org16536"
+    },
+    "Cost": 6758,
+    "End": "2017",
+    "Start": "2016",
+    "id": "77934"
+  },
+  {
+    "group": "medium",
+    "people": [
+      {
+        "uri": "/scholars/display/mfj28",
+        "name": "Jung, Malte F",
+        "netid": "mfj28",
+        "role": "PI"
+      }
+    ],
+    "P-I-Id": "55226-3713",
+    "grant": {
+      "uri": "/scholars/display/gnt72513",
+      "title": "CHS: SMALL: HOW RECOMMENDATION AND EXPLANATION AFFECT PREFERENCES IN SOCIAL NETWORKS",
+      "type": "GRANT"
+    },
+    "dept": {
+      "code": "CBE",
+      "name": "Information Science",
+      "uri": "/scholars/display/org74438"
+    },
+    "funagen": {
+      "name": "DIRECTORATE FOR COMPUTER & INFORMATION SCIENCE & ENGINEERING NSF",
+      "uri": "/scholars/display/org98356"
+    },
+    "Cost": 206246,
+    "End": "2017",
+    "Start": "2014",
+    "id": "72513"
+  }]
