@@ -35,6 +35,15 @@ function drawCountryMap(articles){
     .style('height', height + 'px')
     .style('width', width + 'px');
 
+
+    var rect = map.append("rect")
+    .attr("id", "background-rectangle")
+    .style("height", height)
+    .style("width", width)
+    .style("fill", "white");
+
+    rect.on("click", hideSidebar);
+
     // queue and render
     d3.queue()
     .defer(d3.json, urls.us)
