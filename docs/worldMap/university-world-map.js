@@ -8,7 +8,7 @@ function drawCountryMap(articles){
     }
 
     var margin = {top: 10, left: 10, bottom: 10, right: 10}
-    , width = parseInt(d3.select('.col-md-8').style('width'))
+    , width = parseInt(d3.select('.col-md-7').style('width'))
     , width = width - margin.left - margin.right
     , mapRatio = .5
     , height = width * mapRatio;
@@ -35,8 +35,9 @@ function drawCountryMap(articles){
     .style('height', height + 'px')
     .style('width', width + 'px');
 
-    var tooltip = d3.select("#mapViz").append("div")
-    .attr("class", "tooltip");
+    
+
+
 
 
     // queue and render
@@ -48,6 +49,7 @@ function drawCountryMap(articles){
     // catch the resize
     d3.select(window).on('resize', resize);
 
+    var g = map.append("g");
 
     function render(err, us, abbr) {
         statesDict={}
@@ -56,43 +58,59 @@ function drawCountryMap(articles){
             statesDict[entry.full] = entry.short
         });
 
-
-
         var stateCounts = getCounts(articles)[1];
 
         var states = topojson.feature(us, us.objects.states);
 
-        colors.domain(d3.extent(d3.values(stateCounts).map(d=>Math.log(d))));
-
-        var statePaths = map.selectAll('path.state')
-        .data(states.features)
-        .enter().append('path')
-        .attr('class', 'state')
-        .attr('d', path)
-        .style('fill', function(d) {
-
+        function getStateCounts(d){
             var stateName = d.properties.name.toUpperCase(); 
             var short = statesDict[stateName]; 
 
             if (stateCounts.hasOwnProperty(short)){
                 var stateCount = stateCounts[short]
-                return colors(Math.log(stateCount));
+                return stateCount;
             }
             else{
-                return "#FFF";
+                return 0;
             }
-        })
-        .on("click", function(){
-            console.log(this)
+        }
+
+        var tip = d3.tip().attr('class', 'd3-tip').html(function(d) { return d.properties.name + " (" + getStateCounts(d) + ")" ; });
+
+        /* Invoke the tip in the context of your visualization */
+        map.call(tip)
+
+        function stateMouseover(d){
+            tip.show(d)
+        }
+        function stateMouseout(d){
+            tip.hide();
+        }
+
+
+        colors.domain(d3.extent(d3.values(stateCounts).map(d=>Math.log(d))));
+
+        var statePaths = g.selectAll('path.state')
+        .data(states.features)
+        .enter().append('path')
+        .attr('class', 'state')
+        .attr('d', path)
+        .on("click", sidebar)
+        .on("mouseover", stateMouseover)
+        .on("mouseout", stateMouseout)
+        .style('fill', function(d) {
+            return colors(Math.log(getStateCounts(d)));
         }); 
 
-   
+
+
+
 
     }
 
     function resize() {
         // adjust things when the window size changes
-        width = parseInt(d3.select('.col-md-8').style('width'));
+        width = parseInt(d3.select('.col-md-7').style('width'));
         width = width - margin.left - margin.right;
         height = width * mapRatio;
 
@@ -135,7 +153,27 @@ function createEventListeners(){
 
         }
     });
+
 }
+
+function sidebar(d){
+    var panel = d3.select("#rh-panel"); 
+
+
+    if(panel.classed('closed')){
+        panel.style("width", "20%");
+        panel.classed("closed", false); 
+        panel.select("#areaTitle").style("opacity", 0).text(d.properties.name).transition(100).delay(100).style("opacity", 1);
+    }
+    else{
+
+        hideFields();
+        panel.style("width", "3%"); 
+        panel.classed("closed", true);
+    }
+
+}
+
 
 function drawWorldMap(data){
 
@@ -144,7 +182,7 @@ function drawWorldMap(data){
     }
 
     var margin = {top: 10, left: 10, bottom: 10, right: 10}
-    , width = parseInt(d3.select('.col-md-8').style('width'))
+    , width = parseInt(d3.select('.col-md-7').style('width'))
     , width = width - margin.left - margin.right
     , mapRatio = .5
     , height = width * mapRatio;
@@ -188,27 +226,52 @@ var path = d3.geo.path()
 
         colors.domain(d3.extent(d3.values(countryCounts).map(d=>Math.log(d))));
 
+        function getCountryCounts(d){
+            var name = d.properties.name.toUpperCase();
+            if(countryCounts.hasOwnProperty(name)){
+                return countryCounts[name];
+            }
+            else{
+                return 0; 
+            }
+
+        }
+
+
+
+        var tip = d3.tip().attr('class', 'd3-tip').html(function(d) { return d.properties.name + " (" + getCountryCounts(d) + ")" ; });
+
+        /* Invoke the tip in the context of your visualization */
+        map.call(tip)
+
+        function countryMouseover(d){
+            tip.show(d)
+        }
+        function countryMouseout(d){
+            tip.hide();
+        }
+
+
+
+
 
         map.selectAll("path")
         .data(topojson.feature(world, world.objects.countries).features)
         .enter()
         .append("path")
         .attr("d", path)
+
         .style("fill", function(d){
-            var name = d.properties.name.toUpperCase();
-            if(countryCounts.hasOwnProperty(name)){
-                return colors(Math.log(countryCounts[name]));
-            }
-            else{
-                return "#d3d3d3"; 
-            }
-        }); 
+            return colors(Math.log(getCountryCounts(d)));
+        })
+        .on("mouseover", countryMouseover)
+        .on("mouseout", countryMouseout); 
 
     }
 
     function resize() {
         // adjust things when the window size changes
-        width = parseInt(d3.select('.col-md-8').style('width'));
+        width = parseInt(d3.select('.col-md-7').style('width'));
         width = width - margin.left - margin.right;
         height = width * mapRatio;
 
@@ -279,4 +342,8 @@ var path = d3.geo.path()
                 window.data = data;
                 drawCountryMap(data);
             }); 
+        }
+
+        function hideFields(){
+            d3.select("#areaTitle").text("");
         }

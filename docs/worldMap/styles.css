@@ -10,11 +10,11 @@ body {
 
 .state{
   fill: none;
-  stroke: black;
+  stroke: #d3d3d3;
   stroke-width: 0.7;
   stroke-linejoin: round;
   stroke-linecap: round;
-  pointer-events: none;
+ 
 }
 
 .d3-tip {
@@ -58,4 +58,37 @@ div.tooltip {
   box-shadow: 0px 0px 2px 0px #a6a6a6; 
   opacity: 0.9; 
   position: absolute;
+}
+
+.state:hover{
+  opacity: .5;
+}
+
+#rh-panel {
+  background-color: #000; 
+  opacity: .70;
+  height: 600px;
+  width: 3%;
+  float:right;
+  transition: width .5s;
+  position: absolute;
+  right:0;
+
+}
+
+#hamburgerIcon{
+  margin-top: 5px;
+  font-size: 30px;
+  color: white;
+  display:block;
+  margin-left: 14px;
+  float:left;
+}
+
+#areaTitle{
+  margin-top: 5px;
+  color: #FF0;
+  float:left;
+  margin-left: 5px;
+  margin-bottom: 5px;
 }
