@@ -35,11 +35,6 @@ function drawCountryMap(articles){
     .style('height', height + 'px')
     .style('width', width + 'px');
 
-    
-
-
-
-
     // queue and render
     d3.queue()
     .defer(d3.json, urls.us)
@@ -87,8 +82,9 @@ function drawCountryMap(articles){
             tip.hide();
         }
 
-
         colors.domain(d3.extent(d3.values(stateCounts).map(d=>Math.log(d))));
+
+        d3.select("#rh-panel").on("click", hideSidebar)
 
         var statePaths = g.selectAll('path.state')
         .data(states.features)
@@ -165,12 +161,16 @@ function sidebar(d){
         panel.classed("closed", false); 
         panel.select("#areaTitle").style("opacity", 0).text(d.properties.name).transition(100).delay(100).style("opacity", 1);
     }
-    else{
 
-        hideFields();
-        panel.style("width", "3%"); 
-        panel.classed("closed", true);
+    else{
+         panel.select("#areaTitle").style("opacity", 0).text(d.properties.name).transition(100).delay(100).style("opacity", 1);
     }
+}
+function hideSidebar(){
+    var panel = d3.select("#rh-panel"); 
+    panel.style("width", "3%"); 
+    panel.classed("closed", true)
+    panel.select("#areaTitle").style("opacity", 0).text("");
 
 }
 
