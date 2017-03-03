@@ -100,7 +100,7 @@ function drawCountryMap(articles){
         .enter().append('path')
         .attr('class', 'state')
         .attr('d', path)
-        .on("click", sidebar)
+        .on("click", stateClick)
         .on("mouseover", stateMouseover)
         .on("mouseout", stateMouseout)
         .style('fill', function(d) {
@@ -174,6 +174,11 @@ function sidebar(d){
     else{
          panel.select("#areaTitle").style("opacity", 0).text(d.properties.name).transition(100).delay(100).style("opacity", 1);
     }
+}
+
+function stateClick(d){
+    sidebar(d);
+    fillSidebar(d); 
 }
 function hideSidebar(){
     var panel = d3.select("#rh-panel"); 
@@ -356,3 +361,8 @@ var path = d3.geo.path()
         function hideFields(){
             d3.select("#areaTitle").text("");
         }
+
+
+function fillSidebar(d){
+    console.log(d); 
+}
