@@ -320,14 +320,16 @@ var path = d3.geo.path()
                 paper.authors.forEach(function(author){
                     if(collabCounter.hasOwnProperty(author.country)){
                         collabCounter[author.country] ++; 
-
                     }
                     else{
                         collabCounter[author.country] = 1;
                     }
                     if(author.country === "UNITED STATES"){
                         if(statesCounter.hasOwnProperty(author.state)){
-                            statesCounter[author.state] ++; 
+                            if(!author.cornellAffiliation && author.authorAffiliation !== "Cornell University" && author.authorAffiliation !== "CORNELL UNIV"){
+                               console.log(author)
+                                statesCounter[author.state] ++; 
+                            }
                         }
                         else{
                             statesCounter[author.state] = 1;
@@ -352,7 +354,7 @@ var path = d3.geo.path()
         }
 
         function draw(){
-            d3.json("external-2016-11-4.json", function(data){
+            d3.json("external-2017-1-3.json", function(data){
                 window.data = data;
                 drawCountryMap(data);
             }); 
@@ -365,4 +367,6 @@ var path = d3.geo.path()
 
 function fillSidebar(d){
     console.log(d); 
+
+
 }
