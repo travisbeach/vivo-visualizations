@@ -2,6 +2,9 @@
 
 function drawCountryMap(articles) {
 
+    addChecks("#academicUnit", getAcademicUnits(articles));
+    addChecks("#subjectArea", getSubjectArea(articles));
+    addYears(articles);
     var urls = {
         us: "us.json",
         keys: "statesHash.csv"
@@ -68,7 +71,7 @@ function drawCountryMap(articles) {
 
             if (articles.hasOwnProperty(short)) {
                 var smallerArticles = articles[short]; 
-                return smallerArticles.length
+                return smallerArticles.length;
                 
         }
             else {
@@ -413,6 +416,81 @@ function uniqueCountPreserve(inputArray){
 
     //Reverse the Array and Return
     return(keysByCount.reverse())
+}
+
+function getAcademicUnits(articles){
+    var units = [];
+    Object.keys(articles).forEach(function(state){
+        var stateArticles = articles[state]; 
+        var stateAuthors = stateArticles.map(d=>d.authors).reduce((a, b)=>a.concat(b)); 
+        //console.log(state);
+        var stateUnits = stateAuthors.map(d=>d.cornellAffiliation).map(d=>d===null ? [] : d).reduce((a, b)=>a.concat(b)); 
+        //console.log(stateUnits);
+        units.push(stateUnits); 
+    })
+
+    units = units.reduce((a,b)=>a.concat(b)); 
+    return _.uniq(units); 
+}
+
+function getSubjectArea(articles){
+    var areas = []; 
+     Object.keys(articles).forEach(function(state){
+        var stateArticles = articles[state]; 
+        var stateAreas = stateArticles.map(d=>d.subjectAreas).reduce((a, b)=>a.concat(b)); 
+        areas.push(stateAreas); 
+    })
+    return _.uniq(areas.reduce((a,b)=>a.concat(b))); 
+}
+
+function addChecks(target, list){
+   var anchorDiv = d3.select(target); 
+	var labels = anchorDiv.selectAll("div")
+	.data(list.sort())
+	.enter()
+	.append("li"); 
+	labels
+	.append("input")
+	.attr("checked", true)
+	.attr("type", "checkbox")
+	.attr("class", "cbox"); 
+
+    labels.append("label").attr("class", "label").html(d=>d);
+}
+function getYears(articles){
+    var years = []; 
+     Object.keys(articles).forEach(function(state){
+        var stateArticles = articles[state]; 
+        var stateYears = stateArticles.map(d=>+d.yearOfPublication); 
+        years.push(stateYears); 
+    }) 
+    return _.uniq(years.reduce((a,b)=>a.concat(b))); 
+}
+function addYears(articles){
+    var yearExtent = d3.extent(getYears(articles)); 
+    var range = document.getElementById('range');
+      noUiSlider.create(range, {
+          start: yearExtent, // Handle start position
+          connect: true, // Display a colored bar between the handles
+          step: 1, 
+          tooltips: true,
+          format: {
+            to: function ( value ) {
+              return value;
+            },
+            from: function ( value ) {
+              return value;
+            }}, 
+          range: { // Slider can select '0' to '100'
+          'min': yearExtent[0],
+          'max': yearExtent[1]
+        }, 
+        pips: {
+          mode: 'values',
+          values: yearExtent, 
+          density: 75
+        }
+      });
 }
 
 

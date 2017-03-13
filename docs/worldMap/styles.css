@@ -106,3 +106,22 @@ div.tooltip {
   margin: 5%;
   color: #FFF;
 }
+
+.label{
+  color: black;
+}
+
+li{
+  list-style: none;
+}
+
+.panel-collapse{
+  max-height: 250px; 
+  overflow-y: scroll;
+  min-height: 150px;
+}
+
+#range{
+  margin: 25px;
+  margin-top: 40px;
+}
