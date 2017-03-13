@@ -66,13 +66,14 @@ div.tooltip {
 
 #rh-panel {
   background-color: #000; 
-  opacity: .70;
+  opacity: 1;
   height: 600px;
   width: 3%;
   float:right;
   transition: width .5s;
   position: absolute;
   right:0;
+
 
 }
 
@@ -94,4 +95,14 @@ div.tooltip {
   float:left;
   margin-left: 5px;
   margin-bottom: 5px;
+}
+
+.list{
+  max-height: 150px; 
+  overflow-y: scroll;
+}
+
+#inner{
+  margin: 5%;
+  color: #FFF;
 }
