@@ -44,6 +44,7 @@ function drawCountryMap(articles) {
     rect.on("click", hideSidebar);
 
     // queue and render
+
     d3.queue()
         .defer(d3.json, urls.us)
         .defer(d3.csv, urls.keys)
@@ -192,19 +193,20 @@ function createEventListeners() {
 function sidebar(d) {
     var panel = d3.select("#rh-panel");
 
-
+    d3.selectAll(".list").style({"border-style":"solid", "border-color": "white", "border-width": "1px"});
+    d3.selectAll(".rule").transition(500).delay(500).style("display", "block");
     if (panel.classed('closed')) {
         panel.style("width", "20%");
         panel.classed("closed", false);
-        panel.select("#areaTitle").style("opacity", 0).text(d.properties.name).transition(100).delay(100).style("opacity", 1);
+        panel.select("#areaTitle").style("opacity", 0).text(d.properties.name).transition(500).delay(500).style("opacity", 1);
     }
 
     else {
         panel.select("#areaTitle").style("opacity", 0).text(d.properties.name).transition(100).delay(100).style("opacity", 1);
     }
 
-    d3.select("#res").text("Top Researchers");
-    d3.select("#inst").text("Top Institutions");
+    d3.select("#res").text("Featured Researchers");
+    d3.select("#inst").text("Featured Institutions");
 }
 
 
@@ -215,8 +217,11 @@ function hideSidebar() {
     panel.select("#areaTitle").style("opacity", 0).text("");
     d3.selectAll("p").remove();
     d3.selectAll(".heading").text("");
-
+    d3.selectAll(".list").style("border", "hidden");
+    d3.selectAll(".rule").style("display", "none");
 }
+
+
 
 
 function drawWorldMap(data) {

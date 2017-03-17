@@ -66,7 +66,7 @@ div.tooltip {
 
 #rh-panel {
   background-color: #000; 
-  opacity: 1;
+  opacity: .7;
   height: 600px;
   width: 3%;
   float:right;
@@ -78,28 +78,30 @@ div.tooltip {
 }
 
 #hamburgerIcon{
-  margin-top: 5px;
   font-size: 30px;
   color: white;
   display:block;
   margin-left: 30px;
   float:left;
     margin:0;
-  margin-bottom: 10px;
+
 
 }
 
 #areaTitle{
-  margin-top: 10px;
+  margin: 0;
+  margin-top:5px;
   color: #FF0;
   float:left;
   margin-left: 5px;
-  margin-bottom: 5px;
+
 }
 
 .list{
   max-height: 150px; 
-  overflow-y: scroll;
+  overflow-y: auto;
+  border: hidden;
+  padding: 10px
 }
 
 #inner{
@@ -122,6 +124,38 @@ li{
 }
 
 #range{
-  margin: 25px;
+  margin: 20px;
   margin-top: 40px;
+}
+
+html{
+  max-width: 100%;
+  overflow-x: hidden; 
+}
+
+.scroll1::-webkit-scrollbar {
+  width: 5px;
+}
+ 
+.scroll1::-webkit-scrollbar-track {
+  background: #d3d3d3;
+}
+
+.scroll1::-webkit-scrollbar-thumb{
+  background:#666;
+  border-radius: 20px;
+}
+
+.closed{
+  text-align: center;
+}
+
+.topRow{
+  text-align: center;
+  margin: auto; 
+}
+
+
+.rule{
+  display: none;
 }
