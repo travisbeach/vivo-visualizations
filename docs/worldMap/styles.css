@@ -161,11 +161,19 @@ html{
 }
 
 .authorLink{
-  text-decoration: underline; 
   color: white;
+  text-decoration: underline; 
 }
 .authorLink:hover{
+  color: white;
+}
+
+.notLink{
   text-decoration: none; 
+  color: white;
+}
+.notLink:hover{
+  text-decoration: none;
   color: white;
 }
 .counts{

@@ -88,16 +88,26 @@ function drawCountryMap(articles) {
             var topResearchers = authorCounter(researchersList)
             d3.select("#researchers").selectAll("p").remove();
             d3.select("#researchers").selectAll("p").data(topResearchers).enter().append("p").append("a").attr("class", "authorLink").attr("href", d=>d.uri).html(d=>d.name + "<span class='counts'>(" + d.count + ") </span>"); 
-            var institutionList = arts.map(d=>d.authors).reduce((a,b)=>a.concat(b)).filter(correctState).map(d=>d.authorAffiliation.localName);
-            var topInstitutions = uniqueCountPreserve(institutionList);
+            var institutionList = arts.map(d=>d.authors).reduce((a,b)=>a.concat(b)).filter(correctState);
+            var topInstitutions = institutionCounter(institutionList);
             d3.select("#institutions").selectAll("p").remove();
-            d3.select("#institutions").selectAll("p").data(topInstitutions).enter().append("p").text(d=>d); 
+            d3.select("#institutions").selectAll("p").data(topInstitutions).enter().append("p").append("a").attr("class", "authorLink").attr("class", returnLink).attr("href", d=>d.uri).html(d=>d.name + "<span class='counts'>(" + d.count + ") </span>"); 
+
+
         }
-        
+        function returnLink(d){
+            if (d.uri){
+                return "authorLink";
+            }
+            else{
+                return "notLink";
+            }
+        }
+
         function correctState(d){
             
             if(d.state == window.state){
-                console.log(d.authorAffiliation.localName);
+                console.log(d);
                 return true;
             }
             else{
@@ -106,7 +116,6 @@ function drawCountryMap(articles) {
         }
         function fromCornell(d){
             if (d.cornellAffiliation){
-                console.log(d);
                 return true;
             }
             else{
@@ -389,15 +398,16 @@ function addLegend(target, scale) {
     d3.selectAll("#legend").remove();
 
     var legendSvg = d3.select("#legendDiv").append("svg").attr("width", 200).attr("height", 200).attr("id", "legend");
-
+    console.log(scale.domain());
     scale.range().forEach(function (d, i) {
         legendSvg.append("rect").attr("height", 20).attr("width", 20).attr("x", 10).attr("y", 10 + i * 25).style("fill", d);
         legendSvg.append("text").attr("x", 40).attr("y", 10 + 10 + i * 25).text(d).style("alignment-baseline", "middle").style("font-size", 20);
+        console.log(d);
     })
 }
 
 function draw() {
-    d3.json("ExternalCollaborations-State.json", function (data) {
+    d3.json("ExternalCollaborations-StateUpdated.json", function (data) {
         window.data = data;
         drawCountryMap(data);
     });
@@ -451,7 +461,7 @@ function getSubjectArea(articles){
     var areas = []; 
      Object.keys(articles).forEach(function(state){
         var stateArticles = articles[state]; 
-        var stateAreas = stateArticles.map(d=>d.subjectAreas).reduce((a, b)=>a.concat(b)); 
+        var stateAreas = stateArticles.map(d=>d.subjectAreas).map(d=>d===null ? [] : d).reduce((a, b)=>a.concat(b)); 
         areas.push(stateAreas); 
     })
     return _.uniq(areas.reduce((a,b)=>a.concat(b))); 
@@ -520,6 +530,33 @@ function authorCounter(array){
                 name: author.authorName, 
                 count: 1, 
                 uri: author.authorURI
+            }
+        }
+    }); 
+
+    var returnArray = []; 
+    for (var property in returnObject){
+        if(returnObject.hasOwnProperty(property)){
+            returnArray.push(returnObject[property]);
+        }
+    }
+    
+    return returnArray.sort(function(x,y){
+        return d3.descending(x.count, y.count);
+        });
+}
+
+function institutionCounter(array){
+    var returnObject = {}; 
+    array.forEach(function(author){
+        if (returnObject.hasOwnProperty(author.authorAffiliation.localName)){
+            returnObject[author.authorAffiliation.localName].count++; 
+        }
+        else{
+            returnObject[author.authorAffiliation.localName] = {
+                name: author.authorAffiliation.localName, 
+                count: 1, 
+                uri: author.authorAffiliation.gridURI
             }
         }
     }); 
