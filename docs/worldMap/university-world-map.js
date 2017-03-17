@@ -87,7 +87,7 @@ function drawCountryMap(articles) {
             var researchersList = arts.map(d=>d.authors).reduce((a,b)=>a.concat(b)).filter(fromCornell); 
             var topResearchers = authorCounter(researchersList)
             d3.select("#researchers").selectAll("p").remove();
-            d3.select("#researchers").selectAll("p").data(topResearchers).enter().append("p").append("a").attr("class", "authorLink").attr("href", d=>d.uri).text(d=>d.name + " (" + d.count + ")"); 
+            d3.select("#researchers").selectAll("p").data(topResearchers).enter().append("p").append("a").attr("class", "authorLink").attr("href", d=>d.uri).html(d=>d.name + "<span class='counts'>(" + d.count + ") </span>"); 
             var institutionList = arts.map(d=>d.authors).reduce((a,b)=>a.concat(b)).filter(correctState).map(d=>d.authorAffiliation.localName);
             var topInstitutions = uniqueCountPreserve(institutionList);
             d3.select("#institutions").selectAll("p").remove();

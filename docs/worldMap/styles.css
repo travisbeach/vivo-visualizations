@@ -168,3 +168,6 @@ html{
   text-decoration: none; 
   color: white;
 }
+.counts{
+ float: right;
+}
