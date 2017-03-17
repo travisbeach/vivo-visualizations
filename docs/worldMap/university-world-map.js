@@ -84,10 +84,10 @@ function drawCountryMap(articles) {
             var state = statesDict[d.properties.name.toUpperCase()];
             window.state = state;
             arts = articles[state]; 
-            var researchersList = arts.map(d=>d.authors).reduce((a,b)=>a.concat(b)).filter(correctState).map(d=>d.authorName);
-            var topResearchers = uniqueCountPreserve(researchersList);
+            var researchersList = arts.map(d=>d.authors).reduce((a,b)=>a.concat(b)).filter(fromCornell); 
+            var topResearchers = authorCounter(researchersList)
             d3.select("#researchers").selectAll("p").remove();
-            d3.select("#researchers").selectAll("p").data(topResearchers).enter().append("p").text(d=>d); 
+            d3.select("#researchers").selectAll("p").data(topResearchers).enter().append("p").append("a").attr("class", "authorLink").attr("href", d=>d.uri).text(d=>d.name + " (" + d.count + ")"); 
             var institutionList = arts.map(d=>d.authors).reduce((a,b)=>a.concat(b)).filter(correctState).map(d=>d.authorAffiliation.localName);
             var topInstitutions = uniqueCountPreserve(institutionList);
             d3.select("#institutions").selectAll("p").remove();
@@ -102,6 +102,15 @@ function drawCountryMap(articles) {
             }
             else{
                 return false; 
+            }
+        }
+        function fromCornell(d){
+            if (d.cornellAffiliation){
+                console.log(d);
+                return true;
+            }
+            else{
+                return false;
             }
         }
     
@@ -496,6 +505,35 @@ function addYears(articles){
           density: 75
         }
       });
+}
+
+//return a filtered list of {name:"", count: "", uri: ""}
+
+function authorCounter(array){
+    var returnObject = {}; 
+    array.forEach(function(author){
+        if (returnObject.hasOwnProperty(author.authorName)){
+            returnObject[author.authorName].count++; 
+        }
+        else{
+            returnObject[author.authorName] = {
+                name: author.authorName, 
+                count: 1, 
+                uri: author.authorURI
+            }
+        }
+    }); 
+
+    var returnArray = []; 
+    for (var property in returnObject){
+        if(returnObject.hasOwnProperty(property)){
+            returnArray.push(returnObject[property]);
+        }
+    }
+    
+    return returnArray.sort(function(x,y){
+        return d3.descending(x.count, y.count);
+        });
 }
 
 
