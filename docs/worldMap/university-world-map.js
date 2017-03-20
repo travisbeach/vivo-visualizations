@@ -84,17 +84,20 @@ function drawCountryMap(articles) {
             var state = statesDict[d.properties.name.toUpperCase()];
             window.state = state;
             arts = articles[state]; 
-            var researchersList = arts.map(d=>d.authors).reduce((a,b)=>a.concat(b)).filter(fromCornell); 
+            
+            var researchersList = arts.map(d=>d.authors).reduce((a,b)=>a.concat(b)); 
+  
             var topResearchers = authorCounter(researchersList)
+  
             d3.select("#researchers").selectAll("p").remove();
             d3.select("#researchers").selectAll("p").data(topResearchers).enter().append("p").attr("class", "linked").append("a").attr("href", d=>d.uri).html(d=>d.name + "<span class='counts'>(" + d.count + ") </span>"); 
             var institutionList = arts.map(d=>d.authors).reduce((a,b)=>a.concat(b)).filter(correctState);
             var topInstitutions = institutionCounter(institutionList);
-            console.log(topInstitutions);
+       
             d3.select("#institutions").selectAll("p").remove();
             d3.select("#institutions").selectAll("p").data(topInstitutions).enter().append("p").attr("class", returnLink).append("a").attr("href", d=>d.uri).attr("target", "_blank").html(d=>d.name + "<span class='counts'>(" + d.count + ") </span>"); 
 
-            d3.select("#bigCounts").html("(3)");
+            d3.select("#bigCounts").html(d=>"("+arts.length+")");
 
         }
         function returnLink(d){
@@ -109,7 +112,6 @@ function drawCountryMap(articles) {
         function correctState(d){
             
             if(d.state == window.state){
-                console.log(d);
                 return true;
             }
             else{
@@ -415,7 +417,7 @@ function addLegend(target, scale) {
 }
 
 function draw() {
-    d3.json("ExternalCollaborations-State.json", function (data) {
+    d3.json("ExternalCollaborations-StateUpdated.json", function (data) {
         window.data = data;
         drawCountryMap(data);
     });
