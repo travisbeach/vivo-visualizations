@@ -7,6 +7,8 @@ function drawCountryMap(articles) {
     addChecks("#academicUnit", getAcademicUnits(articles));
     addChecks("#subjectArea", getSubjectArea(articles));
     addYears(articles);
+
+
     var urls = {
         us: "us.json",
         keys: "statesHash.csv"
@@ -244,7 +246,7 @@ function sidebar(d) {
         panel.select("#areaTitle").style("opacity", 0).html(d.properties.name + "<span id='bigCounts'></span>").transition(100).delay(100).style("opacity", 1);
     }
 
-    d3.select("#res").text("Featured Researchers");
+    d3.select("#res").text("Featured Cornell Researchers");
     d3.select("#inst").text("Featured Institutions");
 }
 
