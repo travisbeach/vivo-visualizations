@@ -10,7 +10,7 @@ body {
 
 .state{
   fill: none;
-  stroke: #d3d3d3;
+  stroke: black;
   stroke-width: 0.7;
   stroke-linejoin: round;
   stroke-linecap: round;
@@ -83,7 +83,7 @@ div.tooltip {
   display:block;
   margin-left: 30px;
   float:left;
-    margin:0;
+  margin-left:2px;
 
 
 }
@@ -142,7 +142,7 @@ html{
 }
 
 .scroll1::-webkit-scrollbar-thumb{
-  background:#666;
+  background:steelblue;
   border-radius: 20px;
 }
 
@@ -170,6 +170,10 @@ html{
 .linked a{
   color: white;
   text-decoration: none;
+}
+.linked a:hover{
+  text-decoration: underline;
+  
 }
 .unlinked a{
   color: white;

@@ -2,6 +2,8 @@
 
 function drawCountryMap(articles) {
 
+    articles['NY'] = articles['NY'].filter(nyFilter);
+
     addChecks("#academicUnit", getAcademicUnits(articles));
     addChecks("#subjectArea", getSubjectArea(articles));
     addYears(articles);
@@ -10,10 +12,10 @@ function drawCountryMap(articles) {
         keys: "statesHash.csv"
     }
 
-    var margin = { top: 10, left: 10, bottom: 10, right: 10 }
+    var margin = { top: 10, left: 0, bottom: 10, right: 0 }
         , width = parseInt(d3.select('.col-md-7').style('width'))
         , width = width - margin.left - margin.right
-        , mapRatio = .5
+        , mapRatio = .6
         , height = width * mapRatio;
 
     // projection and path setup
@@ -72,6 +74,7 @@ function drawCountryMap(articles) {
 
             if (articles.hasOwnProperty(short)) {
                 var smallerArticles = articles[short]; 
+                
                 return smallerArticles.length;
                 
         }
@@ -84,21 +87,29 @@ function drawCountryMap(articles) {
             var state = statesDict[d.properties.name.toUpperCase()];
             window.state = state;
             arts = articles[state]; 
-            
-            var researchersList = arts.map(d=>d.authors).reduce((a,b)=>a.concat(b)); 
-  
+
+
+            var researchersList = arts.map(d=>d.authors).reduce((a,b)=>a.concat(b)).filter(fromCornell); 
+           
             var topResearchers = authorCounter(researchersList)
-  
+            //console.log(topResearchers);
             d3.select("#researchers").selectAll("p").remove();
             d3.select("#researchers").selectAll("p").data(topResearchers).enter().append("p").attr("class", "linked").append("a").attr("href", d=>d.uri).html(d=>d.name + "<span class='counts'>(" + d.count + ") </span>"); 
             var institutionList = arts.map(d=>d.authors).reduce((a,b)=>a.concat(b)).filter(correctState);
-            var topInstitutions = institutionCounter(institutionList);
-       
+            var topInstitutions = institutionCounter(institutionList).filter(containsCornell);
             d3.select("#institutions").selectAll("p").remove();
             d3.select("#institutions").selectAll("p").data(topInstitutions).enter().append("p").attr("class", returnLink).append("a").attr("href", d=>d.uri).attr("target", "_blank").html(d=>d.name + "<span class='counts'>(" + d.count + ") </span>"); 
 
             d3.select("#bigCounts").html(d=>"("+arts.length+")");
 
+        }
+        function containsCornell(d){
+            if (d.name.toLowerCase().includes("cornell")){
+                return false; 
+            }
+            else{
+                return true; 
+            }
         }
         function returnLink(d){
             if (d.uri){
@@ -119,12 +130,16 @@ function drawCountryMap(articles) {
             }
         }
         function fromCornell(d){
-            if (d.cornellAffiliation){
+            if (d.authorAffiliation.localName === "Cornell University" || d.authorAffiliation.localName === "CORNELL UNIV"){
                 return true;
             }
             else{
                 return false;
             }
+        }
+
+        function notCornell(d){
+            return !fromCornell(d); 
         }
     
 
@@ -162,7 +177,7 @@ function drawCountryMap(articles) {
                 return colors(Math.log(getStateCounts(d)));
             });
 
-        addLegend("#legendDiv", colors)
+        //addLegend("#legendDiv", colors)
 
     }
 
@@ -226,7 +241,7 @@ function sidebar(d) {
     }
 
     else {
-        panel.select("#areaTitle").style("opacity", 0).text(d.properties.name).transition(100).delay(100).style("opacity", 1);
+        panel.select("#areaTitle").style("opacity", 0).html(d.properties.name + "<span id='bigCounts'></span>").transition(100).delay(100).style("opacity", 1);
     }
 
     d3.select("#res").text("Featured Researchers");
@@ -266,7 +281,7 @@ function drawWorldMap(data) {
 
     // projection and path setup
     var projection = d3.geo.mercator()
-        .scale(width / 9)
+        .scale(width / 6)
         .translate([width / 2, height / 2]);
 
     var path = d3.geo.path()
@@ -583,4 +598,14 @@ function institutionCounter(array){
         });
 }
 
+function nyFilter(d){
+    var nyNotCornell = 0; 
+    d.authors.forEach(function(author){
+        if (author.state == 'NY' && author.authorAffiliation.localName !== 'Cornell University' && author.authorAffiliation.localName !== 'CORNELL UNIV'){
+            nyNotCornell++; 
+        }
+    })
+    return nyNotCornell > 0 ? true : false; 
+
+}
 
