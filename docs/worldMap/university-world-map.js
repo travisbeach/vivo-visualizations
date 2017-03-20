@@ -87,20 +87,22 @@ function drawCountryMap(articles) {
             var researchersList = arts.map(d=>d.authors).reduce((a,b)=>a.concat(b)).filter(fromCornell); 
             var topResearchers = authorCounter(researchersList)
             d3.select("#researchers").selectAll("p").remove();
-            d3.select("#researchers").selectAll("p").data(topResearchers).enter().append("p").append("a").attr("class", "authorLink").attr("href", d=>d.uri).html(d=>d.name + "<span class='counts'>(" + d.count + ") </span>"); 
+            d3.select("#researchers").selectAll("p").data(topResearchers).enter().append("p").attr("class", "linked").append("a").attr("href", d=>d.uri).html(d=>d.name + "<span class='counts'>(" + d.count + ") </span>"); 
             var institutionList = arts.map(d=>d.authors).reduce((a,b)=>a.concat(b)).filter(correctState);
             var topInstitutions = institutionCounter(institutionList);
+            console.log(topInstitutions);
             d3.select("#institutions").selectAll("p").remove();
-            d3.select("#institutions").selectAll("p").data(topInstitutions).enter().append("p").append("a").attr("class", "authorLink").attr("class", returnLink).attr("href", d=>d.uri).html(d=>d.name + "<span class='counts'>(" + d.count + ") </span>"); 
+            d3.select("#institutions").selectAll("p").data(topInstitutions).enter().append("p").attr("class", returnLink).append("a").attr("href", d=>d.uri).html(d=>d.name + "<span class='counts'>(" + d.count + ") </span>"); 
 
+            d3.select("#bigCounts").html("(3)");
 
         }
         function returnLink(d){
             if (d.uri){
-                return "authorLink";
+                return "linked";
             }
             else{
-                return "notLink";
+                return "unlinked";
             }
         }
 
@@ -158,6 +160,8 @@ function drawCountryMap(articles) {
                 return colors(Math.log(getStateCounts(d)));
             });
 
+        addLegend("#legendDiv", colors)
+
     }
 
     function resize() {
@@ -183,7 +187,7 @@ function drawCountryMap(articles) {
 
 
 
-    addLegend("#legendDiv", colors)
+    
 
 }///drawCountyMap
 
@@ -214,9 +218,9 @@ function sidebar(d) {
     d3.selectAll(".list").style({"border-style":"solid", "border-color": "white", "border-width": "1px"});
     d3.selectAll(".rule").transition(500).delay(500).style("display", "block");
     if (panel.classed('closed')) {
-        panel.style("width", "20%");
+        panel.style("width", "25%");
         panel.classed("closed", false);
-        panel.select("#areaTitle").style("opacity", 0).text(d.properties.name).transition(500).delay(500).style("opacity", 1);
+        panel.select("#areaTitle").style("opacity", 0).html(d.properties.name + "<span id='bigCounts'></span>").transition(500).delay(500).style("opacity", 1);
     }
 
     else {
@@ -396,18 +400,22 @@ function getCounts(testObjects) {
 
 function addLegend(target, scale) {
     d3.selectAll("#legend").remove();
-
-    var legendSvg = d3.select("#legendDiv").append("svg").attr("width", 200).attr("height", 200).attr("id", "legend");
-    console.log(scale.domain());
+    var increment = scale.domain()[1]/scale.range().length;
+ 
+    var legendSvg = d3.select("#legendDiv").append("svg").attr("width", 200).attr("height", 250).attr("id", "legend");
+    
     scale.range().forEach(function (d, i) {
         legendSvg.append("rect").attr("height", 20).attr("width", 20).attr("x", 10).attr("y", 10 + i * 25).style("fill", d);
-        legendSvg.append("text").attr("x", 40).attr("y", 10 + 10 + i * 25).text(d).style("alignment-baseline", "middle").style("font-size", 20);
+        legendSvg.append("text").attr("x", 40).attr("y", 12 + 10 + i * 25).text(function(d){
+            
+            return Math.floor(Math.exp(increment*i)) + " - " +  Math.floor(Math.exp(increment*(i+1))); 
+        }).style("alignment-baseline", "middle").style("font-size", 20);
         console.log(d);
     })
 }
 
 function draw() {
-    d3.json("ExternalCollaborations-StateUpdated.json", function (data) {
+    d3.json("ExternalCollaborations-State.json", function (data) {
         window.data = data;
         drawCountryMap(data);
     });

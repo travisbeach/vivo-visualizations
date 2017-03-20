@@ -160,22 +160,21 @@ html{
   display: none;
 }
 
-.authorLink{
-  color: white;
-  text-decoration: underline; 
-}
-.authorLink:hover{
-  color: white;
-}
-
-.notLink{
-  text-decoration: none; 
-  color: white;
-}
-.notLink:hover{
-  text-decoration: none;
-  color: white;
+.linked:hover{
+  background-color: steelblue;
 }
 .counts{
  float: right;
+}
+
+.linked a{
+  color: white;
+  text-decoration: none;
+}
+.unlinked a{
+  color: white;
+  text-decoration: none;
+}
+#bigCounts{
+  margin-left: 7px;
 }
