@@ -4,55 +4,50 @@ function drawCountryMap(articles) {
 
     articles['NY'] = articles['NY'].filter(nyFilter);
 
-    addChecks("#academicUnit", getAcademicUnits(articles));
-    addChecks("#subjectArea", getSubjectArea(articles));
-    addYears(articles);
-
-
     var urls = {
         us: "us.json",
         keys: "statesHash.csv"
     }
 
     var margin = { top: 10, left: 0, bottom: 10, right: 0 }
-        , width = parseInt(d3.select('.col-md-7').style('width'))
-        , width = width - margin.left - margin.right
-        , mapRatio = .6
-        , height = width * mapRatio;
+    , width = parseInt(d3.select('.col-md-7').style('width'))
+    , width = width - margin.left - margin.right
+    , mapRatio = .6
+    , height = width * mapRatio;
 
     // projection and path setup
     var projection = d3.geo.albersUsa()
-        .scale(width)
-        .translate([width / 2, height / 2]);
+    .scale(width)
+    .translate([width / 2, height / 2]);
 
     var path = d3.geo.path()
-        .projection(projection);
+    .projection(projection);
 
     // scales and axes
     var colors = d3.scale.quantize()
-        .range(['#e0f3db', '#ccebc5', '#a8ddb5', '#7bccc4', '#4eb3d3', '#2b8cbe', '#0868ac', '#084081']);
+    .range(['#e0f3db', '#ccebc5', '#a8ddb5', '#7bccc4', '#4eb3d3', '#2b8cbe', '#0868ac', '#084081']);
 
     // make a map
     var map = d3.select('#mapViz').append('svg')
-        .attr("id", "mapsvg")
-        .style('height', height + 'px')
-        .style('width', width + 'px');
+    .attr("id", "mapsvg")
+    .style('height', height + 'px')
+    .style('width', width + 'px');
 
 
     var rect = map.append("rect")
-        .attr("id", "background-rectangle")
-        .style("height", height)
-        .style("width", width)
-        .style("fill", "white");
+    .attr("id", "background-rectangle")
+    .style("height", height)
+    .style("width", width)
+    .style("fill", "white");
 
     rect.on("click", hideSidebar);
 
     // queue and render
 
     d3.queue()
-        .defer(d3.json, urls.us)
-        .defer(d3.csv, urls.keys)
-        .await(render);
+    .defer(d3.json, urls.us)
+    .defer(d3.csv, urls.keys)
+    .await(render);
 
     // catch the resize
     d3.select(window).on('resize', resize);
@@ -79,7 +74,7 @@ function drawCountryMap(articles) {
                 
                 return smallerArticles.length;
                 
-        }
+            }
             else {
                 return 0;
             }
@@ -92,7 +87,7 @@ function drawCountryMap(articles) {
 
 
             var researchersList = arts.map(d=>d.authors).reduce((a,b)=>a.concat(b)).filter(fromCornell); 
-           
+
             var topResearchers = authorCounter(researchersList)
             //console.log(topResearchers);
             d3.select("#researchers").selectAll("p").remove();
@@ -123,7 +118,7 @@ function drawCountryMap(articles) {
         }
 
         function correctState(d){
-            
+
             if(d.state == window.state){
                 return true;
             }
@@ -143,7 +138,7 @@ function drawCountryMap(articles) {
         function notCornell(d){
             return !fromCornell(d); 
         }
-    
+
 
         function stateClick(d) {
             sidebar(d);
@@ -163,21 +158,26 @@ function drawCountryMap(articles) {
             tip.hide();
         }
 
-        colors.domain(d3.extent(d3.values(articles).map(d => Math.log(d.length))));
+
+
+        var min = d3.max([0, d3.min(d3.values(articles).map(d => Math.log(d.length)))]); 
+
+        colors.domain([min, d3.max(d3.values(articles).map(d => Math.log(d.length)))]);
+        console.log(colors.domain());
 
         d3.select("#rh-panel").on("click", hideSidebar)
         
         var statePaths = g.selectAll('path.state')
-            .data(states.features)
-            .enter().append('path')
-            .attr('class', 'state')
-            .attr('d', path)
-            .on("click", stateClick)
-            .on("mouseover", stateMouseover)
-            .on("mouseout", stateMouseout)
-            .style('fill', function (d) {
-                return colors(Math.log(getStateCounts(d)));
-            });
+        .data(states.features)
+        .enter().append('path')
+        .attr('class', 'state')
+        .attr('d', path)
+        .on("click", stateClick)
+        .on("mouseover", stateMouseover)
+        .on("mouseout", stateMouseout)
+        .style('fill', function (d) {
+            return colors(Math.log(getStateCounts(d)));
+        });
 
         //addLegend("#legendDiv", colors)
 
@@ -191,13 +191,13 @@ function drawCountryMap(articles) {
 
         // update projection
         projection
-            .translate([width / 2, height / 2])
-            .scale(width);
+        .translate([width / 2, height / 2])
+        .scale(width);
 
         // resize the map container
         map
-            .style('width', width + 'px')
-            .style('height', height + 'px');
+        .style('width', width + 'px')
+        .style('height', height + 'px');
 
         // resize the map
         map.select('.land').attr('d', path);
@@ -272,10 +272,10 @@ function drawWorldMap(data) {
     }
 
     var margin = { top: 10, left: 10, bottom: 10, right: 10 }
-        , width = parseInt(d3.select('.col-md-7').style('width'))
-        , width = width - margin.left - margin.right
-        , mapRatio = .5
-        , height = width * mapRatio;
+    , width = parseInt(d3.select('.col-md-7').style('width'))
+    , width = width - margin.left - margin.right
+    , mapRatio = .5
+    , height = width * mapRatio;
 
     var formats = {
         percent: d3.format('%')
@@ -283,26 +283,26 @@ function drawWorldMap(data) {
 
     // projection and path setup
     var projection = d3.geo.mercator()
-        .scale(width / 6)
-        .translate([width / 2, height / 2]);
+    .scale(width / 6)
+    .translate([width / 2, height / 2]);
 
     var path = d3.geo.path()
-        .projection(projection);
+    .projection(projection);
 
     // scales and axes
     var colors = d3.scale.quantize()
-        .range(['#e0f3db', '#ccebc5', '#a8ddb5', '#7bccc4', '#4eb3d3', '#2b8cbe', '#0868ac']);
+    .range(['#e0f3db', '#ccebc5', '#a8ddb5', '#7bccc4', '#4eb3d3', '#2b8cbe', '#0868ac']);
 
     // make a map
     var map = d3.select('#mapViz').append('svg')
-        .attr("id", "mapsvg")
-        .style('height', height + 'px')
-        .style('width', width + 'px');
+    .attr("id", "mapsvg")
+    .style('height', height + 'px')
+    .style('width', width + 'px');
 
     // queue and render
     d3.queue()
-        .defer(d3.json, urls.world)
-        .await(render);
+    .defer(d3.json, urls.world)
+    .await(render);
 
     // catch the resize
     d3.select(window).on('resize', resize);
@@ -346,16 +346,16 @@ function drawWorldMap(data) {
 
 
         map.selectAll("path")
-            .data(topojson.feature(world, world.objects.countries).features)
-            .enter()
-            .append("path")
-            .attr("d", path)
+        .data(topojson.feature(world, world.objects.countries).features)
+        .enter()
+        .append("path")
+        .attr("d", path)
 
-            .style("fill", function (d) {
-                return colors(Math.log(getCountryCounts(d)));
-            })
-            .on("mouseover", countryMouseover)
-            .on("mouseout", countryMouseout);
+        .style("fill", function (d) {
+            return colors(Math.log(getCountryCounts(d)));
+        })
+        .on("mouseover", countryMouseover)
+        .on("mouseout", countryMouseout);
 
     }
 
@@ -367,13 +367,13 @@ function drawWorldMap(data) {
 
         // update projection
         projection
-            .translate([width / 2, height / 2])
-            .scale(width);
+        .translate([width / 2, height / 2])
+        .scale(width);
 
         // resize the map container
         map
-            .style('width', width + 'px')
-            .style('height', height + 'px');
+        .style('width', width + 'px')
+        .style('height', height + 'px');
 
         // resize the map
         map.select('.land').attr('d', path);
@@ -420,13 +420,13 @@ function getCounts(testObjects) {
 function addLegend(target, scale) {
     d3.selectAll("#legend").remove();
     var increment = scale.domain()[1]/scale.range().length;
- 
+
     var legendSvg = d3.select("#legendDiv").append("svg").attr("width", 200).attr("height", 250).attr("id", "legend");
     
     scale.range().forEach(function (d, i) {
         legendSvg.append("rect").attr("height", 20).attr("width", 20).attr("x", 10).attr("y", 10 + i * 25).style("fill", d);
         legendSvg.append("text").attr("x", 40).attr("y", 12 + 10 + i * 25).text(function(d){
-            
+
             return Math.floor(Math.exp(increment*i)) + " - " +  Math.floor(Math.exp(increment*(i+1))); 
         }).style("alignment-baseline", "middle").style("font-size", 20);
         console.log(d);
@@ -434,9 +434,17 @@ function addLegend(target, scale) {
 }
 
 function draw() {
+
     d3.json("ExternalCollaborations-StateUpdated.json", function (data) {
         window.data = data;
-        drawCountryMap(data);
+        window.currentData = data; 
+        drawCountryMap(window.currentData);
+        addYears(window.currentData);
+        addChecks("#academicUnit", getAcademicUnits(window.currentData));
+        addChecks("#subjectArea", getSubjectArea(window.currentData));
+
+
+
     });
 }
 
@@ -473,7 +481,7 @@ function getAcademicUnits(articles){
     var units = [];
     Object.keys(articles).forEach(function(state){
         var stateArticles = articles[state]; 
-        var stateAuthors = stateArticles.map(d=>d.authors).reduce((a, b)=>a.concat(b)); 
+        var stateAuthors = stateArticles.map(d=>d.authors).map(d=>d===null ? [] : d).reduce((a, b)=>a.concat(b)); 
         //console.log(state);
         var stateUnits = stateAuthors.map(d=>d.cornellAffiliation).map(d=>d===null ? [] : d).reduce((a, b)=>a.concat(b)); 
         //console.log(stateUnits);
@@ -486,7 +494,7 @@ function getAcademicUnits(articles){
 
 function getSubjectArea(articles){
     var areas = []; 
-     Object.keys(articles).forEach(function(state){
+    Object.keys(articles).forEach(function(state){
         var stateArticles = articles[state]; 
         var stateAreas = stateArticles.map(d=>d.subjectAreas).map(d=>d===null ? [] : d).reduce((a, b)=>a.concat(b)); 
         areas.push(stateAreas); 
@@ -495,22 +503,22 @@ function getSubjectArea(articles){
 }
 
 function addChecks(target, list){
-   var anchorDiv = d3.select(target); 
-	var labels = anchorDiv.selectAll("div")
-	.data(list.sort())
-	.enter()
-	.append("li"); 
-	labels
-	.append("input")
-	.attr("checked", true)
-	.attr("type", "checkbox")
-	.attr("class", "cbox"); 
+ var anchorDiv = d3.select(target); 
+ var labels = anchorDiv.selectAll("div")
+ .data(list.sort())
+ .enter()
+ .append("li"); 
+ labels
+ .append("input")
+ .attr("checked", true)
+ .attr("type", "checkbox")
+ .attr("class", "cbox"); 
 
-    labels.append("label").attr("class", "label").html(d=>d);
+ labels.append("label").attr("class", "label").html(d=>d);
 }
 function getYears(articles){
     var years = []; 
-     Object.keys(articles).forEach(function(state){
+    Object.keys(articles).forEach(function(state){
         var stateArticles = articles[state]; 
         var stateYears = stateArticles.map(d=>+d.yearOfPublication); 
         years.push(stateYears); 
@@ -520,7 +528,7 @@ function getYears(articles){
 function addYears(articles){
     var yearExtent = d3.extent(getYears(articles)); 
     var range = document.getElementById('range');
-      noUiSlider.create(range, {
+    noUiSlider.create(range, {
           start: yearExtent, // Handle start position
           connect: true, // Display a colored bar between the handles
           step: 1, 
@@ -528,20 +536,37 @@ function addYears(articles){
           format: {
             to: function ( value ) {
               return value;
-            },
-            from: function ( value ) {
+          },
+          from: function ( value ) {
               return value;
-            }}, 
+          }}, 
           range: { // Slider can select '0' to '100'
           'min': yearExtent[0],
           'max': yearExtent[1]
-        }, 
-        pips: {
+      }, 
+      pips: {
           mode: 'values',
           values: yearExtent, 
           density: 75
+      }
+  });
+
+    range.noUiSlider.on("change", function(values, handle){
+        destroyMap();
+        window.currentData = []; 
+        for (var property in window.data){
+            currentData[property] = window.data[property].filter(function(article){
+                if (article.yearOfPublication >= values[0] && article.yearOfPublication <= values[1]){
+                    return true; 
+                }
+                else{
+                    return false; 
+                }
+            }); 
         }
-      });
+        console.log(currentData); 
+        drawCountryMap(window.currentData); 
+    }); 
 }
 
 //return a filtered list of {name:"", count: "", uri: ""}
@@ -570,7 +595,7 @@ function authorCounter(array){
     
     return returnArray.sort(function(x,y){
         return d3.descending(x.count, y.count);
-        });
+    });
 }
 
 function institutionCounter(array){
@@ -597,7 +622,7 @@ function institutionCounter(array){
     
     return returnArray.sort(function(x,y){
         return d3.descending(x.count, y.count);
-        });
+    });
 }
 
 function nyFilter(d){
@@ -610,4 +635,6 @@ function nyFilter(d){
     return nyNotCornell > 0 ? true : false; 
 
 }
+
+
 
