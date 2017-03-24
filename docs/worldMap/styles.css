@@ -182,3 +182,12 @@ html{
 #bigCounts{
   margin-left: 7px;
 }
+
+.normal{
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#nowShowing{
+  color: steelBlue;
+}

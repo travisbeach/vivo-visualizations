@@ -1,6 +1,7 @@
 
 
 function drawCountryMap(articles) {
+   
 
     articles['NY'] = articles['NY'].filter(nyFilter);
 
@@ -51,6 +52,13 @@ function drawCountryMap(articles) {
 
     // catch the resize
     d3.select(window).on('resize', resize);
+    d3.select("#clear").on("click", function(d){
+        destroyMap(); 
+        restoreYears();
+        drawCountryMap(window.data); 
+        currentData = data; 
+        d3.select("#nowShowing").text("All"); 
+    })
 
     var g = map.append("g");
 
@@ -160,7 +168,7 @@ function drawCountryMap(articles) {
 
 
 
-        var min = d3.max([0, d3.min(d3.values(articles).map(d => Math.log(d.length)))]); 
+        var min = d3.max([1, d3.min(d3.values(articles).map(d => Math.log(d.length)))]); 
 
         colors.domain([min, d3.max(d3.values(articles).map(d => Math.log(d.length)))]);
         console.log(colors.domain());
@@ -176,12 +184,22 @@ function drawCountryMap(articles) {
         .on("mouseover", stateMouseover)
         .on("mouseout", stateMouseout)
         .style('fill', function (d) {
-            return colors(Math.log(getStateCounts(d)));
+
+            if (getStateCounts(d) == 0){
+                return "#d3d3d3";
+            }
+            else{
+                return colors(Math.log(getStateCounts(d)));
+            }
         });
 
         //addLegend("#legendDiv", colors)
 
     }
+
+
+
+
 
     function resize() {
         // adjust things when the window size changes
@@ -256,7 +274,8 @@ function hideSidebar() {
     panel.style("width", "3%");
     panel.classed("closed", true)
     panel.select("#areaTitle").style("opacity", 0).text("");
-    d3.selectAll("p").remove();
+    d3.select("#researchers").selectAll("p").remove();
+    d3.select("#institutions").selectAll("p").remove();
     d3.selectAll(".heading").text("");
     d3.selectAll(".list").style("border", "hidden");
     d3.selectAll(".rule").style("display", "none");
@@ -438,10 +457,12 @@ function draw() {
     d3.json("ExternalCollaborations-StateUpdated.json", function (data) {
         window.data = data;
         window.currentData = data; 
-        drawCountryMap(window.currentData);
         addYears(window.currentData);
-        addChecks("#academicUnit", getAcademicUnits(window.currentData));
-        addChecks("#subjectArea", getSubjectArea(window.currentData));
+        drawCountryMap(window.currentData);
+        addChecks("#academicUnit", getAcademicUnits(window.currentData), "academic");
+        addChecks("#subjectArea", getSubjectArea(window.currentData), "subject");
+        addClicks();
+
 
 
 
@@ -502,19 +523,67 @@ function getSubjectArea(articles){
     return _.uniq(areas.reduce((a,b)=>a.concat(b))); 
 }
 
-function addChecks(target, list){
+function addChecks(target, list, classWord){
  var anchorDiv = d3.select(target); 
  var labels = anchorDiv.selectAll("div")
  .data(list.sort())
  .enter()
- .append("li"); 
- labels
- .append("input")
- .attr("checked", true)
- .attr("type", "checkbox")
- .attr("class", "cbox"); 
+ .append("p")
+ .append("a")
+ .attr("class","list-item-"+ classWord)
+ .html(d=>d);  
+}
 
- labels.append("label").attr("class", "label").html(d=>d);
+function addClicks(){
+    d3.selectAll(".list-item-academic").on("click", academicClick); 
+    d3.selectAll(".list-item-subject").on("click", subjectAreaClick); 
+}
+
+function academicClick(d){
+
+    destroyMap();
+        window.currentData = []; 
+        for (var property in window.data){
+            currentData[property] = window.data[property].filter(function(article){
+            var stateAuthors = article.authors.map(d=>d===null ? [] : d);
+            var stateUnits = stateAuthors.map(d=>d.cornellAffiliation).map(d=>d===null ? [] : d).reduce((a, b)=>a.concat(b)); 
+            if($.inArray(d, stateUnits) !== -1){
+                return true;
+            }
+            else{
+                return false; 
+            }
+
+            }); 
+        }
+   
+
+    drawCountryMap(currentData);  
+    restoreYears(); 
+    d3.select("#nowShowing").text(d);
+}
+
+function subjectAreaClick(d){
+    var articles = window.data; 
+
+    destroyMap();
+        window.currentData = []; 
+        for (var property in window.data){
+            currentData[property] = window.data[property].filter(function(article){
+                if ($.inArray(d, article.subjectAreas) !== -1){
+                    return true; 
+                }
+                else{
+                    return false; 
+                }
+            }); 
+        }
+
+    //console.log(currentData); 
+
+    drawCountryMap(currentData);  
+    restoreYears();
+    d3.select("#nowShowing").text(d);
 }
 function getYears(articles){
     var years = []; 
@@ -526,7 +595,12 @@ function getYears(articles){
     return _.uniq(years.reduce((a,b)=>a.concat(b))); 
 }
 function addYears(articles){
+
+    
+
     var yearExtent = d3.extent(getYears(articles)); 
+    window.min = yearExtent[0]; 
+    window.max = yearExtent[1]; 
     var range = document.getElementById('range');
     noUiSlider.create(range, {
           start: yearExtent, // Handle start position
@@ -564,8 +638,9 @@ function addYears(articles){
                 }
             }); 
         }
-        console.log(currentData); 
+        
         drawCountryMap(window.currentData); 
+        d3.select("#nowShowing").text("Articles Published: " + values[0] + " - " + values[1]);
     }); 
 }
 
@@ -636,5 +711,12 @@ function nyFilter(d){
 
 }
 
+function update(articles){
+    d3.selectAll(".state").data(articles).style("fill", "white"); 
+}
 
+function restoreYears(){
+    var slider = document.getElementById('range'); 
+    range.noUiSlider.set([window.min, window.max]);
+}
 
