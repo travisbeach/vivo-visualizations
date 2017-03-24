@@ -104,18 +104,34 @@ function drawCountryMap(articles) {
 
 
             var researchersList = arts.map(d=>d.authors).reduce((a,b)=>a.concat(b)).filter(fromCornell); 
-
             var topResearchers = authorCounter(researchersList)
             //console.log(topResearchers);
             d3.select("#researchers").selectAll("p").remove();
             d3.select("#researchers").selectAll("p").data(topResearchers).enter().append("p").attr("class", "linked").append("a").attr("href", d=>d.uri).html(d=>d.name + "<span class='counts'>(" + d.count + ") </span>"); 
-            var institutionList = arts.map(d=>d.authors).reduce((a,b)=>a.concat(b)).filter(correctState);
+            var institutionList = arts.map(oneAuthor).reduce((a,b)=>a.concat(b)).filter(correctState);
             var topInstitutions = institutionCounter(institutionList).filter(containsCornell);
             d3.select("#institutions").selectAll("p").remove();
             d3.select("#institutions").selectAll("p").data(topInstitutions).enter().append("p").attr("class", returnLink).append("a").attr("href", d=>d.uri).attr("target", "_blank").html(d=>d.name + "<span class='counts'>(" + d.count + ") </span>"); 
 
             d3.select("#bigCounts").html(d=>"("+arts.length+")");
 
+        }
+
+        function oneAuthor(d){
+            var authors = d.authors; 
+            //for author
+            var instList = []; 
+            var uniqueAuthors = authors.filter(function(d){
+                if ($.inArray(d.authorAffiliation.localName, instList) == -1){
+                    instList.push(d.authorAffiliation.localName)
+                    return true;
+                }
+                else{
+                    return false; 
+                }
+            });
+
+            return uniqueAuthors;
         }
         function containsCornell(d){
             if (d.name.toLowerCase().includes("cornell")){
