@@ -199,3 +199,6 @@ html{
 .listy{
   font-weight: 600;
 }
+#clear:hover{
+  cursor: pointer;
+}
