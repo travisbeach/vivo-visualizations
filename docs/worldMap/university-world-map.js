@@ -1,7 +1,7 @@
 
 
 function drawCountryMap(articles) {
-   
+
 
     articles['NY'] = articles['NY'].filter(nyFilter);
 
@@ -53,6 +53,8 @@ function drawCountryMap(articles) {
         drawCountryMap(window.data); 
         currentData = data; 
         d3.select("#nowShowing").text("All"); 
+       $("#subjectInput").val(""); 
+       $("#academicInput").val(""); 
     })
 
     var g = map.append("g");
@@ -469,6 +471,7 @@ function draw() {
         addChecks("#academicUnit", getAcademicUnits(window.currentData), "academic");
         addChecks("#subjectArea", getSubjectArea(window.currentData), "subject");
         addClicks();
+        addListSearch();
 
 
 
@@ -531,14 +534,13 @@ function getSubjectArea(articles){
 }
 
 function addChecks(target, list, classWord){
- var anchorDiv = d3.select(target); 
- var labels = anchorDiv.selectAll("div")
- .data(list.sort())
- .enter()
- .append("p")
- .append("a")
- .attr("class","list-item-"+ classWord)
- .html(d=>d);  
+   var anchorDiv = d3.select(target); 
+   var labels = anchorDiv.selectAll("div")
+   .data(list.sort())
+   .enter()
+   .append("p")
+   .attr("class","listy list-item-"+ classWord)
+   .html(d=>d);  
 }
 
 function addClicks(){
@@ -549,9 +551,9 @@ function addClicks(){
 function academicClick(d){
 
     destroyMap();
-        window.currentData = []; 
-        for (var property in window.data){
-            currentData[property] = window.data[property].filter(function(article){
+    window.currentData = []; 
+    for (var property in window.data){
+        currentData[property] = window.data[property].filter(function(article){
             var stateAuthors = article.authors.map(d=>d===null ? [] : d);
             var stateUnits = stateAuthors.map(d=>d.cornellAffiliation).map(d=>d===null ? [] : d).reduce((a, b)=>a.concat(b)); 
             if($.inArray(d, stateUnits) !== -1){
@@ -561,9 +563,9 @@ function academicClick(d){
                 return false; 
             }
 
-            }); 
-        }
-   
+        }); 
+    }
+
 
     drawCountryMap(currentData);  
     restoreYears(); 
@@ -574,17 +576,17 @@ function subjectAreaClick(d){
     var articles = window.data; 
 
     destroyMap();
-        window.currentData = []; 
-        for (var property in window.data){
-            currentData[property] = window.data[property].filter(function(article){
-                if ($.inArray(d, article.subjectAreas) !== -1){
-                    return true; 
-                }
-                else{
-                    return false; 
-                }
-            }); 
-        }
+    window.currentData = []; 
+    for (var property in window.data){
+        currentData[property] = window.data[property].filter(function(article){
+            if ($.inArray(d, article.subjectAreas) !== -1){
+                return true; 
+            }
+            else{
+                return false; 
+            }
+        }); 
+    }
 
     //console.log(currentData); 
 
@@ -603,7 +605,7 @@ function getYears(articles){
 }
 function addYears(articles){
 
-    
+
 
     var yearExtent = d3.extent(getYears(articles)); 
     window.min = yearExtent[0]; 
@@ -727,3 +729,37 @@ function restoreYears(){
     range.noUiSlider.set([window.min, window.max]);
 }
 
+function addListSearch(){
+
+    $('#academicInput').on('keyup', function() {
+        console.log(this.value); 
+        var query = this.value.toLowerCase();
+
+        $('.list-item-academic').each(function(i, elem) {
+            if (elem.innerHTML.toLowerCase().indexOf(query) != -1) {
+                $(this).closest('p').show();
+
+            }else{
+                $(this).closest('p').hide();
+
+            }
+        });
+
+    });
+
+    $('#subjectInput').on('keyup', function() {
+        console.log(this.value); 
+        var query = this.value.toLowerCase();
+
+        $('.list-item-subject').each(function(i, elem) {
+            if (elem.innerHTML.toLowerCase().indexOf(query) != -1) {
+                $(this).closest('p').show();
+
+            }else{
+                $(this).closest('p').hide();
+
+            }
+        });
+
+    });
+}

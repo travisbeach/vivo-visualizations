@@ -191,3 +191,11 @@ html{
 #nowShowing{
   color: steelBlue;
 }
+
+.listy:hover{
+   background-color: #d3d3d3;
+   cursor: pointer;
+}
+.listy{
+  font-weight: 600;
+}
