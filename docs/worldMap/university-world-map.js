@@ -35,13 +35,8 @@ function drawCountryMap(articles) {
     .style('width', width + 'px');
 
 
-    var rect = map.append("rect")
-    .attr("id", "background-rectangle")
-    .style("height", height)
-    .style("width", width)
-    .style("fill", "white");
 
-    rect.on("click", hideSidebar);
+    
 
     // queue and render
 
@@ -61,6 +56,18 @@ function drawCountryMap(articles) {
     })
 
     var g = map.append("g");
+
+    var rect = g.append("rect")
+    .attr("id", "background-rectangle")
+    .attr("x", 0 + 'px')
+    .attr("y", 0 + 'px')
+    .attr("height", height + 'px')
+    .attr("width", width + 'px')
+    .style("fill", "white");
+
+    rect.on("click", hideSidebar);
+
+
 
     function render(err, us, abbr) {
         statesDict = {}
