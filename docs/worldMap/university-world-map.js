@@ -104,8 +104,8 @@ function drawCountryMap(articles) {
 
 
             var researchersList = arts.map(d=>d.authors).reduce((a,b)=>a.concat(b)).filter(fromCornell); 
-            var topResearchers = authorCounter(researchersList)
-            //console.log(topResearchers);
+            var topResearchers = authorCounter(researchersList).filter(hasURI);
+            console.log(topResearchers);
             d3.select("#researchers").selectAll("p").remove();
             d3.select("#researchers").selectAll("p").data(topResearchers).enter().append("p").attr("class", "linked").append("a").attr("href", d=>d.uri).html(d=>d.name + "<span class='counts'>(" + d.count + ") </span>"); 
             var institutionList = arts.map(oneAuthor).reduce((a,b)=>a.concat(b)).filter(correctState);
@@ -115,6 +115,14 @@ function drawCountryMap(articles) {
 
             d3.select("#bigCounts").html(d=>"("+arts.length+")");
 
+        }
+        function hasURI(d){
+            if (d.uri !== null){
+                return true; 
+            }
+            else{
+                return false;
+            }
         }
 
         function oneAuthor(d){
