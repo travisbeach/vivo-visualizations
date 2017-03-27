@@ -48,6 +48,7 @@ function drawCountryMap(articles) {
     // catch the resize
     d3.select(window).on('resize', resize);
     d3.select("#clear").on("click", function(d){
+        hideSidebar();
         destroyMap(); 
         restoreYears();
         drawCountryMap(window.data); 
@@ -573,7 +574,7 @@ function addClicks(){
 }
 
 function academicClick(d){
-
+    hideSidebar();
     destroyMap();
     window.currentData = []; 
     for (var property in window.data){
@@ -593,12 +594,13 @@ function academicClick(d){
 
     drawCountryMap(currentData);  
     restoreYears(); 
+
     d3.select("#nowShowing").text(d);
 }
 
 function subjectAreaClick(d){
     var articles = window.data; 
-
+    hideSidebar();
     destroyMap();
     window.currentData = []; 
     for (var property in window.data){
@@ -659,6 +661,7 @@ function addYears(articles){
   });
 
     range.noUiSlider.on("change", function(values, handle){
+        hideSidebar();
         destroyMap();
         window.currentData = []; 
         for (var property in window.data){
