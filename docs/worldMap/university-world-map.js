@@ -404,7 +404,7 @@ function drawWorldMap(data) {
 
         .style("fill", function (d) {
             if(d.properties.name == "United States"){
-                return "gray";
+                return "#d3d3d3";
             }
             if(data[d.properties.name.toUpperCase()]){
                 if (data[d.properties.name.toUpperCase()].length == 0){
