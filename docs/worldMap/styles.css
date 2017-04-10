@@ -17,6 +17,7 @@ body {
  
 }
 
+
 .d3-tip {
   line-height: 1;
   font-weight: bold;
@@ -64,9 +65,10 @@ div.tooltip {
   opacity: .5;
 }
 
+
+
 #rh-panel {
-  background-color: #000; 
-  opacity: .7;
+  background-color: rgba(50, 50, 50, 0.8);
   height: 600px;
   width: 3%;
   float:right;
@@ -161,7 +163,7 @@ html{
 }
 
 .linked:hover{
-  background-color: steelblue;
+  background-color: rgba(50, 150, 200, 1.0);
 }
 .counts{
  float: right;
