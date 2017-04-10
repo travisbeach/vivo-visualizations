@@ -52,7 +52,7 @@ function drawCountryMap(articles) {
         destroyMap(); 
         restoreYears();
 
-        if(word = "usa"){
+        if(word == "usa"){
             drawCountryMap(window.data); 
         }
 
@@ -612,6 +612,7 @@ function drawWorld(){
     d3.json("ExternalCollaborations-CountryUpdated.json", function(data){
         window.data = data;   
         window.currentData = data;
+        window.word = "world";
         drawWorldMap(data);
         addChecks("#academicUnit", getAcademicUnits(window.currentData), "academic");
         addChecks("#subjectArea", getSubjectArea(window.currentData), "subject");
