@@ -336,7 +336,7 @@ function drawWorldMap(data) {
     var margin = { top: 10, left: 10, bottom: 10, right: 10 }
     , width = parseInt(d3.select('.col-md-8').style('width'))
     , width = width - margin.left - margin.right
-    , mapRatio = .5
+    , mapRatio = .6
     , height = width * mapRatio;
 
     var formats = {
@@ -346,7 +346,7 @@ function drawWorldMap(data) {
     // projection and path setup
     var projection = d3.geo.mercator()
     .scale(width / 6)
-    .translate([width / 2, (height + 100)/ 2]);
+    .translate([width / 2, (height)/ 2 + 75]);
 
     var path = d3.geo.path()
     .projection(projection);
