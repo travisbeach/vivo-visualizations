@@ -11,7 +11,7 @@ function drawCountryMap(articles) {
     }
 
     var margin = { top: 10, left: 0, bottom: 10, right: 0 }
-    , width = parseInt(d3.select('.col-md-7').style('width'))
+    , width = parseInt(d3.select('.col-md-8').style('width'))
     , width = width - margin.left - margin.right
     , mapRatio = .6
     , height = width * mapRatio;
@@ -197,6 +197,13 @@ function drawCountryMap(articles) {
             fillSidebar(d);
         }
 
+        var tooltip = d3.select("body")
+        .append("div")
+        .style("position", "absolute")
+        .style("z-index", "10")
+        .attr("id", "newTip")
+        .style("visibility", "hidden")
+        .text("a simple tooltip");
         
         var tip = d3.tip().attr('class', 'd3-tip').html(function (d) { return d.properties.name + " (" + getStateCounts(d) + ")"; });
 
@@ -204,10 +211,15 @@ function drawCountryMap(articles) {
         map.call(tip)
 
         function stateMouseover(d) {
-            tip.show(d)
+            state = d;
+            tooltip.style("visibility", "visible");
+            tooltip.text(state.properties.name + " (" + getStateCounts(state) + ")");
+        }
+        function stateMove(d){
+            return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");
         }
         function stateMouseout(d) {
-            tip.hide();
+            return tooltip.style("visibility", "hidden");
         }
 
 
@@ -226,6 +238,7 @@ function drawCountryMap(articles) {
         .attr('d', path)
         .on("click", stateClick)
         .on("mouseover", stateMouseover)
+        .on("mousemove", stateMove)
         .on("mouseout", stateMouseout)
         .style('fill', function (d) {
 
@@ -237,7 +250,7 @@ function drawCountryMap(articles) {
             }
         });
 
-        //addLegend("#legendDiv", colors)
+        addLegend("#legendDiv", colors)
 
     }
 
@@ -247,7 +260,7 @@ function drawCountryMap(articles) {
 
     function resize() {
         // adjust things when the window size changes
-        width = parseInt(d3.select('.col-md-7').style('width'));
+        width = parseInt(d3.select('.col-md-8').style('width'));
         width = width - margin.left - margin.right;
         height = width * mapRatio;
 
@@ -321,7 +334,7 @@ function drawWorldMap(data) {
     }
 
     var margin = { top: 10, left: 10, bottom: 10, right: 10 }
-    , width = parseInt(d3.select('.col-md-7').style('width'))
+    , width = parseInt(d3.select('.col-md-8').style('width'))
     , width = width - margin.left - margin.right
     , mapRatio = .5
     , height = width * mapRatio;
@@ -333,7 +346,7 @@ function drawWorldMap(data) {
     // projection and path setup
     var projection = d3.geo.mercator()
     .scale(width / 6)
-    .translate([width / 2, height / 2]);
+    .translate([width / 2, (height + 100)/ 2]);
 
     var path = d3.geo.path()
     .projection(projection);
@@ -375,20 +388,39 @@ function drawWorldMap(data) {
         
         colors.domain([0,d3.max((d3.values(data).map(d=>d.length)))]);
         console.log(colors.domain());
+
+
         var tip = d3.tip().attr('class', 'd3-tip').html(function (d) { 
             var nameKey = d.properties.name.toUpperCase();
             //console.log(data[nameKey].length);
             return d.properties.name + " ("+data[nameKey].length+")"; 
         });
 
+
+
+
+        var tooltip = d3.select("body")
+        .append("div")
+        .style("position", "absolute")
+        .style("z-index", "10")
+        .attr("id", "newTip")
+        .style("visibility", "hidden")
+        .text("a simple tooltip");
+
         /* Invoke the tip in the context of your visualization */
         map.call(tip)
 
         function countryMouseover(d) {
-            tip.show(d)
+            var country = d;
+            var nameKey = country.properties.name.toUpperCase();
+            tooltip.style("visibility", "visible");
+            tooltip.text(country.properties.name + " (" + data[nameKey].length + ")");
+        }
+        function countryMove(d){
+             return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");
         }
         function countryMouseout(d) {
-            tip.hide();
+            tooltip.style("visibility", "hidden");
         }
 
 
@@ -400,11 +432,12 @@ function drawWorldMap(data) {
         .enter()
         .append("path")
         .attr("class", "state")
+        .attr("id", d=>d.id)
         .attr("d", path)
 
         .style("fill", function (d) {
             if(d.properties.name == "United States"){
-                return "#d3d3d3";
+                return "#4d4d4d";
             }
             if(data[d.properties.name.toUpperCase()]){
                 if (data[d.properties.name.toUpperCase()].length == 0){
@@ -417,14 +450,18 @@ function drawWorldMap(data) {
             }
         })
         .on("mouseover", countryMouseover)
+        .on("mousemove", countryMove)
         .on("mouseout", countryMouseout)
         .on("click", countryClick);
 
+        addLegend("#legendDiv", colors)
 
         function countryClick(d){
-
-            sidebar(d);
-            fillCountrySidebar(d);
+            if (d.id !== "USA"){
+                console.log(d);
+                sidebar(d);
+                fillCountrySidebar(d);
+            }
         }
 
         function fillCountrySidebar(d){
@@ -439,7 +476,7 @@ function drawWorldMap(data) {
             d3.select("#researchers").selectAll("p").remove();
             d3.select("#researchers").selectAll("p").data(topResearchers).enter().append("p").attr("class", "linked").append("a").attr("href", d=>d.uri).html(d=>d.name + "<span class='counts'>(" + d.count + ") </span>"); 
 
-            var institutionList = arts.map(oneAuthor).reduce((a,b)=>a.concat(b)).filter(correctState);
+            var institutionList = arts.map(oneAuthor).reduce((a,b)=>a.concat(b)).filter(correctCountry);
             var topInstitutions = institutionCounter(institutionList).filter(containsCornell);
             d3.select("#institutions").selectAll("p").remove();
             d3.select("#institutions").selectAll("p").data(topInstitutions).enter().append("p").attr("class", returnLink).append("a").attr("href", d=>d.uri).attr("target", "_blank").html(d=>d.name + "<span class='counts'>(" + d.count + ") </span>"); 
@@ -489,9 +526,9 @@ function drawWorldMap(data) {
             }
         }
 
-        function correctState(d){
-
-            if(d.state == window.state){
+        function correctCountry(d){
+            console.log(d);
+            if(d.country == window.country){
                 return true;
             }
             else{
@@ -519,15 +556,15 @@ function drawWorldMap(data) {
     function resize() {
         // adjust things when the window size changes
         var margin = { top: 10, left: 10, bottom: 10, right: 10 }
-    , width = parseInt(d3.select('.col-md-7').style('width'))
-    , width = width - margin.left - margin.right
-    , mapRatio = .5
-    , height = width * mapRatio;
+        , width = parseInt(d3.select('.col-md-8').style('width'))
+        , width = width - margin.left - margin.right
+        , mapRatio = .5
+        , height = width * mapRatio;
 
         // update projection
         var projection = d3.geo.mercator()
-    .scale(width / 6)
-    .translate([width / 2, height / 2]);
+        .scale(width / 6)
+        .translate([width / 2, height / 2]);
 
         // resize the map container
         map
@@ -678,16 +715,16 @@ function getSubjectArea(articles){
 }
 
 function addChecks(target, list, classWord){
- var anchorDiv = d3.select(target); 
+   var anchorDiv = d3.select(target); 
 
- anchorDiv.selectAll("p").remove();
+   anchorDiv.selectAll("p").remove();
 
- var labels = anchorDiv.selectAll("div")
- .data(list.sort())
- .enter()
- .append("p")
- .attr("class","listy list-item-"+ classWord)
- .html(d=>d);  
+   var labels = anchorDiv.selectAll("div")
+   .data(list.sort())
+   .enter()
+   .append("p")
+   .attr("class","listy list-item-"+ classWord)
+   .html(d=>d);  
 }
 
 function addClicks(){
@@ -717,7 +754,7 @@ function academicClick(d){
         }
 
 
-         drawCountryMap(currentData);
+        drawCountryMap(currentData);
     }
 
     if (word == "world"){
@@ -742,7 +779,7 @@ function academicClick(d){
 
 
 
-     
+
     restoreYears(); 
 
     d3.select("#nowShowing").text(d);
@@ -834,10 +871,10 @@ function addYears(articles){
         if (word == "world"){
             drawWorldMap(window.currentData);
         }
-         
+
         d3.select("#nowShowing").text("Articles Published: " + values[0] + " - " + values[1]);
-        });
-    };
+    });
+};
 
 
 //return a filtered list of {name:"", count: "", uri: ""}
@@ -953,7 +990,7 @@ function addListSearch(){
 
 function addListeners(){
   d3.selectAll('input[name="map"]').on("change", function(d){
-    
+
     word = d3.select('input[name="map"]:checked').node().value;  
 
     destroyMap(); 
