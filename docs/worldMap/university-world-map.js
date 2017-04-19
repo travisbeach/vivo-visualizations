@@ -328,6 +328,7 @@ function hideSidebar() {
 
 
 function drawWorldMap(data) {
+    data['KOREA'] = data['SOUTH KOREA'];
 
     var urls = {
         world: "countries.topo.json"
@@ -384,7 +385,7 @@ function drawWorldMap(data) {
 
         window.world = world;
 
-        data['UNITED STATES'] = [];
+        data['UNITED STATES'] = []; 
         
         colors.domain([0,d3.max((d3.values(data).map(d=>d.length)))]);
         console.log(colors.domain());
@@ -413,6 +414,8 @@ function drawWorldMap(data) {
         function countryMouseover(d) {
             var country = d;
             var nameKey = country.properties.name.toUpperCase();
+
+            console.log(nameKey);
 
             console.log(d);
             tooltip.style("visibility", "visible");
@@ -1032,6 +1035,7 @@ function initializeMap(){
         Window.countryRaw = rawStates; 
         Window.worldRaw = rawWorld;
         drawCountry(Window.countryRaw)
+        console.log( Window.worldRaw);
         d3.select("#nowShowing").text("All");
     });
 }
