@@ -113,6 +113,12 @@ function drawCountryMap(articles) {
 
             console.log(arts);
 
+            if(arts.length == 0){
+                d3.select("#researchers").selectAll("p").remove();
+                d3.select("#institutions").selectAll("p").remove();
+                d3.select("#bigCounts").html("(0)");
+            }
+
 
             var researchersList = arts.map(d=>d.authors).reduce((a,b)=>a.concat(b)).filter(fromCornell); 
             var topResearchers = authorCounter(researchersList).filter(hasURI);
@@ -477,18 +483,27 @@ function drawWorldMap(data) {
         arts = currentData[country];
         console.log(arts);
 
-        var researchersList = arts.map(d=>d.authors).reduce((a,b)=>a.concat(b)).filter(fromCornell); 
-        var topResearchers = authorCounter(researchersList).filter(hasURI);
-        console.log(topResearchers);
-        d3.select("#researchers").selectAll("p").remove();
-        d3.select("#researchers").selectAll("p").data(topResearchers).enter().append("p").attr("class", "linked").append("a").attr("href", d=>d.uri).html(d=>d.name + "<span class='counts'>(" + d.count + ") </span>"); 
+         if(!arts || arts.length == 0){
+                d3.select("#researchers").selectAll("p").remove();
+                d3.select("#institutions").selectAll("p").remove();
+                d3.select("#bigCounts").html("(0)");
+        }
 
-        var institutionList = arts.map(oneAuthor).reduce((a,b)=>a.concat(b)).filter(correctCountry);
-        var topInstitutions = institutionCounter(institutionList).filter(containsCornell);
-        d3.select("#institutions").selectAll("p").remove();
-        d3.select("#institutions").selectAll("p").data(topInstitutions).enter().append("p").attr("class", returnLink).append("a").attr("href", d=>d.uri).attr("target", "_blank").html(d=>d.name + "<span class='counts'>(" + d.count + ") </span>"); 
+        else{
+            var researchersList = arts.map(d=>d.authors).reduce((a,b)=>a.concat(b)).filter(fromCornell); 
+            var topResearchers = authorCounter(researchersList).filter(hasURI);
+            console.log(topResearchers);
+            d3.select("#researchers").selectAll("p").remove();
+            d3.select("#researchers").selectAll("p").data(topResearchers).enter().append("p").attr("class", "linked").append("a").attr("href", d=>d.uri).html(d=>d.name + "<span class='counts'>(" + d.count + ") </span>"); 
 
-        d3.select("#bigCounts").html(d=>"("+arts.length+")");
+            var institutionList = arts.map(oneAuthor).reduce((a,b)=>a.concat(b)).filter(correctCountry);
+            var topInstitutions = institutionCounter(institutionList).filter(containsCornell);
+            d3.select("#institutions").selectAll("p").remove();
+            d3.select("#institutions").selectAll("p").data(topInstitutions).enter().append("p").attr("class", returnLink).append("a").attr("href", d=>d.uri).attr("target", "_blank").html(d=>d.name + "<span class='counts'>(" + d.count + ") </span>"); 
+
+            d3.select("#bigCounts").html(d=>"("+arts.length+")");
+
+        }
     }
 
     function hasURI(d){
@@ -534,7 +549,7 @@ function drawWorldMap(data) {
         }
 
         function correctCountry(d){
-            console.log(d);
+            //console.log(d);
             if(d.country == window.country){
                 return true;
             }
