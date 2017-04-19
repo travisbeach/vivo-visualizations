@@ -413,8 +413,15 @@ function drawWorldMap(data) {
         function countryMouseover(d) {
             var country = d;
             var nameKey = country.properties.name.toUpperCase();
+
+            console.log(d);
             tooltip.style("visibility", "visible");
-            tooltip.text(country.properties.name + " (" + data[nameKey].length + ")");
+            if(data[nameKey]){
+                tooltip.text(country.properties.name + " (" + data[nameKey].length + ")");
+            }
+            else{
+                 tooltip.text(country.properties.name + " (" + 0 + ")");
+            }
         }
         function countryMove(d){
              return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");
