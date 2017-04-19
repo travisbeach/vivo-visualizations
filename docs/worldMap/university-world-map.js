@@ -629,9 +629,9 @@ function addLegend(target, scale) {
     })
 }
 
-function drawCountry() {
+function drawCountry(data) {
 
-    d3.json("ExternalCollaborations-StateUpdated.json", function (data) {
+   
         window.data = data;
         window.currentData = data; 
         drawCountryMap(window.currentData);
@@ -642,11 +642,10 @@ function drawCountry() {
         addListSearch();
         addYears(currentData);
 
-    });
-}
+    }
 
-function drawWorld(){
-    d3.json("ExternalCollaborations-CountryUpdated.json", function(data){
+function drawWorld(data){
+   
         window.data = data;   
         window.currentData = data;
         window.word = "world";
@@ -657,7 +656,7 @@ function drawWorld(){
         addListSearch();
         addYears(currentData);
 
-    })
+    
 }
 
 function hideFields() {
@@ -1002,14 +1001,28 @@ function addListeners(){
     // addListeners();
     // addYears(window.currentData);
 
+
     if (word==="usa"){
 
-        drawCountry(); 
+        drawCountry(Window.countryRaw); 
     }
 
     if (word==="world"){
-        drawWorld();
+        drawWorld(Window.worldRaw);
     }
 
 })
+}
+
+
+function initializeMap(){
+    d3.queue()
+    .defer(d3.json, "ExternalCollaborations-StateUpdated.json")
+    .defer(d3.json, "ExternalCollaborations-CountryUpdated.json")
+    .await(function(err, rawStates, rawWorld){
+        Window.countryRaw = rawStates; 
+        Window.worldRaw = rawWorld;
+
+        drawCountry(Window.countryRaw)
+    });
 }
