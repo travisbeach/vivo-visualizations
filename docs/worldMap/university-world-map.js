@@ -434,9 +434,6 @@ function drawWorldMap(data) {
         }
 
 
-
-
-
         map.selectAll("path")
         .data(topojson.feature(world, world.objects.countries).features)
         .enter()
