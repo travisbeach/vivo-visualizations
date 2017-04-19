@@ -1016,13 +1016,15 @@ function addListeners(){
 
 
 function initializeMap(){
+
+    d3.select("#nowShowing").text("Loading map visualization"); 
     d3.queue()
     .defer(d3.json, "ExternalCollaborations-StateUpdated.json")
     .defer(d3.json, "ExternalCollaborations-CountryUpdated.json")
     .await(function(err, rawStates, rawWorld){
         Window.countryRaw = rawStates; 
         Window.worldRaw = rawWorld;
-
         drawCountry(Window.countryRaw)
+        d3.select("#nowShowing").text("All");
     });
 }
