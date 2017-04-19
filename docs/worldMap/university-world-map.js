@@ -423,85 +423,85 @@ function drawWorldMap(data) {
                 tooltip.text(country.properties.name + " (" + data[nameKey].length + ")");
             }
             else{
-                 tooltip.text(country.properties.name + " (" + 0 + ")");
-            }
-        }
-        function countryMove(d){
-             return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");
-        }
-        function countryMouseout(d) {
-            tooltip.style("visibility", "hidden");
-        }
+               tooltip.text(country.properties.name + " (" + 0 + ")");
+           }
+       }
+       function countryMove(d){
+           return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");
+       }
+       function countryMouseout(d) {
+        tooltip.style("visibility", "hidden");
+    }
 
 
-        map.selectAll("path")
-        .data(topojson.feature(world, world.objects.countries).features)
-        .enter()
-        .append("path")
-        .attr("class", "state")
-        .attr("id", d=>d.id)
-        .attr("d", path)
+    map.selectAll("path")
+    .data(topojson.feature(world, world.objects.countries).features)
+    .enter()
+    .append("path")
+    .attr("class", "state")
+    .attr("id", d=>d.id)
+    .attr("d", path)
 
-        .style("fill", function (d) {
-            if(d.properties.name == "United States"){
-                return "#4d4d4d";
-            }
-            if(data[d.properties.name.toUpperCase()]){
-                if (data[d.properties.name.toUpperCase()].length == 0){
-                    return "#d3d3d3";
-                }
-                return colors(data[d.properties.name.toUpperCase()].length);
-            }
-            else{
+    .style("fill", function (d) {
+        if(d.properties.name == "United States"){
+            return "#4d4d4d";
+        }
+        if(data[d.properties.name.toUpperCase()]){
+            if (data[d.properties.name.toUpperCase()].length == 0){
                 return "#d3d3d3";
             }
-        })
-        .on("mouseover", countryMouseover)
-        .on("mousemove", countryMove)
-        .on("mouseout", countryMouseout)
-        .on("click", countryClick);
-
-        addLegend("#legendDiv", colors)
-
-        function countryClick(d){
-            if (d.id !== "USA"){
-                console.log(d);
-                sidebar(d);
-                fillCountrySidebar(d);
-            }
+            return colors(data[d.properties.name.toUpperCase()].length);
         }
-
-        function fillCountrySidebar(d){
-            var country = d.properties.name.toUpperCase(); 
-            window.country = country;
-            arts = currentData[country];
-            console.log(arts);
-
-            var researchersList = arts.map(d=>d.authors).reduce((a,b)=>a.concat(b)).filter(fromCornell); 
-            var topResearchers = authorCounter(researchersList).filter(hasURI);
-            console.log(topResearchers);
-            d3.select("#researchers").selectAll("p").remove();
-            d3.select("#researchers").selectAll("p").data(topResearchers).enter().append("p").attr("class", "linked").append("a").attr("href", d=>d.uri).html(d=>d.name + "<span class='counts'>(" + d.count + ") </span>"); 
-
-            var institutionList = arts.map(oneAuthor).reduce((a,b)=>a.concat(b)).filter(correctCountry);
-            var topInstitutions = institutionCounter(institutionList).filter(containsCornell);
-            d3.select("#institutions").selectAll("p").remove();
-            d3.select("#institutions").selectAll("p").data(topInstitutions).enter().append("p").attr("class", returnLink).append("a").attr("href", d=>d.uri).attr("target", "_blank").html(d=>d.name + "<span class='counts'>(" + d.count + ") </span>"); 
-
-            d3.select("#bigCounts").html(d=>"("+arts.length+")");
+        else{
+            return "#d3d3d3";
         }
+    })
+    .on("mouseover", countryMouseover)
+    .on("mousemove", countryMove)
+    .on("mouseout", countryMouseout)
+    .on("click", countryClick);
 
-        function hasURI(d){
-            if (d.uri !== null){
-                return true; 
-            }
-            else{
-                return false;
-            }
+    addLegend("#legendDiv", colors)
+
+    function countryClick(d){
+        if (d.id !== "USA"){
+            console.log(d);
+            sidebar(d);
+            fillCountrySidebar(d);
         }
+    }
 
-        function oneAuthor(d){
-            var authors = d.authors; 
+    function fillCountrySidebar(d){
+        var country = d.properties.name.toUpperCase(); 
+        window.country = country;
+        arts = currentData[country];
+        console.log(arts);
+
+        var researchersList = arts.map(d=>d.authors).reduce((a,b)=>a.concat(b)).filter(fromCornell); 
+        var topResearchers = authorCounter(researchersList).filter(hasURI);
+        console.log(topResearchers);
+        d3.select("#researchers").selectAll("p").remove();
+        d3.select("#researchers").selectAll("p").data(topResearchers).enter().append("p").attr("class", "linked").append("a").attr("href", d=>d.uri).html(d=>d.name + "<span class='counts'>(" + d.count + ") </span>"); 
+
+        var institutionList = arts.map(oneAuthor).reduce((a,b)=>a.concat(b)).filter(correctCountry);
+        var topInstitutions = institutionCounter(institutionList).filter(containsCornell);
+        d3.select("#institutions").selectAll("p").remove();
+        d3.select("#institutions").selectAll("p").data(topInstitutions).enter().append("p").attr("class", returnLink).append("a").attr("href", d=>d.uri).attr("target", "_blank").html(d=>d.name + "<span class='counts'>(" + d.count + ") </span>"); 
+
+        d3.select("#bigCounts").html(d=>"("+arts.length+")");
+    }
+
+    function hasURI(d){
+        if (d.uri !== null){
+            return true; 
+        }
+        else{
+            return false;
+        }
+    }
+
+    function oneAuthor(d){
+        var authors = d.authors; 
             //for author
             var instList = []; 
             var uniqueAuthors = authors.filter(function(d){
@@ -621,47 +621,67 @@ function getCounts(testObjects) {
 
 
 function addLegend(target, scale) {
-    d3.selectAll("#legend").remove();
-    var increment = scale.domain()[1]/scale.range().length;
 
-    var legendSvg = d3.select("#legendDiv").append("svg").attr("width", 200).attr("height", 250).attr("id", "legend");
-    
-    scale.range().forEach(function (d, i) {
-        legendSvg.append("rect").attr("height", 20).attr("width", 20).attr("x", 10).attr("y", 10 + i * 25).style("fill", d);
-        legendSvg.append("text").attr("x", 40).attr("y", 12 + 10 + i * 25).text(function(d){
+    if (window.word == "usa"){
+        d3.selectAll("#legend").remove();
+        var increment = scale.domain()[1]/scale.range().length;
+        console.log(increment);
+        var legendSvg = d3.select("#legendDiv").append("svg").attr("width", 200).attr("height", 250).attr("id", "legend");
+        
+        scale.range().forEach(function (d, i) {
+            legendSvg.append("rect").attr("height", 20).attr("width", 20).attr("x", 10).attr("y", 10 + i * 25).style("fill", d);
+            legendSvg.append("text").attr("x", 40).attr("y", 12 + 10 + i * 25).text(function(d){
 
-            return Math.floor(Math.exp(increment*i)) + " - " +  Math.floor(Math.exp(increment*(i+1))); 
-        }).style("alignment-baseline", "middle").style("font-size", 20);
-        console.log(d);
-    })
+                return Math.floor(Math.exp(increment*i)) + " - " +  Math.floor(Math.exp(increment*(i+1))); 
+            }).style("alignment-baseline", "middle").style("font-size", 20);
+            console.log(d);
+        })
+    }
+
+    else{
+
+         d3.selectAll("#legend").remove();
+         var increment = scale.domain()[1]/scale.range().length;
+         console.log(increment);
+         var legendSvg = d3.select("#legendDiv").append("svg").attr("width", 200).attr("height", 250).attr("id", "legend");
+         
+         scale.range().forEach(function (d, i) {
+            legendSvg.append("rect").attr("height", 20).attr("width", 20).attr("x", 10).attr("y", 10 + i * 25).style("fill", d);
+            legendSvg.append("text").attr("x", 40).attr("y", 12 + 10 + i * 25).text(function(d){
+                var calculation = Math.floor(increment*i) + " - " +  Math.floor(increment*(i+1));
+                return calculation; 
+            }).style("alignment-baseline", "middle").style("font-size", 20);
+            console.log(d);
+        })  
+ }
 }
 
 function drawCountry(data) {
 
-   
-        window.data = data;
-        window.currentData = data; 
-        drawCountryMap(window.currentData);
-        addListeners();
-        addChecks("#academicUnit", getAcademicUnits(window.currentData), "academic");
-        addChecks("#subjectArea", getSubjectArea(window.currentData), "subject");
-        addClicks();
-        addListSearch();
-        addYears(currentData);
 
-    }
+    window.data = data;
+    window.currentData = data; 
+    drawCountryMap(window.currentData);
+    addListeners();
+    addChecks("#academicUnit", getAcademicUnits(window.currentData), "academic");
+    addChecks("#subjectArea", getSubjectArea(window.currentData), "subject");
+    addClicks();
+    addListSearch();
+    addYears(currentData);
+
+}
 
 function drawWorld(data){
-   
-        window.data = data;   
-        window.currentData = data;
-        window.word = "world";
-        drawWorldMap(data);
-        addChecks("#academicUnit", getAcademicUnits(window.currentData), "academic");
-        addChecks("#subjectArea", getSubjectArea(window.currentData), "subject");
-        addClicks();
-        addListSearch();
-        addYears(currentData);
+
+    window.data = data;   
+    window.currentData = data;
+    window.word = "world";
+    drawWorldMap(data);
+    addChecks("#academicUnit", getAcademicUnits(window.currentData), "academic");
+    addChecks("#subjectArea", getSubjectArea(window.currentData), "subject");
+    addClicks();
+    addListSearch();
+    addYears(currentData);
 
     
 }
@@ -721,16 +741,16 @@ function getSubjectArea(articles){
 }
 
 function addChecks(target, list, classWord){
-   var anchorDiv = d3.select(target); 
+ var anchorDiv = d3.select(target); 
 
-   anchorDiv.selectAll("p").remove();
+ anchorDiv.selectAll("p").remove();
 
-   var labels = anchorDiv.selectAll("div")
-   .data(list.sort())
-   .enter()
-   .append("p")
-   .attr("class","listy list-item-"+ classWord)
-   .html(d=>d);  
+ var labels = anchorDiv.selectAll("div")
+ .data(list.sort())
+ .enter()
+ .append("p")
+ .attr("class","listy list-item-"+ classWord)
+ .html(d=>d);  
 }
 
 function addClicks(){
