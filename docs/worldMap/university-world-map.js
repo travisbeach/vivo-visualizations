@@ -48,16 +48,17 @@ function drawCountryMap(articles) {
     // catch the resize
     d3.select(window).on('resize', resize);
     d3.select("#clear").on("click", function(d){
+        window.filterVariable = false;
         hideSidebar();
         destroyMap(); 
         restoreYears();
 
         if(word == "usa"){
-            drawCountryMap(window.data); 
+            drawCountryMap(Window.countryRaw); 
         }
 
         else{
-            drawWorldMap(window.data);
+            drawWorldMap(Window.worldRaw);
         }
 
         currentData = data; 
@@ -285,10 +286,6 @@ function drawCountryMap(articles) {
         map.selectAll('.state').attr('d', path);
     }
 
-
-
-    
-
 }///drawCountyMap
 
 
@@ -483,10 +480,10 @@ function drawWorldMap(data) {
         arts = currentData[country];
         console.log(arts);
 
-         if(!arts || arts.length == 0){
-                d3.select("#researchers").selectAll("p").remove();
-                d3.select("#institutions").selectAll("p").remove();
-                d3.select("#bigCounts").html("(0)");
+        if(!arts || arts.length == 0){
+            d3.select("#researchers").selectAll("p").remove();
+            d3.select("#institutions").selectAll("p").remove();
+            d3.select("#bigCounts").html("(0)");
         }
 
         else{
@@ -655,19 +652,19 @@ function addLegend(target, scale) {
 
     else{
 
-         d3.selectAll("#legend").remove();
-         var increment = scale.domain()[1]/scale.range().length;
-         console.log(increment);
-         var legendSvg = d3.select("#legendDiv").append("svg").attr("width", 200).attr("height", 250).attr("id", "legend");
-         
-         scale.range().forEach(function (d, i) {
-            legendSvg.append("rect").attr("height", 20).attr("width", 20).attr("x", 10).attr("y", 10 + i * 25).style("fill", d);
-            legendSvg.append("text").attr("x", 40).attr("y", 12 + 10 + i * 25).text(function(d){
-                var calculation = Math.floor(increment*i) + " - " +  Math.floor(increment*(i+1));
-                return calculation; 
-            }).style("alignment-baseline", "middle").style("font-size", 20);
-            console.log(d);
-        })  
+     d3.selectAll("#legend").remove();
+     var increment = scale.domain()[1]/scale.range().length;
+     console.log(increment);
+     var legendSvg = d3.select("#legendDiv").append("svg").attr("width", 200).attr("height", 250).attr("id", "legend");
+
+     scale.range().forEach(function (d, i) {
+        legendSvg.append("rect").attr("height", 20).attr("width", 20).attr("x", 10).attr("y", 10 + i * 25).style("fill", d);
+        legendSvg.append("text").attr("x", 40).attr("y", 12 + 10 + i * 25).text(function(d){
+            var calculation = Math.floor(increment*i) + " - " +  Math.floor(increment*(i+1));
+            return calculation; 
+        }).style("alignment-baseline", "middle").style("font-size", 20);
+        console.log(d);
+    })  
  }
 }
 
@@ -676,6 +673,7 @@ function drawCountry(data) {
 
     window.data = data;
     window.currentData = data; 
+
     drawCountryMap(window.currentData);
     addListeners();
     addChecks("#academicUnit", getAcademicUnits(window.currentData), "academic");
@@ -690,8 +688,11 @@ function drawWorld(data){
 
     window.data = data;   
     window.currentData = data;
+
+
+
     window.word = "world";
-    drawWorldMap(data);
+    drawWorldMap(window.currentData);
     addChecks("#academicUnit", getAcademicUnits(window.currentData), "academic");
     addChecks("#subjectArea", getSubjectArea(window.currentData), "subject");
     addClicks();
@@ -774,14 +775,15 @@ function addClicks(){
 }
 
 function academicClick(d){
+    window.filterVariable = ['academic',d];
     hideSidebar();
     destroyMap();
     window.currentData = []; 
 
 
     if (word == "usa"){
-        for (var property in window.data){
-            currentData[property] = window.data[property].filter(function(article){
+        for (var property in Window.countryRaw){
+            currentData[property] = Window.countryRaw[property].filter(function(article){
                 var stateAuthors = article.authors.map(d=>d===null ? [] : d);
                 var stateUnits = stateAuthors.map(d=>d.cornellAffiliation).map(d=>d===null ? [] : d).reduce((a, b)=>a.concat(b)); 
                 if($.inArray(d, stateUnits) !== -1){
@@ -800,8 +802,8 @@ function academicClick(d){
 
     if (word == "world"){
 
-        for (var property in window.data){
-            currentData[property] = window.data[property].filter(function(article){
+        for (var property in Window.worldRaw){
+            currentData[property] = Window.worldRaw[property].filter(function(article){
                 console.log(article);
                 var stateAuthors = article.authors.map(d=>d===null ? [] : d);
                 var stateUnits = stateAuthors.map(d=>d.cornellAffiliation).map(d=>d===null ? [] : d).reduce((a, b)=>a.concat(b)); 
@@ -817,22 +819,25 @@ function academicClick(d){
 
         drawWorldMap(currentData); 
     }
-
-
-
-
     restoreYears(); 
 
     d3.select("#nowShowing").text(d);
 }
 
 function subjectAreaClick(d){
+    window.filterVariable = ['subject',d];
     var articles = window.data; 
     hideSidebar();
     destroyMap();
     window.currentData = []; 
-    for (var property in window.data){
-        currentData[property] = window.data[property].filter(function(article){
+
+
+
+    //console.log(currentData); 
+
+    if(window.word =="usa"){
+        for (var property in Window.countryRaw){
+        currentData[property] = Window.countryRaw[property].filter(function(article){
             if ($.inArray(d, article.subjectAreas) !== -1){
                 return true; 
             }
@@ -842,16 +847,23 @@ function subjectAreaClick(d){
         }); 
     }
 
-    //console.log(currentData); 
-
-    if(window.word =="usa"){
-        drawCountryMap(currentData);  
-    }
-    else{
-        drawWorldMap(currentData);
-    }
-    restoreYears();
-    d3.select("#nowShowing").text(d);
+    drawCountryMap(currentData);  
+}
+else{
+  for (var property in Window.worldRaw){
+    currentData[property] = Window.worldRaw[property].filter(function(article){
+        if ($.inArray(d, article.subjectAreas) !== -1){
+            return true; 
+        }
+        else{
+            return false; 
+        }
+    }); 
+}
+drawWorldMap(currentData);
+}
+restoreYears();
+d3.select("#nowShowing").text(d);
 }
 function getYears(articles){
     var years = []; 
@@ -985,9 +997,7 @@ function nyFilter(d){
 
 }
 
-function update(articles){
-    d3.selectAll(".state").data(articles).style("fill", "white"); 
-}
+
 
 function restoreYears(){
     var slider = document.getElementById('range'); 
@@ -1031,28 +1041,31 @@ function addListSearch(){
 
 function addListeners(){
   d3.selectAll('input[name="map"]').on("change", function(d){
-
     word = d3.select('input[name="map"]:checked').node().value;  
-
     destroyMap(); 
 
-    // addChecks("#academicUnit", getAcademicUnits(window.currentData), "academic");
-    // addChecks("#subjectArea", getSubjectArea(window.currentData), "subject");
-    // addClicks();
-    // addListSearch();
-    // addListeners();
-    // addYears(window.currentData);
 
+    if (!window.filterVariable){
+        if (word==="usa"){
 
-    if (word==="usa"){
+            drawCountry(Window.countryRaw); 
+        }
 
-        drawCountry(Window.countryRaw); 
+        if (word==="world"){
+            drawWorld(Window.worldRaw);
+        }
+
     }
 
-    if (word==="world"){
-        drawWorld(Window.worldRaw);
-    }
+    else{
+        if(window.filterVariable[0] == 'subject'){
+            subjectAreaClick(window.filterVariable[1]);
+        }
+        else{
+            academicClick(window.filterVariable[1]);
+        }
 
+    }
 })
 }
 
@@ -1064,6 +1077,7 @@ function initializeMap(){
     .defer(d3.json, "ExternalCollaborations-StateUpdated.json")
     .defer(d3.json, "ExternalCollaborations-CountryUpdated.json")
     .await(function(err, rawStates, rawWorld){
+        window.filterVariable = false
         Window.countryRaw = rawStates; 
         Window.worldRaw = rawWorld;
         drawCountry(Window.countryRaw)
